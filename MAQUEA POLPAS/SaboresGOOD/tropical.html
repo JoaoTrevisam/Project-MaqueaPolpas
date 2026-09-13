@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Language" content="pt-br">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maquea Polpas | LINHA TROPICAL</title>
+  <link href="../Contato/assets/logo1.png" rel="shortcut icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root{--color:#ffffff; --primaryColor:#fe6b00; --secondaryColor:#e9ddc8; --tertiaryColor:#ffffff; --color1:#f8f5f2; --color2:#dac6aa; --color3:#ba9a71; --color4:#6bedf2; --color5:#ff43a2; --color6:#000000; --color7:#000000;}
+  </style>
+  <link rel="stylesheet" href="./componentes-home/module/bootstrap-5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./componentes-home/pages/css/header.css">
+  <link rel="stylesheet" href="./componentes-home/pages/css/footer.css">
+  <link rel="stylesheet" href="./componentes-home/box/lgpd/front/css/view.css">
+  <style>
+    /* ============================================================
+       ESTILOS DOS SUBMENUS – MESMO TAMANHO DO CÓDIGO MEMORIZADO
+       ============================================================ */
+    .menu-has-sub {
+      position: relative;
+    }
+    
+    /* ============================================================
+       ESTILO BASE DOS SUBMENUS (BORDAS RETAS E SEM ARREDONDAMENTO)
+       ============================================================ */
+    .menu-top-sub {
+      display: none;
+      position: absolute;
+      left: 0;
+      background-color: #FFFDD0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 2px 20px;
+      z-index: 1000;
+      border-radius: 0 !important;
+    }
+    
+    /* ============================================================
+       AJUSTE DE POSIÇÃO DOS SUBMENUS (PARA CIMA)
+       ============================================================ */
+    .menu-has-sub .menu-top-sub {
+      top: 39px;
+    }
+    
+    /* ============================================================
+       TAMANHO INDIVIDUAL DE CADA SUBMENU
+       ============================================================ */
+    .menu-catalogo-sub {
+      min-width: 272px;
+      max-width: 272px;
+    }
+    
+    .menu-revendedor-sub {
+      min-width: 230px;
+      max-width: 230px;
+    }
+    
+    .menu-has-sub:hover .menu-top-sub {
+      display: block;
+    }
+    .menu-top-sub ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .menu-top-sub-item {
+      padding: 0;
+    }
+    .menu-top-sub-item a {
+      display: block;
+      padding: 12px 24px;
+      color: #444 !important;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s, font-weight 0.2s;
+      font-size: 18px;
+      background: transparent !important;
+    }
+    .menu-top-sub-item a:hover {
+      color: #008349 !important;
+      font-weight: 600 !important;
+      background: transparent !important;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #008349;
+      color: #24292d;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL SEM MARGENS LATERAIS (igual LINHA COMPLETA) ===== */
+    .conteudo-main {
+      flex: 1;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .polpas-linha { width: 100%; max-width: 100%; }
+
+    /* ===== TÍTULO PRINCIPAL - LUCKIEST GUY COM CONTORNO BRANCO ===== */
+    .titulo-principal {
+      font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
+      font-size: 4.3rem;
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0.6rem 0 2rem 0;
+      color: #D83135;
+      letter-spacing: 9px;
+      padding: 0 1.5rem;
+      text-shadow: 
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff,
+        0 0 8px #ffffff4d;
+    }
+
+    /* ===== CARROSSEL 100% LARGURA (IGUAL LINHA COMPLETA) ===== */
+    .carrossel-wrapper {
+      width: 100vw;
+      max-width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+      padding-top: 1px;
+      overflow: hidden;
+    }
+    .carrossel {
+      position: relative;
+      width: 100%;
+      height: 130vh;
+      overflow: hidden;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .carrossel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    .carrossel.sem-transicao .carrossel-track { transition: none; }
+    .carrossel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      cursor: default;
+    }
+    .carrossel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      padding: 0;
+    }
+    .carrossel-indicadores { display: none !important; }
+    .carrossel-btn { display: none !important; }
+
+    @media (max-width: 700px) {
+      .carrossel { height: 100vh; }
+      .carrossel-wrapper { padding-top: 1px; }
+    }
+    @media (max-width: 450px) {
+      .carrossel { height: 90vh; }
+      .carrossel-wrapper { padding-top: 1px; }
+    }
+
+    /* ===== LINHA VERMELHA – ENCOSTADA NO CARROSSEL ===== */
+    .barra-separadora {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 1rem solid #D83135;
+      margin: 0;
+      flex-shrink: 0;
+      display: block;
+    }
+    @media (max-width: 700px) {
+      .barra-separadora { margin-top: 0; }
+    }
+
+    /* ===== BARRA SEPARADORA FINAL – 20px PARA BAIXO (LEVA O FOOTER JUNTO) ===== */
+    .barra-separadora:last-of-type {
+      margin-top: 70px;
+    }
+
+    /* ===== CAMPO DE PESQUISA ===== */
+    .search-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 8px 1.5rem 4px 1.5rem;
+    }
+    .search-bar-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 410px;
+    }
+    .search-bar-wrapper input {
+      width: 100%;
+      padding: 12px 50px 12px 20px;
+      font-size: 20px;
+      border-radius: 40px;
+      border: 2px solid #D83135;
+      background-color: #FFFDD0;
+      color: #D83135;
+      outline: none;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      font-weight: 500;
+    }
+    .search-bar-wrapper input::placeholder {
+      color: #aaa;
+      font-weight: 400;
+    }
+    .search-bar-wrapper input:focus {
+      border-color: #b0222a;
+      box-shadow: 0 0 0 4px rgba(216, 49, 53, 0.2);
+    }
+    .search-bar-wrapper .search-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      color: #D83135;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .search-container {
+        justify-content: center;
+        padding: 6px 1rem 2px 1rem;
+      }
+      .search-bar-wrapper {
+        max-width: 100%;
+      }
+      .search-bar-wrapper input {
+        font-size: 18px;
+        padding: 10px 44px 10px 16px;
+      }
+      .search-bar-wrapper .search-icon {
+        font-size: 24px;
+        right: 14px;
+      }
+    }
+    @media (max-width: 480px) {
+      .search-bar-wrapper input {
+        font-size: 16px;
+        padding: 8px 38px 8px 14px;
+      }
+      .search-bar-wrapper .search-icon {
+        font-size: 20px;
+        right: 12px;
+      }
+    }
+
+    /* ===== UMA IMAGEM NO MODAL (apenas a tabela, centralizada, 380px) ===== */
+    .modal-imagens-duas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 4px auto 2px;
+      flex-shrink: 0;
+    }
+    .modal-imagens-duas .img-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      width: 380px;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .modal-imagens-duas .img-wrapper img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      display: block;
+      border-radius: 4px;
+    }
+    .modal-imagens-duas .img-wrapper {
+      cursor: none;
+    }
+
+    /* ===== BOTÕES DO MODAL ===== */
+    .botoes-tabela {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 14px;
+      flex-shrink: 0;
+    }
+    .btn-tabela {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid #000;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 6px 24px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: .3s;
+      display: inline-block;
+      color: #000;
+      border-color: #000;
+      flex-shrink: 0;
+    }
+    .btn-tabela:hover {
+      background: rgba(0, 0, 0, 0.1);
+      transform: scale(1.03);
+    }
+
+    /* ===== GRADE DE PRODUTOS – LARGURA FIXA ===== */
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 260px);
+      gap: 45px 30px;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      justify-content: center;
+    }
+    .produto-item {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  filter 0.4s ease,
+                  background 0.4s ease,
+                  box-shadow 0.4s ease;
+      background: #FFFDD0;
+      border-radius: 20px;
+      padding: 25px 15px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      width: 260px;
+    }
+    .produto-item:hover {
+      transform: translateY(-110px) scale(1.05);
+      filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.35));
+      background: #008349;
+      z-index: 10;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    body.scrolling .produto-item:hover {
+      transform: none !important;
+      filter: none !important;
+      background: #FFFDD0 !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+      transition: none !important;
+      z-index: 1 !important;
+    }
+    .produto-item img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      transition: .3s;
+      pointer-events: none;
+      background-color: transparent;
+    }
+    .nome-produto {
+      margin-top: 14px;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+      font-family: Arial, sans-serif;
+      color: #000 !important;
+    }
+    .produto-item.oculto {
+      display: none;
+    }
+
+    .header {
+      background-color: #FFFDD0 !important;
+      color: #000 !important;
+    }
+    .header .menu-top ul li a,
+    .header .menu-top ul li a:hover,
+    .header .menu-top ul li a:focus {
+      color: #008349 !important;
+      font-weight: normal;
+    }
+    .header .menu-top ul li { color: #000 !important; }
+    .search-icon { filter: brightness(0) saturate(1); }
+    .header .menu-top ul li a:hover,
+    .header .menu-top ul li a:focus { font-weight: 600 !important; }
+
+    /* ===== MODAIS ===== */
+    .modal, .modal-nutri, .modal-imagem {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .modal-nutri {
+      z-index: 10000;
+      background: rgba(0, 0, 0, 0.95);
+    }
+    .modal-imagem {
+      z-index: 10001;
+      background: rgba(0, 0, 0, 0.95);
+    }
+    .modal-box {
+      width: 100%;
+      max-width: 880px;
+      max-height: 90vh;
+      height: auto;
+      border-radius: 30px;
+      position: relative;
+      animation: aparecer .3s ease;
+      padding: 20px 24px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: hidden;
+      flex-shrink: 0;
+      font-size: 20px;
+      box-sizing: border-box;
+      border: none;
+      margin: 0;
+    }
+    .modal-box::-webkit-scrollbar { width: 0px; }
+
+    .modal-content-polpasul,
+    .modal-nutri-content,
+    .modal-imagem-content {
+      min-height: 430px;
+      padding-bottom: 24px;
+      width: 100%;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .fechar {
+      position: sticky;
+      top: 0;
+      align-self: flex-end;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2px;
+      transition: .2s;
+      flex-shrink: 0;
+      color: #000;
+    }
+    .fechar:hover {
+      background: rgba(0, 0, 0, 0.2);
+      transform: rotate(90deg);
+    }
+    .produto-info {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 6px;
+      flex-shrink: 0;
+      color: #000;
+    }
+    .produto-info h2 {
+      font-size: 34px;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      word-break: break-word;
+      line-height: 1.2;
+      margin-top: -12px;
+      color: inherit;
+    }
+    .produto-info p {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.3;
+      margin: 3px 0;
+      color: inherit;
+    }
+
+    /* ===== TABELA NUTRICIONAL - CORES DINÂMICAS (via JS) ===== */
+    .modal-nutri-content .titulo-nutri {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0px;
+      flex-shrink: 0;
+    }
+    .modal-nutri-content .subtitulo-nutri {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 6px;
+      flex-shrink: 0;
+    }
+    .modal-nutri-content .porcao-sub {
+      font-size: 18px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid;
+      padding-bottom: 4px;
+      text-align: center;
+      font-weight: bold;
+      flex-shrink: 0;
+      border-color: inherit;
+    }
+    .modal-nutri-content table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 18px;
+      font-weight: bold;
+      flex: 1;
+    }
+    .modal-nutri-content th,
+    .modal-nutri-content td {
+      padding: 5px 8px;
+      border-bottom: 1px solid;
+      text-align: center;
+      font-weight: bold;
+      border-color: inherit;
+    }
+    .modal-nutri-content th {
+      border-bottom-width: 2px;
+      text-align: center;
+    }
+    .modal-nutri-content td:first-child { text-align: left; }
+    .modal-nutri-content .rodape-vd {
+      font-size: 16px;
+      margin-top: 6px;
+      border-top: 1px solid;
+      padding-top: 4px;
+      text-align: left;
+      line-height: 1.3;
+      font-weight: bold;
+      flex-shrink: 0;
+      border-color: inherit;
+    }
+
+    /* ===== MODAL IMAGEM ===== */
+    .modal-imagem-content .img-tabela-ampliada {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      padding: 8px;
+    }
+    .modal-imagem-content .titulo-imagem {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    @media(max-width:900px) {
+      .titulo-principal { font-size: 40px; }
+      .produto-info h2 { font-size: 28px; margin-bottom: 4px; }
+      .produto-info p { font-size: 20px; }
+      .btn-tabela { font-size: 16px; padding: 5px 20px; margin-top: 12px; }
+      .fechar { font-size: 28px; width: 36px; height: 36px; }
+      .produto-item img { width: 140px; height: 140px; }
+      .nome-produto { font-size: 22px; }
+      .modal-box { max-width: 92%; padding: 16px 18px 20px; font-size: 18px; }
+      .modal-nutri-content table { font-size: 16px; }
+      .modal-nutri-content .titulo-nutri { font-size: 24px; }
+      .modal-nutri-content .subtitulo-nutri { font-size: 20px; }
+      .modal-nutri-content .porcao-sub { font-size: 16px; }
+      .modal-nutri-content .rodape-vd { font-size: 14px; }
+    }
+    @media(max-width:500px) {
+      .produtos {
+        grid-template-columns: repeat(auto-fill, 160px);
+        gap: 20px;
+        padding: 0 1rem;
+      }
+      .produto-item {
+        width: 160px;
+        padding: 15px 10px 15px;
+      }
+      .produto-item img { width: 110px; height: 110px; }
+      .nome-produto { font-size: 18px; }
+      .modal-box { max-width: 95%; min-height: 300px; padding: 12px 14px 16px; border-radius: 20px; font-size: 16px; max-height: 80vh; }
+      .produto-info h2 { font-size: 24px; margin-bottom: 4px; margin-top: -8px; }
+      .produto-info p { font-size: 18px; }
+      .btn-tabela { font-size: 15px; padding: 4px 16px; margin-top: 12px; }
+      .modal-nutri-content table { font-size: 14px; }
+      .modal-nutri-content th,
+      .modal-nutri-content td { padding: 3px 4px; }
+      .modal-nutri-content .titulo-nutri { font-size: 20px; }
+      .modal-nutri-content .subtitulo-nutri { font-size: 18px; }
+      .modal-nutri-content .porcao-sub { font-size: 14px; }
+      .modal-nutri-content .rodape-vd { font-size: 13px; }
+      .fechar { font-size: 24px; width: 32px; height: 32px; }
+    }
+
+    /* ===== RESPONSIVIDADE DO TÍTULO ===== */
+    @media (max-width: 992px) {
+      .titulo-principal {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .titulo-principal {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* ===== LUPA ===== */
+    #lupa {
+      display: none;
+      position: fixed;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.3);
+      pointer-events: none;
+      background-repeat: no-repeat;
+      z-index: 100000;
+      transform: translate(-50%, -50%);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 18px;
+      z-index: 9999;
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .whatsapp-float i {
+      font-size: 60px;
+      color: #25D366;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .whatsapp-float:hover i { transform: scale(1.12) rotate(-4deg); }
+    .whatsapp-float:active i { transform: scale(0.92); }
+    .whatsapp-float .whatsapp-tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-family: 'Nunito', sans-serif;
+    }
+    .whatsapp-float .whatsapp-tooltip::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 8px solid rgba(0, 0, 0, 0.8);
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+    @media (max-width: 576px) {
+      .whatsapp-float { bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 48px; }
+      .whatsapp-float .whatsapp-tooltip { display: none; }
+    }
+    @media (max-width: 400px) {
+      .whatsapp-float { bottom: 16px; right: 16px; }
+      .whatsapp-float i { font-size: 40px; }
+    }
+
+    /* rodapé */
+    .footer-custom {
+      background-color: #3E464C;
+      padding: 30px 0 20px;
+    }
+    .footer-layout {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-left {
+      flex: 1 1 auto;
+      text-align: center;
+      min-width: 150px;
+    }
+    .footer-center {
+      flex: 0 0 auto;
+      margin: 0 50px;
+    }
+    .footer-right {
+      flex: 1 1 auto;
+      text-align: right;
+      min-width: 150px;
+    }
+    .footer-left p {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 0 8px 0;
+    }
+    .footer-left .redes-sociais-icons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    .footer-left .redes-sociais-icons a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    .footer-left .redes-sociais-icons a:hover { opacity: 1; }
+    .redesocial-icon.facebook {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBmaWxsPSIjMzg3ZWJmIiBkPSJNMjc5LjE0IDI4OCAxNiAyODggMTYgMTkyIDE2MCAxOTIgMTYwIDAgMjA4IDAgMjA4IDE5MiAyODggMTkyIDI4OCAyODh6Ii8+PC9zdmc+');
+    }
+    .redesocial-icon.instagram {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjRjcwMCIgZD0iTTIyNC4xIDQxMWMtMTAzIDAtMTg3LTg0LTE4Ny0xODdzODQtMTg3IDE4Ny0xODcgMTg3IDg0IDE4NyAxODctODQgMTg3LTE4NyAxODd6bTAtMzM0Yy04MSAwLTE0NyA2Ni0xNDcgMTQ3czY2IDE0NyAxNDcgMTQ3IDE0Ny02NiAxNDctMTQ3LTY2LTE0Ny0xNDctMTQ3eiIvPjwvc3ZnPg==');
+    }
+    .footer-center img {
+      max-height: 80px;
+      width: auto;
+      display: block;
+    }
+    .footer-right .endereco {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+    .footer-right .endereco strong { font-weight: 700; color: #ffffff; }
+    @media (max-width: 768px) {
+      .footer-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-left, .footer-right {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+      }
+      .footer-center { margin: 10px 0; }
+      .footer-right .endereco { text-align: center; }
+      .footer-center img { max-height: 60px; }
+    }
+    @media (max-width: 480px) {
+      .footer-left p { font-size: 14px; }
+      .footer-right .endereco { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== CABEÇALHO E SEARCH ===== -->
+  <div class="search-bkg">
+    <div class="container">
+      <div class="search-content">
+        <span class="icon search-icon-close" onclick="document.querySelector('.search-bkg').classList.toggle('on');"></span>
+        <form action="./busca" method="POST" class="search-menu">
+          <label>
+            Digite sua busca e aperte enter
+            <input type="text" name="s" placeholder="Buscar" autocomplete="off">
+            <input type="submit" name="ok" style="display:none;">
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-5 col-sm-3 col-md-2">
+          <a href="./">
+            <div class="marca">
+              <img src="./componentes-home/pages/image/logo1.png" alt="GEBON">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 col-sm-8 col-md-9">
+          <nav class="menu-top">
+            <ul>
+              <li class="menu-empresa"><a href="../Princpal/home.html">Home</a></li>
+              <li class="menu-onde-encontrar"><a href="../QuemSomos/quem-somos.html">Quem somos</a></li>
+              <li class="menu-catalogo menu-has-sub">
+                <a>Nosso Catálogo</a>
+                <div class="menu-top-sub menu-catalogo-sub">
+                  <ul>
+                    <li class="menu-top-sub-item"><a href="index.html">Linha Completa</a></li>
+                    <li class="menu-top-sub-item"><a href="tropical.html">Linha Tropical</a></li>
+                    <li class="menu-top-sub-item"><a href="premium.html">Linha Frutas Premium</a></li>
+                    <li class="menu-top-sub-item"><a href="acai.html">Linha Açaí</a></li>
+                    <li class="menu-top-sub-item"><a href="variados.html">Linha Variados</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-revendedor menu-has-sub">
+                <a>Receitas</a>
+                <div class="menu-top-sub menu-revendedor-sub">
+                  <ul>
+                    <li class="menu-top-sub-item"><a href="../Receitas/receitas.html">Todas as Receitas</a></li>
+                    <li class="menu-top-sub-item"><a href="../Receitas/Sobremesas.html">Sobremesas</a></li>
+                    <li class="menu-top-sub-item"><a href="../Receitas/drinks.html">Drinks</a></li>
+                  </ul>
+                </div>
+              </li>
+              <!-- CONTATO -->
+              <li class="menu-franquia menu-has-sub">
+                <a href="../Contato/index.html">Contato</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-4 col-sm-1">
+          <div class="menu-hamb d-sm-none" onclick="document.querySelector('.menu-top').classList.toggle('open');">
+            <div></div><div></div><div></div>
+          </div>
+          <div onclick="document.querySelector('.search-bkg').classList.toggle('on');" class="search-icon"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo-main">
+    <section class="polpas-linha">
+
+      <!-- ===== CARROSSEL PRINCIPAL ===== -->
+      <section class="carrossel-wrapper" aria-label="Galeria de imagens">
+        <div class="carrossel" id="carrossel" data-intervalo="3000">
+          <div class="carrossel-track" id="carrosselTrack">
+            <!-- 35 slides -->
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaABACAXI.png" alt="Polpa de Abacaxi"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaHORTELA.png" alt="Polpa de Abacaxi com Hortelã"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaACAI.png" alt="Polpa de Açaí"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaACEROLA.png" alt="Polpa de Acerola"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaACEROLALARANJA.png" alt="Polpa de Acerola e Laranja"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaAMORA.png" alt="Polpa de Amora"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaCACAU.png" alt="Polpa de Cacau"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaCAJA.png" alt="Polpa de Cajá"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaCAJU.png" alt="Polpa de Cajú"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaCLOROFILA.png" alt="Polpa de Clorofila"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaCOCO.png" alt="Polpa de Coco"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaCUPUACU.png" alt="Polpa de Cupuaçu"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaFRUTASVERMELHAS.png" alt="Polpa de Frutas Vermelhas"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaGOIABA.png" alt="Polpa de Goiaba"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaGRAVIOLA.png" alt="Polpa de Graviola"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaKIWI.png" alt="Polpa de Kiwi"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaLARANJA.png" alt="Polpa de Laranja"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaLIMÃO.png" alt="Polpa de Limão"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaMAMAO.png" alt="Polpa de Mamão"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaMANGA.png" alt="Polpa de Manga"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaMARACUJA.png" alt="Polpa de Maracujá"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaMELAO.png" alt="Polpa de Melão"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaMISTA.png" alt="Polpa Mista"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaMORANGO.png" alt="Polpa de Morango"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaPESSEGO.png" alt="Polpa de Pêssego"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaTAMARINDO.png" alt="Polpa de Tamarindo"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaTANGERINA.png" alt="Polpa de Tangerina"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaUMBU.png" alt="Polpa de Umbu"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/PolpaUVA.png" alt="Polpa de Uva"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/KgMORANGO.png" alt="Polpa de Morango (Fruta)"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/KgABACAXI.png" alt="Polpa de Abacaxi (Pedaços)"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/KgACEROLA.png" alt="Polpa de Acerola (Fruta)"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/KgAMORA.png" alt="Polpa de Amora (Fruta)"></div>
+            <div class="carrossel-slide"><img src="./componentes-home/image/MassaACAI.png" alt="Massa de Açaí"></div>
+            <div class="carrossel-slide" id="slidePaoQueijo"><img src="./componentes-home/image/PaoDeQueijo.png" alt="Pão de Queijo"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== LINHA VERMELHA ===== -->
+      <div class="barra-separadora"></div>
+
+      <!-- ===== CAMPO DE PESQUISA ===== -->
+      <div class="search-container">
+        <div class="search-bar-wrapper">
+          <input type="text" id="searchInput" placeholder="Pesquisar produtos..." autocomplete="off">
+          <i class="bi bi-search search-icon"></i>
+        </div>
+      </div>
+
+      <!-- ===== TÍTULO - LUCKIEST GUY COM CONTORNO BRANCO ===== -->
+      <h1 class="titulo-principal">LINHA TROPICAL</h1>
+
+      <!-- GRADE DE PRODUTOS -->
+      <div class="produtos" id="produtosGrid">
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaABACAXI.png" class="produto" data-nome="Polpa de Abacaxi" data-descricao="Polpa tropical de abacaxi, doce e levemente ácida, perfeita para sucos, vitaminas e sobremesas.">
+          <span class="nome-produto">Polpa de Abacaxi</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaHORTELA.png" class="produto" data-nome="Polpa de Abacaxi com Hortelã" data-descricao="Refrescante combinação de abacaxi com hortelã, ideal para drinks e sucos gelados.">
+          <span class="nome-produto">Polpa de Abacaxi com Hortelã</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaACEROLA.png" class="produto" data-nome="Polpa de Acerola" data-descricao="Polpa de acerola com alto teor de vitamina C, sabor levemente ácido e refrescante.">
+          <span class="nome-produto">Polpa de Acerola</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaACEROLALARANJA.png" class="produto" data-nome="Polpa de Acerola e Laranja" data-descricao="Mistura cítrica e antioxidante, combinando a acidez da acerola com a doçura da laranja.">
+          <span class="nome-produto">Polpa de Acerola e Laranja</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaCACAU.png" class="produto" data-nome="Polpa de Cacau" data-descricao="Polpa de cacau com sabor amargo e característico, ideal para sobremesas e bebidas.">
+          <span class="nome-produto">Polpa de Cacau</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaCAJA.png" class="produto" data-nome="Polpa de Cajá" data-descricao="Polpa de cajá com sabor agridoce e exótico, muito utilizada em sucos e sorvetes.">
+          <span class="nome-produto">Polpa de Cajá</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaCAJU.png" class="produto" data-nome="Polpa de Cajú" data-descricao="Polpa de caju com sabor adocicado e característico, rica em vitamina C e antioxidantes.">
+          <span class="nome-produto">Polpa de Cajú</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaCOCO.png" class="produto" data-nome="Polpa de Coco" data-descricao="Polpa de coco com sabor doce e tropical, perfeita para vitaminas e sobremesas.">
+          <span class="nome-produto">Polpa de Coco</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaCUPUACU.png" class="produto" data-nome="Polpa de Cupuaçu" data-descricao="Polpa de cupuaçu com sabor marcante e levemente ácido, muito usado em sucos e sorvetes.">
+          <span class="nome-produto">Polpa de Cupuaçu</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaGOIABA.png" class="produto" data-nome="Polpa de Goiaba" data-descricao="Polpa de goiaba doce e aromática, rica em vitamina C e fibras.">
+          <span class="nome-produto">Polpa de Goiaba</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaGRAVIOLA.png" class="produto" data-nome="Polpa de Graviola" data-descricao="Polpa de graviola com sabor suave e levemente ácido, refrescante e nutritiva.">
+          <span class="nome-produto">Polpa de Graviola</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaMAMAO.png" class="produto" data-nome="Polpa de Mamão" data-descricao="Polpa de mamão doce e suave, rica em fibras e vitaminas A e C.">
+          <span class="nome-produto">Polpa de Mamão</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaMANGA.png" class="produto" data-nome="Polpa de Manga" data-descricao="Polpa de manga doce e suculenta, com sabor tropical e aroma marcante.">
+          <span class="nome-produto">Polpa de Manga</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaMARACUJA.png" class="produto" data-nome="Polpa de Maracujá" data-descricao="Polpa de maracujá com sabor ácido e refrescante, rica em vitamina C.">
+          <span class="nome-produto">Polpa de Maracujá</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaMELAO.png" class="produto" data-nome="Polpa de Melão" data-descricao="Polpa de melão doce e suave, refrescante e rica em vitamina A.">
+          <span class="nome-produto">Polpa de Melão</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaTAMARINDO.png" class="produto" data-nome="Polpa de Tamarindo" data-descricao="Polpa de tamarindo com sabor agridoce e exótico, rica em vitaminas do complexo B.">
+          <span class="nome-produto">Polpa de Tamarindo</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/PolpaUMBU.png" class="produto" data-nome="Polpa de Umbu" data-descricao="Polpa de umbu com sabor agridoce e característico, típica do Nordeste brasileiro.">
+          <span class="nome-produto">Polpa de Umbu</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/KgABACAXI.png" class="produto" data-nome="Polpa de Abacaxi (Pedaços)" data-descricao="Polpa de abacaxi com pedaços da fruta, ideal para vitaminas e sobremesas.">
+          <span class="nome-produto">Polpa de Abacaxi (Pedaços)</span>
+        </div>
+        <div class="produto-item">
+          <img src="./componentes-home/image/KgACEROLA.png" class="produto" data-nome="Polpa de Acerola (Fruta)" data-descricao="Polpa de acerola com pedaços da fruta, mantendo a textura natural.">
+          <span class="nome-produto">Polpa de Acerola (Fruta)</span>
+        </div>
+      </div>
+
+      <!-- ===== MODAL PRINCIPAL ===== -->
+      <div class="modal" id="modal">
+        <div class="modal-box modal-content-polpasul" id="modalContent">
+          <span class="fechar" id="fecharModal">&times;</span>
+          <div class="produto-info">
+            <h2 id="titulo"></h2>
+            <p id="descricao"></p>
+            <p id="composicao"></p>
+            <p id="preparo"></p>
+          </div>
+          <div class="modal-imagens-duas" id="modalImagensDuas">
+            <div class="img-wrapper" id="imgTabelaWrapper">
+              <img id="imgTabelaModal" src="./componentes-home/image/carrossell1.png" alt="Tabela Nutricional">
+            </div>
+          </div>
+          <div class="botoes-tabela">
+            <button class="btn-tabela" id="btnTabelaTexto">LER TABELA NUTRICIONAL</button>
+            <button class="btn-tabela" id="btnTabelaImagem">IMAGEM TABELA NUTRICIONAL</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL NUTRICIONAL (TEXTO) -->
+      <div class="modal-nutri" id="modalNutri">
+        <div class="modal-box modal-nutri-content" id="modalNutriContent">
+          <span class="fechar" id="fecharNutri">&times;</span>
+          <div class="titulo-nutri">INFORMAÇÃO NUTRICIONAL</div>
+          <div class="subtitulo-nutri" id="subtituloNutri">(Polpa de Exemplo)</div>
+          <div class="porcao-sub">Porção: 100 g (1 unidade)</div>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:left;">Nutriente</th>
+                <th style="text-align:center;">100 ml**</th>
+                <th style="text-align:center;">100 g</th>
+                <th style="text-align:center;">%VD*</th>
+              </tr>
+            </thead>
+            <tbody id="corpoTabelaNutri"></tbody>
+          </table>
+          <div class="rodape-vd">
+            *Percentual de valores diários fornecidos pela porção.<br>
+            **No alimento pronto para o consumo.
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL IMAGEM DA TABELA -->
+      <div class="modal-imagem" id="modalImagem">
+        <div class="modal-box modal-imagem-content" id="modalImagemContent">
+          <span class="fechar" id="fecharImagem">&times;</span>
+          <div class="titulo-imagem" id="tituloImagem">TABELA NUTRICIONAL</div>
+          <img id="imgTabelaAmpliada" src="" alt="Tabela Nutricional" class="img-tabela-ampliada">
+        </div>
+      </div>
+
+      <!-- LUPA -->
+      <div id="lupa"></div>
+
+    </section>
+  </main>
+
+  <!-- BARRA SEPARADORA FINAL -->
+  <div class="barra-separadora"></div>
+
+  <!-- RODAPÉ -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-left">
+          <p>Visite nossas redes sociais</p>
+          <div class="redes-sociais-icons">
+            <a href="https://www.facebook.com/share/1EYtRCVoZN/" target="_blank"><span class="redesocial-icon facebook"></span></a>
+            <a href="https://www.instagram.com/maquea_polpas?igsh=MTAyMmRlNzZ2d3RzOA==" target="_blank"><span class="redesocial-icon instagram"></span></a>
+          </div>
+        </div>
+        <div class="footer-center">
+          <a href="../Princpal/home.html">
+            <img src="./componentes-home/pages/image/logo1.png" alt="Maquea Polpas" />
+          </a>
+        </div>
+        <div class="footer-right">
+          <div class="endereco">
+            <strong>Unidade PARANÁ</strong><br>
+            Rua Tv, São José, 93<br>
+            Jardim Morada do Sol II Parte, Japurá - PR<br>
+            CEP: 87225-000
+          </div>
+          <div style="margin: 8px 0;"></div>
+          <div class="endereco">
+            Rua Travessa A, 15 Centro<br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AAs%21"
+     target="_blank"
+     class="whatsapp-float"
+     aria-label="Fale conosco no WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span class="whatsapp-tooltip">Fale conosco</span>
+  </a>
+
+  <script>
+    function set_lgpd() {
+      var d = new Date();
+      d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+      document.cookie = "__lgpd=" + d + "; expires=" + d.toUTCString() + "; path=/;";
+      var banner = document.getElementById('cookie-banner-lgpd');
+      if (banner) banner.classList.add('cookie-banner-lgpd-hidden');
+    }
+  </script>
+
+  <script>
+    // ============================================================
+    // CORES DAS POLPAS
+    // ============================================================
+    const cores = {
+      'Polpa de Abacaxi': '#F7E47A',
+      'Polpa de Abacaxi com Hortelã': '#A8D08D',
+      'Polpa de Açaí': '#4A148C',
+      'Polpa de Acerola': '#E53935',
+      'Polpa de Acerola e Laranja': '#FF8F00',
+      'Polpa de Amora': '#6A1B9A',
+      'Polpa de Cacau': '#5D4037',
+      'Polpa de Cajá': '#F9A825',
+      'Polpa de Cajú': '#FF8F00',
+      'Polpa de Clorofila': '#43A047',
+      'Polpa de Coco': '#F5F5F5',
+      'Polpa de Cupuaçu': '#8D6E63',
+      'Polpa de Frutas Vermelhas': '#8B0000',
+      'Polpa de Goiaba': '#4CAF50',
+      'Polpa de Graviola': '#C8E6C9',
+      'Polpa de Kiwi': '#6B8E23',
+      'Polpa de Laranja': '#FF9800',
+      'Polpa de Limão': '#89F436',
+      'Polpa de Mamão': '#FFB74D',
+      'Polpa de Manga': '#FFB300',
+      'Polpa de Maracujá': '#FFC107',
+      'Polpa de Melão': '#f3d915',
+      'Polpa Mista': '#ff2121',
+      'Polpa de Morango': '#E53935',
+      'Polpa de Pêssego': '#FFAB91',
+      'Polpa de Tamarindo': '#795548',
+      'Polpa de Tangerina': '#FF6F00',
+      'Polpa de Umbu': '#C0CA33',
+      'Polpa de Uva': '#4B0082',
+      'Polpa de Morango (Fruta)': '#E53935',
+      'Polpa de Abacaxi (Pedaços)': '#F7E47A',
+      'Polpa de Acerola (Fruta)': '#E53935',
+      'Polpa de Amora (Fruta)': '#6A1B9A',
+      'Massa de Açaí': '#4A148C',
+      'Pão de Queijo': '#FDD73A'
+    };
+
+    // ============================================================
+    // FUNÇÃO PARA DETERMINAR SE A COR É CLARA (para contraste)
+    // ============================================================
+    function isLightColor(hex) {
+      hex = hex.replace('#', '');
+      const r = parseInt(hex.substring(0, 2), 16);
+      const g = parseInt(hex.substring(2, 4), 16);
+      const b = parseInt(hex.substring(4, 6), 16);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      return luminance > 0.5;
+    }
+
+    // ============================================================
+    // APLICA COR DE TEXTO E BORDAS NO MODAL
+    // ============================================================
+    function applyTextColor(modalElement, corFundo) {
+      const isLight = isLightColor(corFundo);
+      const textColor = isLight ? '#000000' : '#FFFFFF';
+      
+      const textos = modalElement.querySelectorAll(
+        '.produto-info, .titulo-nutri, .subtitulo-nutri, .porcao-sub, .rodape-vd, .titulo-imagem, ' +
+        '.fechar, table, th, td, .btn-tabela, p, h2, .produto-info *'
+      );
+      textos.forEach(el => {
+        el.style.color = textColor;
+        if (el.tagName === 'TABLE' || el.tagName === 'TH' || el.tagName === 'TD') {
+          el.style.borderColor = textColor;
+        }
+      });
+      
+      modalElement.querySelectorAll('.btn-tabela').forEach(btn => {
+        btn.style.borderColor = textColor;
+        btn.style.color = textColor;
+        if (!isLight) {
+          btn.style.background = 'rgba(255,255,255,0.2)';
+        } else {
+          btn.style.background = 'rgba(0,0,0,0.1)';
+        }
+      });
+      
+      modalElement.querySelectorAll('.fechar').forEach(f => {
+        f.style.color = textColor;
+        f.style.background = isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.2)';
+      });
+    }
+
+    // ============================================================
+    // MAPEAMENTO PARA IMAGENS DA TABELA (miniaturas e ampliadas)
+    // ============================================================
+    const tabelaImagens = {
+      'Polpa de Abacaxi': {
+        miniatura: './componentes-home/image/imgABACAXI2.png',
+        ampliada: './componentes-home/image/imgABACAXI.png'
+      },
+      'Polpa de Abacaxi com Hortelã': {
+        miniatura: './componentes-home/image/imgHORTELA2.png',
+        ampliada: './componentes-home/image/imgHORTELA.png'
+      },
+      'Polpa de Acerola': {
+        miniatura: './componentes-home/image/imgACEROLA2.png',
+        ampliada: './componentes-home/image/imgACEROLA.png'
+      },
+      'Polpa de Acerola e Laranja': {
+        miniatura: './componentes-home/image/imgACEROLALARANJA2.png',
+        ampliada: './componentes-home/image/imgACEROLALARANJA.png'
+      },
+      'Polpa de Cacau': {
+        miniatura: './componentes-home/image/imgCACAU2.png',
+        ampliada: './componentes-home/image/imgCACAU.png'
+      },
+      'Polpa de Cajá': {
+        miniatura: './componentes-home/image/imgCAJA2.png',
+        ampliada: './componentes-home/image/imgCAJA.png'
+      },
+      'Polpa de Cajú': {
+        miniatura: './componentes-home/image/imgCAJU2.png',
+        ampliada: './componentes-home/image/imgCAJU.png'
+      },
+      'Polpa de Coco': {
+        miniatura: './componentes-home/image/imgCOCO2.png',
+        ampliada: './componentes-home/image/imgCOCO.png'
+      },
+      'Polpa de Cupuaçu': {
+        miniatura: './componentes-home/image/imgCUPUACU2.png',
+        ampliada: './componentes-home/image/imgCUPUACU.png'
+      },
+      'Polpa de Goiaba': {
+        miniatura: './componentes-home/image/imgGOIABA2.png',
+        ampliada: './componentes-home/image/imgGOIABA.png'
+      },
+      'Polpa de Graviola': {
+        miniatura: './componentes-home/image/imgGRAVIOLA2.png',
+        ampliada: './componentes-home/image/imgGRAVIOLA.png'
+      },
+      'Polpa de Mamão': {
+        miniatura: './componentes-home/image/imgMAMAO2.png',
+        ampliada: './componentes-home/image/imgMAMAO.png'
+      },
+      'Polpa de Manga': {
+        miniatura: './componentes-home/image/imgMANGA2.png',
+        ampliada: './componentes-home/image/imgMANGA.png'
+      },
+      'Polpa de Maracujá': {
+        miniatura: './componentes-home/image/imgMARACUJA2.png',
+        ampliada: './componentes-home/image/imgMARACUJA.png'
+      },
+      'Polpa de Melão': {
+        miniatura: './componentes-home/image/imgMELAO2.png',
+        ampliada: './componentes-home/image/imgMELAO.png'
+      },
+      'Polpa de Tamarindo': {
+        miniatura: './componentes-home/image/imgTAMARINDO2.png',
+        ampliada: './componentes-home/image/imgTAMARINDO.png'
+      },
+      'Polpa de Umbu': {
+        miniatura: './componentes-home/image/imgUMBU2.png',
+        ampliada: './componentes-home/image/imgUMBU.png'
+      },
+      'Polpa de Abacaxi (Pedaços)': {
+        miniatura: './componentes-home/image/imgABACAXI2.png',
+        ampliada: './componentes-home/image/imgABACAXI.png'
+      },
+      'Polpa de Acerola (Fruta)': {
+        miniatura: './componentes-home/image/imgACEROLA2.png',
+        ampliada: './componentes-home/image/imgACEROLA.png'
+      }
+    };
+    const imagemPadraoMiniatura = './componentes-home/image/carrossell1.png';
+    const imagemPadraoAmpliada = './componentes-home/image/carrossell1.png';
+
+    function getImagemTabela(nome, tipo) {
+      const entry = tabelaImagens[nome];
+      if (entry) {
+        return tipo === 'miniatura' ? entry.miniatura : entry.ampliada;
+      }
+      return tipo === 'miniatura' ? imagemPadraoMiniatura : imagemPadraoAmpliada;
+    }
+
+    // ============================================================
+    // MAPEAMENTO PARA NOMES (a partir do src do card)
+    // ============================================================
+    function getNomePolpaFromSrc(src) {
+      const nomeArquivo = src.split('/').pop().replace(/\.[^/.]+$/, '');
+      const mapa = {
+        'PolpaABACAXI': 'Polpa de Abacaxi',
+        'PolpaHORTELA': 'Polpa de Abacaxi com Hortelã',
+        'PolpaACAI': 'Polpa de Açaí',
+        'PolpaACEROLA': 'Polpa de Acerola',
+        'PolpaACEROLALARANJA': 'Polpa de Acerola e Laranja',
+        'PolpaAMORA': 'Polpa de Amora',
+        'PolpaCACAU': 'Polpa de Cacau',
+        'PolpaCAJA': 'Polpa de Cajá',
+        'PolpaCAJU': 'Polpa de Cajú',
+        'PolpaCLOROFILA': 'Polpa de Clorofila',
+        'PolpaCOCO': 'Polpa de Coco',
+        'PolpaCUPUACU': 'Polpa de Cupuaçu',
+        'PolpaFRUTASVERMELHAS': 'Polpa de Frutas Vermelhas',
+        'PolpaGOIABA': 'Polpa de Goiaba',
+        'PolpaGRAVIOLA': 'Polpa de Graviola',
+        'PolpaKIWI': 'Polpa de Kiwi',
+        'PolpaLARANJA': 'Polpa de Laranja',
+        'PolpaLIMÃO': 'Polpa de Limão',
+        'PolpaMAMAO': 'Polpa de Mamão',
+        'PolpaMANGA': 'Polpa de Manga',
+        'PolpaMARACUJA': 'Polpa de Maracujá',
+        'PolpaMELAO': 'Polpa de Melão',
+        'PolpaMISTA': 'Polpa Mista',
+        'PolpaMORANGO': 'Polpa de Morango',
+        'PolpaPESSEGO': 'Polpa de Pêssego',
+        'PolpaTAMARINDO': 'Polpa de Tamarindo',
+        'PolpaTANGERINA': 'Polpa de Tangerina',
+        'PolpaUMBU': 'Polpa de Umbu',
+        'PolpaUVA': 'Polpa de Uva',
+        'KgMORANGO': 'Polpa de Morango (Fruta)',
+        'KgABACAXI': 'Polpa de Abacaxi (Pedaços)',
+        'KgACEROLA': 'Polpa de Acerola (Fruta)',
+        'KgAMORA': 'Polpa de Amora (Fruta)',
+        'MassaACAI': 'Massa de Açaí',
+        'PaoDeQueijo': 'Pão de Queijo'
+      };
+      if (nomeArquivo.startsWith('Img') && nomeArquivo.endsWith('2')) {
+        const base = nomeArquivo.replace('Img', '').replace('2', '');
+        for (let key in mapa) {
+          if (key.includes(base)) return mapa[key];
+        }
+      }
+      return mapa[nomeArquivo] || null;
+    }
+
+    // ============================================================
+    // APLICAR CORES NAS IMAGENS DOS CARDS (fundo da imagem)
+    // ============================================================
+    document.querySelectorAll('.produto-item').forEach(item => {
+      const img = item.querySelector('img');
+      const nomeSpan = item.querySelector('.nome-produto');
+      if (img && nomeSpan) {
+        const nome = nomeSpan.textContent.trim();
+        const cor = cores[nome] || '#cccccc';
+        img.style.backgroundColor = cor;
+      }
+    });
+
+    // ============================================================
+    // DADOS NUTRICIONAIS
+    // ============================================================
+    const nutrientes = {
+      'Polpa de Abacaxi': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Abacaxi com Hortelã': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Acerola': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Acerola e Laranja': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Cacau': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Cajá': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Cajú': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Coco': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Cupuaçu': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Goiaba': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Graviola': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Mamão': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Manga': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Maracujá': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Melão': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Tamarindo': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Umbu': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Abacaxi (Pedaços)': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']],
+      'Polpa de Acerola (Fruta)': [['Valor energético (kcal)', '17', '50', '3'], ['Carboidratos (g)', '3,9', '12', '4'], ['Açúcares totais (g)', '3,1', '9,3', '–'], ['Açúcares adicionados (g)', '0', '0', '0'], ['Proteínas (g)', '0,2', '0,7', '1'], ['Gorduras totais (g)', '0', '0', '0'], ['Gorduras saturadas (g)', '0', '0', '0'], ['Gordura trans (g)', '0', '0', '0'], ['Fibras alimentares (g)', '0,4', '1,1', '4'], ['Sódio (mg)', '0,9', '2,8', '0']]
+    };
+
+    // ============================================================
+    // ELEMENTOS DOS MODAIS
+    // ============================================================
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    const modalNutri = document.getElementById('modalNutri');
+    const modalNutriContent = document.getElementById('modalNutriContent');
+    const modalImagem = document.getElementById('modalImagem');
+    const modalImagemContent = document.getElementById('modalImagemContent');
+
+    const titulo = document.getElementById('titulo');
+    const descricao = document.getElementById('descricao');
+    const composicao = document.getElementById('composicao');
+    const preparo = document.getElementById('preparo');
+
+    const imgTabelaModal = document.getElementById('imgTabelaModal');
+    const imgTabelaAmpliada = document.getElementById('imgTabelaAmpliada');
+    const tituloImagem = document.getElementById('tituloImagem');
+
+    const btnTabelaTexto = document.getElementById('btnTabelaTexto');
+    const btnTabelaImagem = document.getElementById('btnTabelaImagem');
+
+    const fecharModal = document.getElementById('fecharModal');
+    const fecharNutri = document.getElementById('fecharNutri');
+    const fecharImagem = document.getElementById('fecharImagem');
+
+    const corpoTabelaNutri = document.getElementById('corpoTabelaNutri');
+    const subtituloNutri = document.getElementById('subtituloNutri');
+
+    const lupa = document.getElementById('lupa');
+
+    // ============================================================
+    // FECHAR TODOS OS MODAIS
+    // ============================================================
+    function fecharModais() {
+      modal.style.display = 'none';
+      modalNutri.style.display = 'none';
+      modalImagem.style.display = 'none';
+      lupa.style.display = 'none';
+    }
+
+    // ============================================================
+    // ABRIR MODAL PRINCIPAL (com cor dinâmica e texto adaptado)
+    // ============================================================
+    function abrirModalPorNome(nome, descricaoTexto) {
+      titulo.textContent = nome;
+      descricao.textContent = descricaoTexto || '';
+      composicao.textContent = 'Composição: Polpa 100% ' + nome + ', sem conservantes.';
+      preparo.textContent = 'Sugestão de preparo: Para 300ml (1 copo), adicione 1 unidade (100g) a 200ml de água ou leite, adoce a gosto e bata no liquidificador.';
+
+      const cor = cores[nome] || '#FFFDD0';
+      modalContent.style.backgroundColor = cor;
+      applyTextColor(modalContent, cor);
+
+      const imgMini = getImagemTabela(nome, 'miniatura');
+      imgTabelaModal.src = imgMini;
+
+      const dados = nutrientes[nome] || [];
+      modal.dataset.nutri = JSON.stringify(dados);
+      modal.dataset.nome = nome;
+      modal.dataset.cor = cor;
+
+      modal.style.display = 'flex';
+      modalNutri.style.display = 'none';
+      modalImagem.style.display = 'none';
+      lupa.style.display = 'none';
+    }
+
+    // ============================================================
+    // EVENTO DE CLIQUE NOS CARDS
+    // ============================================================
+    document.querySelectorAll('.produto-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        if (!img) return;
+        const nome = img.dataset.nome || getNomePolpaFromSrc(img.src) || 'Polpa';
+        const desc = img.dataset.descricao || '';
+        abrirModalPorNome(nome, desc);
+      });
+    });
+
+    // ============================================================
+    // FECHAR MODAL PRINCIPAL
+    // ============================================================
+    fecharModal.addEventListener('click', function(e) {
+      e.stopPropagation();
+      fecharModais();
+    });
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) fecharModais();
+    });
+
+    // ============================================================
+    // ABRIR MODAL NUTRICIONAL (TEXTO) – herda cor e texto
+    // ============================================================
+    btnTabelaTexto.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dadosStr = modal.dataset.nutri;
+      if (!dadosStr) return;
+      const dados = JSON.parse(dadosStr);
+      corpoTabelaNutri.innerHTML = '';
+      dados.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${item[0]}</td><td style="text-align:center;">${item[1]}</td><td style="text-align:center;">${item[2]}</td><td style="text-align:center;">${item[3]}</td>`;
+        corpoTabelaNutri.appendChild(tr);
+      });
+
+      const nomePolpa = modal.dataset.nome || titulo.textContent;
+      subtituloNutri.textContent = `(${nomePolpa})`;
+
+      const cor = modal.dataset.cor || '#FFFDD0';
+      modalNutriContent.style.backgroundColor = cor;
+      applyTextColor(modalNutriContent, cor);
+
+      modalNutri.style.display = 'flex';
+      lupa.style.display = 'none';
+    });
+
+    fecharNutri.addEventListener('click', function(e) {
+      e.stopPropagation();
+      fecharModais();
+    });
+    modalNutri.addEventListener('click', function(e) {
+      if (e.target === modalNutri) fecharModais();
+    });
+
+    // ============================================================
+    // ABRIR MODAL IMAGEM DA TABELA – herda cor e texto
+    // ============================================================
+    btnTabelaImagem.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const nome = modal.dataset.nome || '';
+      const imgAmpliada = getImagemTabela(nome, 'ampliada');
+      imgTabelaAmpliada.src = imgAmpliada;
+      tituloImagem.textContent = 'TABELA NUTRICIONAL - ' + (nome || '');
+
+      const cor = modal.dataset.cor || '#FFFDD0';
+      modalImagemContent.style.backgroundColor = cor;
+      applyTextColor(modalImagemContent, cor);
+
+      modalImagem.style.display = 'flex';
+      lupa.style.display = 'none';
+    });
+
+    fecharImagem.addEventListener('click', function(e) {
+      e.stopPropagation();
+      fecharModais();
+    });
+    modalImagem.addEventListener('click', function(e) {
+      if (e.target === modalImagem) fecharModais();
+    });
+
+    // ============================================================
+    // TECLA ESC FECHA TUDO
+    // ============================================================
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        fecharModais();
+      }
+    });
+
+    // ============================================================
+    // LUPA – na imagem da tabela
+    // ============================================================
+    const imgTabelaWrapper = document.getElementById('imgTabelaWrapper');
+
+    function ativarLupa(e, imgElement) {
+      if (!imgElement || !imgElement.src) return;
+      const rect = imgElement.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return;
+
+      const w = rect.width, h = rect.height;
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+      x = Math.max(0, Math.min(x, w));
+      y = Math.max(0, Math.min(y, h));
+
+      const lupaW = lupa.offsetWidth, lupaH = lupa.offsetHeight;
+      lupa.style.left = e.clientX + 'px';
+      lupa.style.top = e.clientY + 'px';
+      lupa.style.backgroundImage = `url('${imgElement.src}')`;
+      const ZOOM = 2.5;
+      const bgW = w * ZOOM, bgH = h * ZOOM;
+      lupa.style.backgroundSize = `${bgW}px ${bgH}px`;
+      let bgX = -(x * ZOOM - lupaW / 2);
+      let bgY = -(y * ZOOM - lupaH / 2);
+      bgX = Math.max(-(bgW - lupaW), Math.min(0, bgX));
+      bgY = Math.max(-(bgH - lupaH), Math.min(0, bgY));
+      lupa.style.backgroundPosition = `${bgX}px ${bgY}px`;
+      lupa.style.display = 'block';
+    }
+
+    function desativarLupa() {
+      lupa.style.display = 'none';
+    }
+
+    imgTabelaWrapper.addEventListener('mouseenter', function(e) {
+      if (imgTabelaModal.src) ativarLupa(e, imgTabelaModal);
+    });
+    imgTabelaWrapper.addEventListener('mousemove', function(e) {
+      if (imgTabelaModal.src) ativarLupa(e, imgTabelaModal);
+    });
+    imgTabelaWrapper.addEventListener('mouseleave', desativarLupa);
+
+    // ============================================================
+    // CARROSSEL PRINCIPAL – AUTOMÁTICO, SEM ARRASTE, FUNDO TRANSPARENTE
+    // ============================================================
+    (function () {
+      const carrossel = document.getElementById('carrossel');
+      const track = document.getElementById('carrosselTrack');
+      if (!carrossel || !track) return;
+
+      const slides = track.querySelectorAll('.carrossel-slide');
+      const total = slides.length;
+      let indiceAtual = 0;
+      const intervaloMs = parseInt(carrossel.dataset.intervalo, 10) || 3000;
+      let autoTimer = null;
+
+      function atualizarPosicao(comTransicao) {
+        if (!comTransicao) carrossel.classList.add('sem-transicao');
+        track.style.transform = `translateX(${-indiceAtual * 100}%)`;
+        if (!comTransicao) {
+          void track.offsetWidth;
+          carrossel.classList.remove('sem-transicao');
+        }
+      }
+
+      function irPara(i) {
+        indiceAtual = ((i % total) + total) % total;
+        atualizarPosicao(true);
+      }
+
+      function proximo() { irPara(indiceAtual + 1); }
+
+      function iniciarAuto() {
+        pararAuto();
+        if (total > 1) {
+          autoTimer = setInterval(proximo, intervaloMs);
+        }
+      }
+      function pararAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      }
+
+      atualizarPosicao(false);
+      iniciarAuto();
+
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          pararAuto();
+        } else {
+          iniciarAuto();
+        }
+      });
+    })();
+
+    // ============================================================
+    // DESATIVA HOVER DURANTE SCROLL
+    // ============================================================
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      document.body.classList.add('scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.body.classList.remove('scrolling');
+      }, 150);
+    });
+
+    // ============================================================
+    // FILTRO DE PRODUTOS (PESQUISA) – COM DISPLAY:NONE
+    // ============================================================
+    const searchInput = document.getElementById('searchInput');
+    const produtosItems = document.querySelectorAll('.produto-item');
+
+    searchInput.addEventListener('input', function() {
+      const termo = this.value.toLowerCase().trim();
+
+      produtosItems.forEach(item => {
+        const nomeProduto = item.querySelector('.nome-produto').textContent.toLowerCase();
+        if (termo === '' || nomeProduto.includes(termo)) {
+          item.classList.remove('oculto');
+        } else {
+          item.classList.add('oculto');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

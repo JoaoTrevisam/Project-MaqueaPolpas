@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maquea Polpas | QUEM SOMOS</title>
+
+    <link href="../Contato/assets/logo1.png" rel="shortcut icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonte Luckiest Guy -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Bootstrap Icons (para o ícone do WhatsApp) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./componentes-home/module/bootstrap-5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./componentes-home/pages/css/header.css">
+    <link rel="stylesheet" href="./componentes-home/pages/css/footer.css">
+    <link rel="stylesheet" href="./componentes-home/box/lgpd/front/css/view.css">
+    <link rel="stylesheet" href="./quem-somos.css">
+
+    <style>
+        /* ----- RESET & BASE ----- */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #008349;
+        }
+        .page-main {
+            flex: 1;
+        }
+
+        /* ===== SEÇÃO ABOUT ===== */
+        .about {
+            padding: 30px 0 60px;
+            background: transparent;
+        }
+
+        .about-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: stretch;
+            gap: 30px;
+        }
+
+        .about-side {
+            flex: 0 0 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .about-side img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+            display: block;
+            background: #fff;
+            padding: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: contain;
+            max-height: 220px;
+            cursor: pointer;
+        }
+        .about-side img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-center {
+            flex: 1;
+            min-width: 0;
+            padding: 58px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* ============================================================
+           TÍTULOS COM LUCKIEST GUY, VERMELHOS E CONTORNO BRANCO
+           ============================================================ */
+        .about-center .titulo-principal {
+            font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
+            font-size: 4.3rem;  /* ← ALTERE AQUI O TAMANHO DO TÍTULO "Quem somos?" */
+            font-weight: 400;
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 4px;
+            color: #D83135; /* VERMELHO */
+            letter-spacing: 3px;
+            /* CONTORNO BRANCO */
+            text-shadow: 
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff,
+                0 0 8px #ffffff4d;
+        }
+        .about-center .subtitulo {
+            font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
+            font-size: 2.8rem;  /* ← ALTERE AQUI O TAMANHO DO TÍTULO "Somos a MAQUEA POLPAS!" */
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 4.4px;
+            color: #D83135; /* VERMELHO */
+            /* CONTORNO BRANCO */
+            text-shadow: 
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff,
+                0 0 8px rgba(255,255,255,0.3);
+        }
+
+        .about-center .p-bloco {
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        .about-center .p-bloco-verde {
+            background: #eaf9f0;
+            color: #008349;
+        }
+        .about-center .p-bloco-vermelho {
+            background: #fef0f0;
+            color: #D83135;
+        }
+
+        .about-center .p-destaque {
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .about-center .p-destaque.p-bloco-verde {
+            background: #eaf9f0;
+            color: #008349;
+        }
+        .about-center .p-destaque.p-bloco-vermelho {
+            background: #fef0f0;
+            color: #D83135;
+        }
+
+        /* ===== MODAL LIGHTBOX ===== */
+        .modal-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-lightbox.active {
+            display: flex;
+        }
+
+        .modal-lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+            background: #fff;
+            padding: 12px;
+        }
+
+        .modal-lightbox .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 300;
+            transition: transform 0.2s;
+            background: none;
+            border: none;
+            line-height: 1;
+            padding: 0 12px;
+        }
+        .modal-lightbox .close-modal:hover {
+            transform: scale(1.2);
+            color: #ddd;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            .about-side {
+                flex: unset;
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .about-side img {
+                max-height: 180px;
+                width: auto;
+                flex: 0 0 160px;
+            }
+            .about-center {
+                text-align: center;
+                padding: 0 10px;
+            }
+            .about-center .titulo-principal {
+                font-size: 2.8rem;  /* ← TAMANHO PARA TABLET */
+            }
+            .about-center .subtitulo {
+                font-size: 2.2rem;  /* ← TAMANHO PARA TABLET */
+            }
+            .about-center .p-bloco {
+                font-size: 1.05rem;
+                padding: 14px 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-side img {
+                flex: 0 0 120px;
+                max-height: 140px;
+            }
+            .about-center .titulo-principal {
+                font-size: 2.2rem;  /* ← TAMANHO PARA CELULAR */
+            }
+            .about-center .subtitulo {
+                font-size: 1.8rem;  /* ← TAMANHO PARA CELULAR */
+            }
+            .about-center .p-bloco {
+                font-size: 0.95rem;
+                padding: 12px 14px;
+            }
+            .about-container {
+                gap: 18px;
+                padding: 0 12px;
+            }
+            .modal-lightbox .close-modal {
+                top: 20px;
+                right: 20px;
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ============================================================
+           ESTILOS DO RODAPÉ
+           ============================================================ */
+        .barra-separadora {
+            width: 100%;
+            margin-left: auto;
+            margin-top: 16px;
+            border-top: 1rem solid #D83135;
+        }
+        @media (max-width:700px) {
+            .barra-separadora {
+                margin-top: 60px;
+                border-top-width: 0.75rem;
+            }
+        }
+        @media (max-width:450px) {
+            .barra-separadora {
+                margin-top: 50px;
+                border-top-width: 0.6rem;
+            }
+        }
+
+        .footer-custom {
+            background-color: #3E464C;
+            padding: 30px 0 20px;
+        }
+        .footer-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-left {
+            flex: 1 1 auto;
+            text-align: center;
+            min-width: 150px;
+        }
+        .footer-center {
+            flex: 0 0 auto;
+            margin: 0 50px;
+        }
+        .footer-right {
+            flex: 1 1 auto;
+            text-align: right;
+            min-width: 150px;
+        }
+        .footer-left p {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0 0 8px 0;
+        }
+        .footer-left .redes-sociais-icons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 4px;
+        }
+        .footer-left .redes-sociais-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .footer-left .redes-sociais-icons a:hover {
+            opacity: 1;
+        }
+        .redesocial-icon.facebook {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBmaWxsPSIjMzg3ZWJmIiBkPSJNMjc5LjE0IDI4OCAxNiAyODggMTYgMTkyIDE2MCAxOTIgMTYwIDAgMjA4IDAgMjA4IDE5MiAyODggMTkyIDI4OCAyODh6Ii8+PC9zdmc+');
+        }
+        .redesocial-icon.instagram {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjRjcwMCIgZD0iTTIyNC4xIDQxMWMtMTAzIDAtMTg3LTg0LTE4Ny0xODdzODQtMTg3IDE4Ny0xODcgMTg3IDg0IDE4NyAxODctODQgMTg3LTE4NyAxODd6bTAtMzM0Yy04MSAwLTE0NyA2Ni0xNDcgMTQ3czY2IDE0NyAxNDcgMTQ3IDE0Ny02NiAxNDctMTQ3LTY2LTE0Ny0xNDctMTQ3eiIvPjwvc3ZnPg==');
+        }
+
+        .footer-center img {
+            max-height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .footer-right .endereco {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+        .footer-right .endereco strong {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .footer-layout {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-left, .footer-right {
+                flex: 0 0 auto;
+                width: 100%;
+                text-align: center;
+            }
+            .footer-center {
+                margin: 10px 0;
+            }
+            .footer-right .endereco {
+                text-align: center;
+            }
+            .footer-center img {
+                max-height: 60px;
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-left p {
+                font-size: 14px;
+            }
+            .footer-right .endereco {
+                font-size: 13px;
+            }
+        }
+
+        /* ============================================================
+           ESTILOS DO BOTÃO WHATSAPP (com ícone Bootstrap Icons)
+           ============================================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 18px;
+            z-index: 9999;
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .whatsapp-float i {
+            font-size: 60px;
+            color: #25D366;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .whatsapp-float:hover i {
+            transform: scale(1.12) rotate(-4deg);
+        }
+        .whatsapp-float:active i {
+            transform: scale(0.92);
+        }
+        .whatsapp-float .whatsapp-tooltip {
+            position: absolute;
+            right: calc(100% + 12px);
+            top: 50%;
+            transform: translateY(-50%) translateX(10px);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-family: 'Nunito', sans-serif;
+        }
+        .whatsapp-float .whatsapp-tooltip::after {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: 8px solid rgba(0, 0, 0, 0.8);
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+        @media (max-width: 576px) {
+            .whatsapp-float { bottom: 20px; right: 20px; }
+            .whatsapp-float i { font-size: 48px; }
+            .whatsapp-float .whatsapp-tooltip { display: none; }
+        }
+        @media (max-width: 400px) {
+            .whatsapp-float { bottom: 16px; right: 16px; }
+            .whatsapp-float i { font-size: 40px; }
+        }
+
+        /* ============================================================
+           ESTILOS DO HEADER – IGUAIS AO PRIMEIRO CÓDIGO
+           ============================================================ */
+        .header {
+            background-color: #FFFDD0 !important;
+            color: #000 !important;
+        }
+        .header .menu-top ul li a,
+        .header .menu-top ul li a:hover,
+        .header .menu-top ul li a:focus {
+            color: #008349 !important;
+            font-weight: normal;
+        }
+        .header .menu-top ul li {
+            color: #000 !important;
+        }
+        .search-icon {
+            filter: brightness(0) saturate(1);
+        }
+        .header .menu-top ul li a:hover,
+        .header .menu-top ul li a:focus {
+            font-weight: 600 !important;
+        }
+
+        /* ============================================================
+           ESTILOS DOS SUBMENUS – MESMO TAMANHO DO CÓDIGO MEMORIZADO
+           ============================================================ */
+        .menu-has-sub {
+            position: relative;
+        }
+        
+        /* ============================================================
+           ESTILO BASE DOS SUBMENUS (BORDAS RETAS E SEM ARREDONDAMENTO)
+           ============================================================ */
+        .menu-top-sub {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #FFFDD0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 2px 20px;
+            z-index: 1000;
+            border-radius: 0 !important; /* BORDAS RETAS */
+        }
+        
+        /* ============================================================
+           AJUSTE DE POSIÇÃO DOS SUBMENUS (PARA CIMA)
+           ============================================================ */
+        .menu-has-sub .menu-top-sub {
+            top: 39px; /* MESMA POSIÇÃO DO CÓDIGO MEMORIZADO */
+        }
+        
+        /* ============================================================
+           TAMANHO INDIVIDUAL DE CADA SUBMENU
+           ============================================================ */
+        /* SUBMENU DO CATÁLOGO - LARGURA PERSONALIZADA */
+        .menu-catalogo-sub {
+            min-width: 272px; /* MESMO TAMANHO DO CÓDIGO MEMORIZADO */
+            max-width: 272px;
+        }
+        
+        /* SUBMENU DAS RECEITAS - LARGURA PERSONALIZADA */
+        .menu-revendedor-sub {
+            min-width: 230px; /* MESMO TAMANHO DO CÓDIGO MEMORIZADO */
+            max-width: 230px;
+        }
+        
+        .menu-has-sub:hover .menu-top-sub {
+            display: block;
+        }
+        .menu-top-sub ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-top-sub-item {
+            padding: 0;
+        }
+        .menu-top-sub-item a {
+            display: block;
+            padding: 12px 24px;
+            color: #444 !important;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.2s, font-weight 0.2s;
+            font-size: 18px;
+            background: transparent !important;
+        }
+        .menu-top-sub-item a:hover {
+            color: #008349 !important;
+            font-weight: 600 !important;
+            background: transparent !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-sm-3 col-md-2">
+                    <a href="../Princpal/home.html">
+                        <div class="marca">
+                            <img src="./componentes-home/pages/image/logo1.png" alt="GEBON">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-3 col-sm-8 col-md-9">
+                    <nav class="menu-top">
+                        <ul>
+                            <li class="menu-empresa">
+                                <a href="../Princpal/home.html">Home</a>
+                            </li>
+                            <li class="menu-onde-encontrar">
+                                <a href="../QuemSomos/quem-somos.html">Quem somos</a>
+                            </li>
+
+                            <!-- ===== CATÁLOGO DE PRODUTOS COM SUBMENU (5 OPÇÕES) ===== -->
+                            <li class="menu-catalogo menu-has-sub">
+                                <a>Nosso Catálogo</a>
+                                <div class="menu-top-sub menu-catalogo-sub">
+                                    <ul>
+                                        <li class="menu-top-sub-item"><a href="../SaboresGOOD/index.html">Linha Completa</a></li>
+                                        <li class="menu-top-sub-item"><a href="../SaboresGOOD/tropical.html">Linha Tropical</a></li>
+                                        <li class="menu-top-sub-item"><a href="../SaboresGOOD/premium.html">Linha Frutas Premium</a></li>
+                                        <li class="menu-top-sub-item"><a href="../SaboresGOOD/acai.html">Linha Açaí</a></li>
+                                        <li class="menu-top-sub-item"><a href="../SaboresGOOD/variados.html">Linha Variados</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ===== FIM CATÁLOGO ===== -->
+
+                            <!-- ===== RECEITAS COM SUBMENU (SOBREMESAS E DRINKS) ===== -->
+                            <li class="menu-revendedor menu-has-sub">
+                                <a>Receitas</a>
+                                <div class="menu-top-sub menu-revendedor-sub">
+                                    <ul>
+                                        <li class="menu-top-sub-item"><a href="../Receitas/receitas.html">Todas as Receitas</a></li>
+                                        <li class="menu-top-sub-item"><a href="../Receitas/Sobremesas.html">Sobremesas</a></li>
+                                        <li class="menu-top-sub-item"><a href="../Receitas/drinks.html">Drinks</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- CONTATO -->
+                            <li class="menu-franquia menu-has-sub">
+                                <a href="../Contato/index.html">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-4 col-sm-1">
+                    <div class="menu-hamb d-sm-none" onclick="document.querySelector('.menu-top').classList.toggle('open');">
+                        <div></div><div></div><div></div>
+                    </div>
+                    <div onclick="document.querySelector('.search-bkg').classList.toggle('on');" class="search-icon"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="page-main">
+
+        <!-- ===== SEÇÃO QUEM SOMOS ===== -->
+        <section class="about">
+            <div class="about-container">
+
+                <!-- LADO ESQUERDO: imagens -->
+                <div class="about-side about-side-left">
+                    <img src="./componentes-home/pages/image/uva.png" alt="Uva" title="Uva">
+                    <img src="./componentes-home/pages/image/acerola.png" alt="Acerola" title="Acerola">
+                    <img src="./componentes-home/pages/image/laranja.png" alt="Laranja" title="Laranja">
+                    <img src="./componentes-home/pages/image/maracuja.png" alt="Maracuja" title="Maracuja">
+                    <img src="./componentes-home/pages/image/MassaACAI.png" alt="Açaí" title="Açaí">
+                    <img src="./componentes-home/pages/image/PaoDeQueijo.png" alt="PaoDeQueijo" title="PaoDeQueijo">
+                </div>
+
+                <!-- CENTRO: texto com títulos visíveis -->
+                <div class="about-center">
+                    <div class="titulo-principal">
+                        Quem somos ?
+                    </div>
+                    <div class="subtitulo">
+                        Somos a MAQUEA POLPAS
+                    </div>
+
+                    <p class="p-bloco p-bloco-verde">
+                        A MAQUEA POLPAS, é uma empresa brasileira fundada em, 13 de fevereiro de 1996, na cidade de Japurá, no noroeste do estado do Paraná é especializada na produção de polpas de frutas 100% naturais, reconhecida pela qualidade de seus produtos, pelo compromisso com a sustentabilidade e pela valorização da agricultura regional.
+                    </p>
+
+                    <p class="p-bloco p-bloco-vermelho">
+                        Desde sua fundação, a empresa mantém o propósito de preservar o sabor, o aroma e os nutrientes naturais das frutas, oferecendo produtos que atendem aos mais diversos públicos, desde consumidores domésticos até restaurantes, sorveterias, lanchonetes, hotéis, indústrias e distribuidores. Desta maneira investiu em tecnologia, aperfeiçoou seus processos produtivos, consolidando-se assim como uma referência regional na fabricação de polpas de frutas.
+                    </p>
+
+                    <p class="p-bloco p-bloco-verde">
+                        A nossa MISSÃO é produzir alimentos naturais de alta qualidade, oferecendo praticidade, sabor e segurança alimentar, sempre respeitando o meio ambiente e valorizando produtores rurais e parceiros comerciais
+                    </p>
+
+                    <p class="p-bloco p-destaque p-bloco-vermelho">
+                        Já os nossos VALORES tem como sua atuação em princípios que orientam todas as suas atividades. Entre seus principais valores estão a qualidade em todos os processos, o respeito ao consumidor, a honestidade e transparência nas relações, o compromisso com o meio ambiente, a responsabilidade social, a valorização dos colaboradores, o incentivo à agricultura regional e a busca constante por inovação, visando oferecer produtos de excelência e contribuir para o desenvolvimento sustentável.
+                    </p>
+
+                </div>
+
+                <!-- LADO DIREITO: imagens -->
+                <div class="about-side about-side-right">
+                    <img src="./componentes-home/pages/image/uva.png" alt="Uva" title="Uva">
+                    <img src="./componentes-home/pages/image/acerola.png" alt="Acerola" title="Acerola">
+                    <img src="./componentes-home/pages/image/laranja.png" alt="Laranja" title="Laranja">
+                    <img src="./componentes-home/pages/image/maracuja.png" alt="Maracuja" title="Maracuja">
+                    <img src="./componentes-home/pages/image/MassaACAI.png" alt="Açaí" title="Açaí">
+                    <img src="./componentes-home/pages/image/PaoDeQueijo.png" alt="PaoDeQueijo" title="PaoDeQueijo">
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL LIGHTBOX ===== -->
+    <div class="modal-lightbox" id="imageModal">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <img id="modalImage" src="" alt="Imagem ampliada">
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- BARRA SEPARADORA ANTES DO RODAPÉ                             -->
+    <!-- ============================================================ -->
+    <div class="barra-separadora"></div>
+
+    <!-- ============================================================ -->
+    <!-- RODAPÉ                                                       -->
+    <!-- ============================================================ -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-layout">
+                <div class="footer-left">
+                    <p>Visite nossas redes sociais</p>
+                    <div class="redes-sociais-icons">
+                        <a href="https://www.facebook.com/GebonSorvetesoficial/" target="_blank">
+                            <span class="redesocial-icon facebook"></span>
+                        </a>
+                        <a href="https://www.instagram.com/gebonsorvetes/" target="_blank">
+                            <span class="redesocial-icon instagram"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-center">
+                    <a href="../Princpal/home.html">
+                        <img src="./componentes-home/pages/image/logo1.png" alt="Maquea Polpas" />
+                    </a>
+                </div>
+
+                <div class="footer-right">
+                    <div class="endereco">
+                        <strong>Unidade PARANÁ</strong><br>
+                        Rua Tv, São José, 93<br>
+                        Jardim Morada do Sol II Parte, Japurá - PR<br>
+                        CEP: 87225-000
+                    </div>
+                    <div style="margin: 8px 0;"></div>
+                    <div class="endereco">
+                        Rua Travessa A, 15 Centro<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- BOTÃO WHATSAPP COM ÍCONE DO BOOTSTRAP ICONS E VERDE          -->
+    <!-- ============================================================ -->
+    <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AAs%21"
+       target="_blank"
+       class="whatsapp-float"
+       aria-label="Fale conosco no WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+        <span class="whatsapp-tooltip">Fale conosco</span>
+    </a>
+
+    <script>
+        // ===== FUNÇÃO LGPD =====
+        function set_lgpd() {
+            var d = new Date();
+            d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+            document.cookie = "__lgpd=" + d + "; expires=" + d.toUTCString() + "; path=/;";
+            var banner = document.getElementById('cookie-banner-lgpd');
+            if (banner) banner.classList.add('cookie-banner-lgpd-hidden');
+        }
+
+        // ===== MODAL LIGHTBOX =====
+        (function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.getElementById('closeModal');
+
+            function openModal(imgSrc) {
+                modalImg.src = imgSrc;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalImg.src = '';
+            }
+
+            const sideImages = document.querySelectorAll('.about-side img');
+            sideImages.forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const src = this.getAttribute('src');
+                    if (src) openModal(src);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

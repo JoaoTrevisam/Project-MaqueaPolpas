@@ -1,0 +1,26 @@
+.big-line { width:100%; height:50px; background-position:-1px -1px; background-repeat:repeat; }
+.big-line.small { height:8px; }
+.btn-conheca{ display:inline-block; background-color:#D83135; color:#008349; border:0; padding:0.6rem 1.5rem; border-radius:46px; font-weight:700; }
+.btn-conheca:hover, .btn-conheca:focus, .btn-conheca:active{ background-color:#D83135; color:#008349; box-shadow:0px 4px 20px rgba(0,0,0,0.25); }
+.empresa-header-left p{ padding-top:4rem; }
+
+.empresa-header{ background-color:#008349 !important; }
+.empresa-header-left, .empresa-header-right{ background-color:transparent !important; padding:2rem; }
+.empresa-header-left p, .empresa-header-left p *,
+.empresa-header-right p, .empresa-header-right p *{ color:#ffffff !important; font-weight:600 !important; }
+
+/* Ajuste aqui o tamanho das fotos da seção "Somos a Maquea Polpas" */
+:root{
+	--foto-laranja-largura:90%;
+	--foto-laranja-altura:75%;
+	--foto-uva-largura:75%;
+}
+.empresa-header-left-image{ max-width:var(--foto-laranja-largura) !important; margin:0 !important; padding:0 0 var(--foto-laranja-altura) 0 !important; }
+.empresa-header-right img{ max-height:none !important; width:var(--foto-uva-largura) !important; height:auto !important; display:block; margin:0; }
+.empresa-header-right p:first-of-type{ margin:0 0 1rem 0 !important; padding:0 !important; }
+
+.empresa-header:before{ display:none !important; background-color:transparent !important; }
+.empresa-line{ display:none !important; }
+/* === Home company text size aligned with Produtos menu === */
+.empresa-header-left p,
+.empresa-header-right p:not(:first-of-type){ font-size:1.3rem !important; line-height:1.35 !important; }

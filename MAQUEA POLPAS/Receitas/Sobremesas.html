@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Language" content="pt-br">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Receitas - Sobremesas</title>
+
+  <!-- ===== Assets compartilhados ===== -->
+  <link href="./componentes-home/pages/image/favicon.ico" rel="shortcut icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+  <!-- Fonte Luckiest Guy (mesma do ATENDIMENTO) -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./componentes-home/module/bootstrap-5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./componentes-home/pages/css/header.css">
+  <link rel="stylesheet" href="./componentes-home/pages/css/footer.css">
+  <link rel="stylesheet" href="./componentes-home/box/lgpd/front/css/view.css">
+
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #008349;
+      color: #1A905A;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 21px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .receitas-main {
+      flex: 1;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .spacer-top { height: 5px; }
+
+    /* ============================================================
+       TÍTULO PRINCIPAL - MESMO PADRÃO DO "ATENDIMENTO"
+       ============================================================ */
+    .titulo-principal {
+      font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
+      font-size: 4.0rem;  /* mesmo tamanho do ATENDIMENTO */
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 6px;  /* mesmo espaçamento do ATENDIMENTO */
+      color: #D83135;
+      text-shadow: 
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff,
+        0 0 8px #ffffff4d;
+      margin: 1.5rem 0 2rem 0;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .titulo-principal {
+        font-size: 2.8rem;
+      }
+    }
+    @media (max-width: 576px) {
+      .titulo-principal {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* ============================================================
+       SUBMENU – MESMO PADRÃO SUAVE DO QUEM-SOMOS.HTML
+       ============================================================ */
+    .menu-has-sub {
+      position: relative;
+    }
+
+    /* Submenu base - BORDAS RETAS como no quem-somos.html */
+    .menu-top-sub {
+      display: none;
+      position: absolute;
+      left: 0;
+      background-color: #FFFDD0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 2px 20px;
+      z-index: 1000;
+      border-radius: 0 !important; /* BORDAS RETAS */
+    }
+
+    /* Posição do submenu - mesmo do quem-somos.html */
+    .menu-has-sub .menu-top-sub {
+      top: 39px;
+    }
+
+    /* SUBMENU DO CATÁLOGO - LARGURA PERSONALIZADA (igual ao quem-somos.html) */
+    .menu-catalogo-sub {
+      min-width: 272px;
+      max-width: 272px;
+    }
+
+    /* SUBMENU DAS RECEITAS - LARGURA PERSONALIZADA (igual ao quem-somos.html) */
+    .menu-revendedor-sub {
+      min-width: 230px;
+      max-width: 230px;
+    }
+
+    .menu-has-sub:hover .menu-top-sub {
+      display: block;
+    }
+
+    .menu-top-sub ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-top-sub-item {
+      padding: 0;
+    }
+
+    /* ---- ESTILO SUAVE (padrão) ---- */
+    .menu-top-sub-item a {
+      display: block;
+      padding: 12px 24px;
+      color: #008349 !important;           /* CINZA SUAVE - igual ao quem-somos.html */
+      text-decoration: none;
+      font-weight: 400 !important;      /* NORMAL - igual ao quem-somos.html */
+      transition: color 0.3s ease, font-weight 0.3s ease;
+      font-size: 18px;
+      background: transparent !important;
+    }
+
+    /* ---- HOVER (verde suave) ---- */
+    .menu-top-sub-item a:hover {
+      color: #008349 !important;         /* VERDE - igual ao quem-somos.html */
+      font-weight: 600 !important;       /* NEGRITO - igual ao quem-somos.html */
+      background: transparent !important;
+    }
+
+    /* ============================================================
+       BARRA SEPARADORA VERMELHA
+       ============================================================ */
+    .barra-separadora {
+      width: 100%;
+      margin-left: auto;
+      margin-top: 0;
+      border-top: 1rem solid #D83135;
+    }
+    @media (max-width:700px) {
+      .barra-separadora {
+        margin-top: 0;
+        border-top-width: 0.75rem;
+      }
+    }
+    @media (max-width:450px) {
+      .barra-separadora {
+        margin-top: 0;
+        border-top-width: 0.6rem;
+      }
+    }
+
+    /* ============================================================
+       CARROSSEL
+       ============================================================ */
+    :root {
+      --carrossel-altura: 550px;
+      --carrossel-largura-max: 1400px;
+      --carrossel-radius: 50px;
+      --carrossel-offset-y: 0.5rem;
+      --carrossel-espaco-inferior: 2rem;
+    }
+
+    .carrossel-wrapper {
+      width: 100%;
+      max-width: var(--carrossel-largura-max);
+      margin: var(--carrossel-offset-y) auto var(--carrossel-espaco-inferior);
+      padding: 0 15px;
+    }
+
+    .carrossel {
+      position: relative;
+      width: 100%;
+      height: var(--carrossel-altura);
+      overflow: hidden;
+      border-radius: var(--carrossel-radius);
+      background: #ffffff;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .carrossel.arrastando { cursor: grabbing; }
+
+    .carrossel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .carrossel.sem-transicao .carrossel-track { transition: none; }
+
+    .carrossel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      cursor: default;
+    }
+
+    .carrossel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      padding: 12px;
+    }
+
+    .carrossel-indicadores {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      padding: 6px 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      z-index: 2;
+    }
+    .carrossel-indicadores button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .carrossel-indicadores button.ativo {
+      background: #ffffff;
+      transform: scale(1.4);
+    }
+    .carrossel-indicadores button:hover {
+      background: rgba(255, 255, 255, 0.8);
+      transform: scale(1.2);
+    }
+
+    .carrossel-btn {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      :root { --carrossel-altura: 320px; }
+      .carrossel-wrapper { padding: 0 8px; }
+      .carrossel-indicadores { gap: 6px; padding: 5px 12px; }
+      .carrossel-indicadores button { width: 9px; height: 9px; }
+    }
+
+    @media (max-width: 450px) {
+      :root { --carrossel-altura: 200px; }
+      .carrossel-slide img { padding: 4px; }
+      .carrossel-indicadores button { width: 7px; height: 7px; }
+    }
+
+    /* ----- CATÁLOGO (grid único) ----- */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    /* ----- CARD ----- */
+    .recipe-card {
+      background: #FFFDD0;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 4px 10px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 6px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    :root {
+      --card-image-height: 315px;
+    }
+
+    .card-image {
+      width: 100%;
+      height: var(--card-image-height);
+      background: #DFDFDF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: radial-gradient(circle at 20% 30%, #f1deef 0%, #ffffff 100%);
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-image span {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      color: #4d3a2b;
+      z-index: 1;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .card-content {
+      padding: 1.2rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-content h3 {
+      color: #D83135;
+      line-height: 1.3;
+      text-align: center;
+      font-size: 23px !important;
+      font-weight: bold;
+    }
+
+    .card-content .description {
+      color: #008349;
+      line-height: 1.5;
+      text-align: left;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .like-area {
+      display: none;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: auto;
+      width: 100%;
+      padding-top: 0.5rem;
+      background-color: transparent !important;
+      border-top: none !important;
+    }
+
+    .btn-recipe {
+      background: #D83135;
+      border: none;
+      color: #fff;
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 8px rgba(107, 76, 59, 0.15);
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .btn-recipe:hover {
+      background: #008349;
+      transform: scale(1.02);
+    }
+
+    /* ============================================================
+       MODAL – TAMANHO AUMENTADO E FONTES AJUSTADAS
+       ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0s 0.3s;
+      z-index: 2147483647;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0s 0s;
+    }
+
+    .modal {
+      display: block;
+      background: #FFFDD0;
+      max-width: 1200px;
+      width: 95%;
+      height: auto;
+      min-height: 400px;
+      border-radius: 30px;
+      padding: 30px 35px 35px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+      transform: scale(0.92) translateY(20px);
+      transition: transform 0.3s ease;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      top: auto;
+      left: auto;
+      z-index: auto;
+      outline: none;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .modal::-webkit-scrollbar {
+      width: 6px;
+    }
+    .modal::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .modal::-webkit-scrollbar-thumb {
+      background: #D83135;
+      border-radius: 10px;
+    }
+
+    .modal-overlay.active .modal { transform: scale(1) translateY(0); }
+
+    .modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: rgba(0, 0, 0, 0.08);
+      border: none;
+      color: #7d6a58;
+      cursor: pointer;
+      transition: color 0.2s, transform 0.2s, background 0.2s;
+      line-height: 1;
+      padding: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      z-index: 10;
+      flex-shrink: 0;
+      margin-bottom: 0;
+    }
+
+    .modal-close:hover {
+      background: rgba(0, 0, 0, 0.15);
+      transform: rotate(90deg);
+    }
+
+    .modal h2 {
+      color: #D83135;
+      margin-right: 2rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      font-size: 22px !important;
+      font-weight: bold;
+      margin-top: -4px;
+    }
+
+    .modal .subtitle {
+      color: #008349;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      font-size: 20px !important;
+      font-weight: bold;
+    }
+
+    .modal-section {
+      margin-bottom: 1rem;
+      margin-top: 35px;
+    }
+
+    .modal-section:first-of-type {
+      margin-top: 0;
+    }
+
+    .modal-section h4 {
+      color: #D83135;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 20px !important;
+      font-weight: bold;
+    }
+
+    .modal-section h4::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 20px;
+      background: #008349;
+      border-radius: 6px;
+    }
+
+    .modal-section ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      padding-left: 0;
+    }
+
+    .modal-section ul li {
+      background: #D83135;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      color: #ffffff;
+      font-size: 20px !important;
+      font-weight: bold;
+    }
+
+    .modal-section p {
+      white-space: pre-line;
+      color: #008349;
+      line-height: 1.6;
+      font-size: 20px !important;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .modal {
+        max-width: 95%;
+        padding: 20px 22px 24px;
+        min-height: 300px;
+        font-size: 18px;
+        max-height: 80vh;
+      }
+      .modal h2 { 
+        font-size: 20px !important; 
+        margin-bottom: 12px; 
+      }
+      .modal .subtitle { 
+        font-size: 18px !important; 
+        margin-bottom: 12px; 
+      }
+      .modal-section { margin-top: 12px; }
+      .modal-section h4 { font-size: 18px !important; }
+      .modal-section ul li { font-size: 18px !important; }
+      .modal-section p { font-size: 18px !important; }
+      .modal-close { 
+        width: 36px; 
+        height: 36px; 
+        font-size: 26px; 
+      }
+    }
+
+    @media (max-width: 500px) {
+      .modal {
+        max-width: 98%;
+        padding: 16px 16px 20px;
+        min-height: 250px;
+        font-size: 16px;
+        max-height: 75vh;
+      }
+      .modal h2 { 
+        font-size: 18px !important; 
+        margin-bottom: 10px; 
+      }
+      .modal .subtitle { 
+        font-size: 16px !important; 
+        margin-bottom: 10px; 
+      }
+      .modal-section { margin-top: 10px; }
+      .modal-section h4 { font-size: 16px !important; }
+      .modal-section ul li { font-size: 16px !important; }
+      .modal-section p { font-size: 16px !important; }
+      .modal-close { 
+        width: 32px; 
+        height: 32px; 
+        font-size: 22px; 
+      }
+    }
+
+    @media (max-width: 600px) {
+      .receitas-main {
+        padding: 1rem 0.8rem;
+      }
+      .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    body.scrolling .recipe-card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* ============================================================
+       WHATSAPP FLOAT
+       ============================================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 18px;
+      z-index: 9999;
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .whatsapp-float i {
+      font-size: 60px;
+      color: #25D366;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .whatsapp-float:hover i {
+      transform: scale(1.12) rotate(-4deg);
+    }
+    .whatsapp-float:active i {
+      transform: scale(0.92);
+    }
+    .whatsapp-float .whatsapp-tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-family: 'Nunito', sans-serif;
+    }
+    .whatsapp-float .whatsapp-tooltip::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 8px solid rgba(0, 0, 0, 0.8);
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+    @media (max-width: 576px) {
+      .whatsapp-float { bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 48px; }
+      .whatsapp-float .whatsapp-tooltip { display: none; }
+    }
+    @media (max-width: 400px) {
+      .whatsapp-float { bottom: 16px; right: 16px; }
+      .whatsapp-float i { font-size: 40px; }
+    }
+
+    /* ============================================================
+       RODAPÉ
+       ============================================================ */
+    .footer-custom {
+      background-color: #3E464C;
+      padding: 30px 0 20px;
+    }
+    .footer-layout {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-left {
+      flex: 1 1 auto;
+      text-align: center;
+      min-width: 150px;
+    }
+    .footer-center {
+      flex: 0 0 auto;
+      margin: 0 50px;
+    }
+    .footer-right {
+      flex: 1 1 auto;
+      text-align: right;
+      min-width: 150px;
+    }
+    .footer-left p {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 0 8px 0;
+    }
+    .footer-left .redes-sociais-icons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    .footer-left .redes-sociais-icons a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    .footer-left .redes-sociais-icons a:hover {
+      opacity: 1;
+    }
+    .redesocial-icon.facebook {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBmaWxsPSIjMzg3ZWJmIiBkPSJNMjc5LjE0IDI4OCAxNiAyODggMTYgMTkyIDE2MCAxOTIgMTYwIDAgMjA4IDAgMjA4IDE5MiAyODggMTkyIDI4OCAyODh6Ii8+PC9zdmc+');
+    }
+    .redesocial-icon.instagram {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjRjcwMCIgZD0iTTIyNC4xIDQxMWMtMTAzIDAtMTg3LTg0LTE4Ny0xODdzODQtMTg3IDE4Ny0xODcgMTg3IDg0IDE4NyAxODctODQgMTg3LTE4NyAxODd6bTAtMzM0Yy04MSAwLTE0NyA2Ni0xNDcgMTQ3czY2IDE0NyAxNDcgMTQ3IDE0Ny02NiAxNDctMTQ3LTY2LTE0Ny0xNDctMTQ3eiIvPjwvc3ZnPg==');
+    }
+    .footer-center img {
+      max-height: 80px;
+      width: auto;
+      display: block;
+    }
+    .footer-right .endereco {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+    .footer-right .endereco strong {
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .footer-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-left, .footer-right {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+      }
+      .footer-center {
+        margin: 10px 0;
+      }
+      .footer-right .endereco {
+        text-align: center;
+      }
+      .footer-center img {
+        max-height: 60px;
+      }
+    }
+    @media (max-width: 480px) {
+      .footer-left p {
+        font-size: 14px;
+      }
+      .footer-right .endereco {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       BLOCO SEARCH-BKG
+       ============================================================ -->
+  <div class="search-bkg">
+    <div class="container">
+      <div class="search-content">
+        <span class="icon search-icon-close" onclick="document.querySelector('.search-bkg').classList.toggle('on');"></span>
+        <form action="./busca" method="POST" class="search-menu">
+          <label>
+            Digite sua busca e aperte enter
+            <input type="text" name="s" placeholder="Buscar" autocomplete="off">
+            <input type="submit" name="ok" style="display:none;">
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER – COM SUBMENUS NO PADRÃO DO QUEM-SOMOS
+       ============================================================ -->
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-5 col-sm-3 col-md-2">
+          <a href="../Princpal/home.html">
+            <div class="marca">
+              <img src="./componentes-home/pages/image/logo1.png" alt="GEBON">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-3 col-sm-8 col-md-9">
+          <nav class="menu-top">
+            <ul>
+              <li class="menu-empresa">
+                <a href="../Princpal/home.html">Home</a>
+              </li>
+              <li class="menu-onde-encontrar">
+                <a href="../QuemSomos/quem-somos.html">Quem somos</a>
+              </li>
+              <!-- CATÁLOGO DE SABORES -->
+              <li class="menu-catalogo menu-has-sub">
+                <a href="../SaboresGOOD/index.html">Nosso Catálogo</a>
+                <div class="menu-top-sub menu-catalogo-sub">
+                  <ul>
+                    <li class="menu-top-sub-item">
+                      <a href="../SaboresGOOD/index.html">Linha Completa</a>
+                    </li>
+                    <li class="menu-top-sub-item">
+                      <a href="../SaboresGOOD/tropical.html">Linha Tropical</a>
+                    </li>
+                    <li class="menu-top-sub-item">
+                      <a href="../SaboresGOOD/premium.html">Linha Frutas Premium</a>
+                    </li>
+                    <li class="menu-top-sub-item">
+                      <a href="../SaboresGOOD/acai.html">Linha Açaí</a>
+                    </li>
+                    <li class="menu-top-sub-item">
+                      <a href="../SaboresGOOD/variados.html">Linha Variados</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="menu-revendedor menu-has-sub">
+                <a>Receitas</a>
+                <div class="menu-top-sub menu-revendedor-sub">
+                  <ul>
+                    <li class="menu-top-sub-item"><a href="../Receitas/receitas.html">Todas as Receitas</a></li>
+                    <li class="menu-top-sub-item"><a href="../Receitas/Sobremesas.html">Sobremesas</a></li>
+                    <li class="menu-top-sub-item"><a href="../Receitas/drinks.html">Drinks</a></li>
+                  </ul>
+                </div>
+              </li>
+              <!-- CONTATO -->
+              <li class="menu-franquia menu-has-sub">
+                <a href="../Contato/index.html">Contato</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-4 col-sm-1">
+          <div class="menu-hamb d-sm-none" onclick="document.querySelector('.menu-top').classList.toggle('open');">
+            <div></div><div></div><div></div>
+          </div>
+          <div onclick="document.querySelector('.search-bkg').classList.toggle('on');" class="search-icon"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="spacer-top"></div>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main class="receitas-main">
+
+    <!-- ===== CARROSSEL ===== -->
+    <section class="carrossel-wrapper" aria-label="Galeria de receitas">
+      <div class="carrossel" id="carrossel" data-intervalo="3000">
+        <div class="carrossel-track" id="carrosselTrack">
+          <!-- Os slides serão gerados dinamicamente via JavaScript -->
+        </div>
+        <button class="carrossel-btn prev" id="carrosselPrev" aria-label="Anterior">‹</button>
+        <button class="carrossel-btn next" id="carrosselNext" aria-label="Próximo">›</button>
+        <div class="carrossel-indicadores" id="carrosselIndicadores"></div>
+      </div>
+    </section>
+
+    <!-- TÍTULO - MESMO PADRÃO DO "ATENDIMENTO" -->
+    <h1 class="titulo-principal" id="tituloLinha">
+      SOBREMESAS
+    </h1>
+
+    <!-- GRID DE RECEITAS -->
+    <div class="catalog-grid" id="catalogGrid"></div>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" id="modalContent">
+        <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+        <h2 id="modalTitle">Título</h2>
+        <div class="subtitle" id="modalSubtitle">Descrição</div>
+        <div class="modal-section">
+          <h4>Ingredientes</h4>
+          <ul id="modalIngredients"></ul>
+        </div>
+        <div class="modal-section">
+          <h4>Modo de preparo</h4>
+          <p id="modalInstructions"></p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== BARRA SEPARADORA VERMELHA ===== -->
+  <div class="barra-separadora" style="margin-top:0; border-top:1rem solid #D83135;"></div>
+
+  <!-- ============================================================
+       RODAPÉ
+       ============================================================ -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-left">
+          <p>Visite nossas redes sociais</p>
+          <div class="redes-sociais-icons">
+            <a href="https://www.facebook.com/GebonSorvetesoficial/" target="_blank">
+              <span class="redesocial-icon facebook"></span>
+            </a>
+            <a href="https://www.instagram.com/gebonsorvetes/" target="_blank">
+              <span class="redesocial-icon instagram"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-center">
+          <a href="../Princpal/home.html">
+            <img src="./componentes-home/image/logo1.png" alt="Maquea Polpas" />
+          </a>
+        </div>
+
+        <div class="footer-right">
+          <div class="endereco">
+            <strong>Unidade PARANÁ</strong><br>
+            Rua Tv, São José, 93<br>
+            Jardim Morada do Sol II Parte, Japurá - PR<br>
+            CEP: 87225-000          </div>
+          <div style="margin: 8px 0;"></div>
+          <div class="endereco">
+            Rua Travessa A, 15 Centro<br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLOAT
+       ============================================================ -->
+  <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AAs%21"
+     target="_blank"
+     class="whatsapp-float"
+     aria-label="Fale conosco no WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span class="whatsapp-tooltip">Fale conosco</span>
+  </a>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+
+  <script>
+    function set_lgpd() {
+      var d = new Date();
+      d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+      document.cookie = "__lgpd=" + d + "; expires=" + d.toUTCString() + "; path=/;";
+      var banner = document.getElementById('cookie-banner-lgpd');
+      if (banner) banner.classList.add('cookie-banner-lgpd-hidden');
+    }
+  </script>
+
+  <script>
+    // -------------------------------------------------------------
+    // DADOS DAS RECEITAS – APENAS SOBREMESAS (ids 1 a 12)
+    // -------------------------------------------------------------
+    const allRecipes = [
+      {
+        id: 1,
+        name: 'Bombons de Cupuaçu',
+        description: 'Bombons recheados com uma ganache cremosa de cupuaçu, cobertos com chocolate ao leite – uma explosão amazônica.',
+        image: 'img/receitas/bombonscupuacu.png',
+        imageEmoji: '🍫',
+        ingredients: [ 'Polpa de cupuaçu (150g)', 'Chocolate ao leite (300g)', 'Creme de leite (100g)', 'Açúcar (50g)', 'Manteiga (20g)' ],
+        instructions: 'Derreta o chocolate em banho-maria. À parte, aqueça a polpa de cupuaçu com o açúcar até reduzir um pouco, adicione o creme de leite e a manteiga, mexa até engrossar. Deixe esfriar. Modele bolinhas com o recheio, mergulhe no chocolate derretido e coloque para endurecer sobre papel manteiga.'
+      },
+      {
+        id: 2,
+        name: 'Bombons de Frutas Vermelhas',
+        description: 'Bombons de chocolate recheados com um creme aveludado de frutas vermelhas, combinando o sabor intenso das frutas com a doçura do chocolate.',
+        image: 'img/receitas/BombonsdeFrutasVermelhas.png',
+        imageEmoji: '🍓',
+        ingredients: [
+          'Polpa de frutas vermelhas (200g)',
+          'Chocolate meio amargo ou ao leite (350g)',
+          'Creme de leite (100g)',
+          'Leite condensado (80g)',
+          'Manteiga (15g)'
+        ],
+        instructions: 'Aqueça a polpa de frutas vermelhas em fogo baixo até reduzir levemente. Acrescente o leite condensado, o creme de leite e a manteiga, mexendo até formar um creme consistente. Deixe esfriar completamente. Derreta o chocolate e faça uma camada nas formas de bombom. Leve à geladeira por 10 minutos, recheie com o creme de frutas vermelhas e cubra com mais chocolate derretido. Retorne à geladeira por cerca de 30 minutos ou até os bombons endurecerem. Desenforme e sirva.'
+      },
+      {
+        id: 3,
+        name: 'Cheesecake de Abacaxi',
+        description: 'Cheesecake cremoso com cobertura de abacaxi, base de biscoito e um toque tropical e refrescante.',
+        image: 'img/receitas/CheesecakedeAbacaxi.png',
+        imageEmoji: '🍍',
+        ingredients: [ 'Biscoito maisena (200g)', 'Manteiga (100g)', 'Cream cheese (500g)', 'Açúcar (150g)', 'Ovos (2)', 'Polpa de abacaxi (200g)', 'Gelatina incolor (12g)' ],
+        instructions: 'Triture o biscoito e misture com a manteiga derretida, forre o fundo de uma forma. Bata o cream cheese, açúcar e ovos até ficar liso. Despeje sobre a base e asse a 160°C por 40 minutos. Prepare a cobertura: aqueça a polpa de abacaxi com açúcar a gosto, adicione a gelatina hidratada. Despeje sobre o cheesecake já frio e leve à geladeira por 4 horas.'
+      },
+      {
+        id: 4,
+        name: 'Cheesecake de Amora',
+        description: 'Cheesecake cremoso com cobertura de amora feita com polpa da fruta – uma sobremesa elegante, refrescante e levemente ácida.',
+        image: 'img/receitas/CheesecakedeAmora.png',
+        imageEmoji: '🫐',
+        ingredients: [ 'Polpa de amora (250g)', 'Biscoito maisena triturado (200g)', 'Manteiga derretida (100g)', 'Cream cheese (400g)', 'Leite condensado (1 lata)', 'Creme de leite (1 caixa)', 'Gelatina incolor sem sabor (1 envelope)', 'Açúcar (100g)', 'Água (50ml)' ],
+        instructions: 'Misture o biscoito triturado com a manteiga até formar uma farofa úmida e pressione no fundo de uma forma de aro removível. Leve à geladeira por 20 minutos. Bata o cream cheese, o leite condensado, o creme de leite e a gelatina hidratada e dissolvida até obter um creme homogêneo. Despeje sobre a base e leve à geladeira por pelo menos 4 horas. Para a cobertura, cozinhe a polpa de amora com o açúcar e a água até formar uma calda levemente espessa. Deixe esfriar completamente, espalhe sobre o cheesecake e sirva gelado.'
+      },
+      {
+        id: 5,
+        name: 'Cheesecake de Goiaba',
+        description: 'Cheesecake com base de biscoito e cobertura de goiaba, cremoso e com o doce equilibrado da fruta.',
+        image: 'img/receitas/CheesecakedeGoiaba.png',
+        imageEmoji: '🍐',
+        ingredients: [ 'Biscoito maisena (200g)', 'Manteiga (100g)', 'Cream cheese (500g)', 'Açúcar (150g)', 'Ovos (2)', 'Polpa de goiaba (200g)', 'Gelatina incolor (12g)' ],
+        instructions: 'Triture o biscoito e misture com a manteiga derretida, forre o fundo de uma forma. Bata o cream cheese, açúcar e ovos até ficar liso. Despeje sobre a base e asse a 160°C por 40 minutos. Prepare a cobertura: aqueça a polpa de goiaba com açúcar a gosto, adicione a gelatina hidratada. Despeje sobre o cheesecake já frio e leve à geladeira por 4 horas.'
+      },
+      {
+        id: 6,
+        name: 'Mousse de Abacaxi com Coco',
+        description: 'Mousse leve e cremosa feita com polpa de abacaxi e polpa de coco, combinando o sabor tropical do abacaxi com a suavidade do coco.',
+        image: 'img/receitas/MousseDeAbacaxiComCoco.png',
+        imageEmoji: '🍍',
+        ingredients: [ 'Polpa de abacaxi (200g)', 'Polpa de coco (100g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor sem sabor (1 envelope – 12g)', 'Água (5 colheres de sopa para hidratar a gelatina)', 'Coco ralado para decorar' ],
+        instructions: 'Hidrate e dissolva a gelatina conforme as instruções da embalagem. Bata no liquidificador a polpa de abacaxi, a polpa de coco, o leite condensado, o creme de leite e a gelatina dissolvida até obter um creme homogêneo. Distribua em taças ou em um refratário, leve à geladeira por cerca de 4 horas ou até firmar. Finalize com coco ralado antes de servir.'
+      },
+      {
+        id: 7,
+        name: 'Mousse de Cupuaçu',
+        description: 'Mousse leve e delicada com o sabor exótico e levemente ácido do cupuaçu, uma sobremesa amazônica.',
+        image: 'img/receitas/MousseDeCupuacu.png',
+        imageEmoji: '🍬',
+        ingredients: [ 'Polpa de cupuaçu (300g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor (12g)' ],
+        instructions: 'Hidrate a gelatina. Bata a polpa de cupuaçu, leite condensado e creme de leite no liquidificador. Adicione a gelatina dissolvida e bata rapidamente. Distribua em taças e leve à geladeira por 3 horas.'
+      },
+      {
+        id: 8,
+        name: 'Mousse de Manga',
+        description: 'Mousse cremoso e aerado com o sabor doce e tropical da manga, perfeito para sobremesas leves.',
+        image: 'img/receitas/MoussedeManga.png',
+        imageEmoji: '🥭',
+        ingredients: [ 'Polpa de manga (300g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor (12g)' ],
+        instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de manga, o leite condensado e o creme de leite. Adicione a gelatina dissolvida e bata até homogeneizar. Distribua em taças e leve à geladeira por 4 horas.'
+      },
+      {
+        id: 9,
+        name: 'Mousse de Maracujá',
+        description: 'Mousse cremoso e aerado com o equilíbrio perfeito entre o doce e o ácido da polpa de maracujá.',
+        image: 'img/receitas/MousseDeMaracuja.png',
+        imageEmoji: '🥭',
+        ingredients: [ 'Polpa de maracujá (200g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor (12g)', 'Açúcar (a gosto)' ],
+        instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de maracujá, o leite condensado, o creme de leite e o açúcar. Adicione a gelatina dissolvida e bata mais um pouco. Despeje em taças e leve à geladeira por 4 horas.'
+      },
+      {
+        id: 10,
+        name: 'Pavê de Morango com Suspiro',
+        description: 'Pavê cremoso com camadas de biscoito champagne, creme de morango e suspiros crocantes, finalizado com morangos frescos.',
+        image: 'img/receitas/PavedeMorangocomSuspiro.png',
+        imageEmoji: '🍓',
+        ingredients: [ 'Polpa de morango (300g)', 'Biscoito champagne (200g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Leite (100ml)', 'Suspiros (150g)', 'Morangos frescos para decorar' ],
+        instructions: 'Bata a polpa de morango com o leite condensado e o creme de leite até formar um creme homogêneo. Umedeça os biscoitos champagne no leite e faça uma camada em um refratário. Cubra com uma camada do creme de morango e distribua parte dos suspiros quebrados. Repita as camadas até finalizar os ingredientes. Decore com morangos frescos e suspiros inteiros. Leve à geladeira por 4 horas antes de servir.'
+      },
+      {
+        id: 11,
+        name: 'Petit Suisse de Frutas Vermelhas',
+        description: 'Versão caseira do clássico petit suisse, cremosa e doce na medida certa, com o sabor inconfundível das frutas vermelhas – saudável e deliciosa.',
+        image: 'img/receitas/PetitSuissedeFrutasVermelhas.png',
+        imageEmoji: '🍓',
+        ingredients: [ 'Polpa de frutas vermelhas (200g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Iogurte natural (170g)', 'Gelatina incolor (12g)' ],
+        instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de frutas vermelhas, o leite condensado, o creme de leite e o iogurte natural. Adicione a gelatina dissolvida e bata até ficar homogêneo. Distribua em potinhos individuais e leve à geladeira por 4 horas. Sirva gelado.'
+      },
+      {
+        id: 12,
+        name: 'Torta de Limão',
+        description: 'Torta com base de biscoito, recheio cremoso de limão feito com polpa da fruta e merengue tostado – uma sobremesa cítrica e sofisticada.',
+        image: 'img/receitas/TortadeLimao.png',
+        imageEmoji: '🍋',
+        ingredients: [ 'Biscoito maisena (200g)', 'Manteiga (100g)', 'Leite condensado (1 lata – 395g)', 'Polpa de limão (150ml)', 'Creme de leite (1 caixa – 200g)', 'Claras de ovos (3)', 'Açúcar (150g)' ],
+        instructions: 'Triture o biscoito e misture com a manteiga derretida. Forre o fundo de uma forma. Bata o leite condensado, a polpa de limão e o creme de leite até engrossar. Despeje sobre a base. Para o merengue, bata as claras com o açúcar em neve, cubra a torta e leve ao forno para dourar (ou use maçarico). Leve à geladeira por 2 horas.'
+      }
+    ];
+
+    // -------------------------------------------------------------
+    // SLIDES DO CARROSSEL – apenas sobremesas
+    // -------------------------------------------------------------
+    const slideMap = {
+      'bombonscupuacu': 2,
+      'BrowniecomMoussedeMorango': 11,
+      'CheesecakedeAbacaxi': 1,
+      'CheesecakedeAmora': 3,
+      'CheesecakedeGoiaba': 4,
+      'MousseDeAbacaxiComCoco': 9,
+      'MousseDeCupuacu': 6,
+      'MoussedeManga': 7,
+      'MousseDeMaracuja': 8,
+      'PavedeMorangocomSuspiro': 5,
+      'PetitSuissedeFrutasVermelhas': 10,
+      'TortadeLimao': 12
+    };
+
+    function getSlidesData() {
+      return Object.entries(slideMap).map(([key, id]) => {
+        const recipe = allRecipes.find(r => r.id === id);
+        return {
+          id: id,
+          src: `img/receitas/${key}.png`,
+          alt: recipe ? recipe.name : key,
+          categoria: 'sobremesa'
+        };
+      });
+    }
+
+    // -------------------------------------------------------------
+    // CURTIDAS (localStorage) – mantido
+    // -------------------------------------------------------------
+    const LIKES_COUNT_KEY = 'recipeLikesCount';
+    const USER_LIKES_KEY = 'recipeLikedByUser';
+
+    function loadLikesCount() {
+      const raw = localStorage.getItem(LIKES_COUNT_KEY);
+      try { return raw ? JSON.parse(raw) : {}; } catch { return {}; }
+    }
+    function saveLikesCount(data) {
+      localStorage.setItem(LIKES_COUNT_KEY, JSON.stringify(data));
+    }
+    function loadUserLikes() {
+      const raw = localStorage.getItem(USER_LIKES_KEY);
+      try { return raw ? JSON.parse(raw) : {}; } catch { return {}; }
+    }
+    function saveUserLikes(data) {
+      localStorage.setItem(USER_LIKES_KEY, JSON.stringify(data));
+    }
+    function getLikeCount(recipeId) {
+      const counts = loadLikesCount();
+      return counts[recipeId] || 0;
+    }
+    function getUserLike(recipeId) {
+      const userLikes = loadUserLikes();
+      return !!userLikes[recipeId];
+    }
+    function toggleLike(recipeId) {
+      const userLikes = loadUserLikes();
+      const counts = loadLikesCount();
+      const alreadyLiked = !!userLikes[recipeId];
+
+      if (alreadyLiked) {
+        counts[recipeId] = (counts[recipeId] || 1) - 1;
+        if (counts[recipeId] <= 0) delete counts[recipeId];
+        delete userLikes[recipeId];
+      } else {
+        counts[recipeId] = (counts[recipeId] || 0) + 1;
+        userLikes[recipeId] = true;
+      }
+
+      saveLikesCount(counts);
+      saveUserLikes(userLikes);
+      renderCards(categoriaAtual);
+    }
+
+    // -------------------------------------------------------------
+    // CORES DAS POLPAS (mesmo mapa)
+    // -------------------------------------------------------------
+    const cores = {
+      'Polpa de Abacaxi': '#F7E47A',
+      'Polpa de Abacaxi com Hortelã': '#A8D08D',
+      'Polpa de Açaí': '#4A148C',
+      'Polpa de Acerola': '#E53935',
+      'Polpa de Amora': '#6A1B9A',
+      'Polpa de Cacau': '#5D4037',
+      'Polpa de Cajá': '#F9A825',
+      'Polpa de Cajú': '#FF8F00',
+      'Polpa de Clorofila': '#43A047',
+      'Polpa de Coco': '#F5F5F5',
+      'Polpa de Cupuaçu': '#8D6E63',
+      'Polpa de Frutas Vermelhas': '#8B0000',
+      'Polpa de Goiaba': '#4CAF50',
+      'Polpa de Graviola': '#C8E6C9',
+      'Polpa de Kiwi': '#6B8E23',
+      'Polpa de Laranja': '#FF9800',
+      'Polpa de Limão': '#89F436',
+      'Polpa de Mamão': '#FFB74D',
+      'Polpa de Manga': '#FFB300',
+      'Polpa de Maracujá': '#FFC107',
+      'Polpa de Melão': '#f3d915',
+      'Polpa Mista': '#ff2121',
+      'Polpa de Morango': '#E53935',
+      'Polpa de Pêssego': '#FFAB91',
+      'Polpa de Tamarindo': '#795548',
+      'Polpa de Tangerina': '#FF6F00',
+      'Polpa de Umbu': '#C0CA33',
+      'Polpa de Uva': '#4B0082',
+      'Polpa de Morango (Fruta)': '#E53935',
+      'Polpa de Abacaxi (Pedaços)': '#F7E47A',
+      'Polpa de Acerola (Fruta)': '#E53935',
+      'Polpa de Amora (Fruta)': '#6A1B9A',
+      'Polpa de Açaí (Fruta)': '#4A148C',
+      'Pão de Queijo': '#D7CCC8'
+    };
+
+    function getCorDaPolpaPorNomeImagem(src) {
+      const nomeArquivo = src.split('/').pop().replace(/\.[^/.]+$/, '');
+      const mapa = {
+        'bombonscupuacu': 'Polpa de Cupuaçu',
+        'BatidinhadeAcerola': 'Polpa de Acerola',
+        'BrowniecomMoussedeMorango': 'Polpa de Morango',
+        'BatidinhadeCupuacu': 'Polpa de Cupuaçu',
+        'CheesecakedeAbacaxi': 'Polpa de Abacaxi',
+        'BatidinhadeUva': 'Polpa de Uva',
+        'CheesecakedeAmora': 'Polpa de Amora',
+        'CaipirinhadeCaju': 'Polpa de Cajú',
+        'CheesecakedeGoiaba': 'Polpa de Goiaba',
+        'CaipirinhadeKiwi': 'Polpa de Kiwi',
+        'MousseDeAbacaxiComCoco': 'Polpa de Abacaxi',
+        'CosmopolitandeGoiaba': 'Polpa de Goiaba',
+        'MousseDeCupuacu': 'Polpa de Cupuaçu',
+        'GindeAbacaxicomHortela': 'Polpa de Abacaxi com Hortelã',
+        'MoussedeManga': 'Polpa de Manga',
+        'MojitodeMorango': 'Polpa de Morango',
+        'MousseDeMaracuja': 'Polpa de Maracujá',
+        'MoscowMuledeAcerola': 'Polpa de Acerola',
+        'PavedeMorangocomSuspiro': 'Polpa de Morango',
+        'MoscowMuledeFrutasVermelhas': 'Polpa de Frutas Vermelhas',
+        'PetitSuissedeFrutasVermelhas': 'Polpa de Frutas Vermelhas',
+        'PinaColada': 'Polpa de Abacaxi',
+        'TortadeLimao': 'Polpa de Limão',
+        'SodaTropicaldeManga': 'Polpa de Manga'
+      };
+      const polpa = mapa[nomeArquivo] || null;
+      return polpa ? cores[polpa] : null;
+    }
+
+    // -------------------------------------------------------------
+    // RENDERIZAÇÃO DO GRID – apenas sobremesas
+    // -------------------------------------------------------------
+    let categoriaAtual = 'todas';
+    const grid = document.getElementById('catalogGrid');
+    const tituloEl = document.getElementById('tituloLinha');
+
+    function renderCards(categoria) {
+      grid.innerHTML = '';
+
+      const receitasFiltradas = allRecipes;
+
+      // Atualiza título usando textContent (mantém o estilo CSS)
+      tituloEl.textContent = 'SOBREMESAS';
+
+      if (receitasFiltradas.length === 0) {
+        grid.innerHTML = '<p style="grid-column:1/-1; color:#fff; font-size:24px;">Nenhuma receita encontrada.</p>';
+        return;
+      }
+
+      function createCard(recipe) {
+        const count = getLikeCount(recipe.id);
+        const liked = getUserLike(recipe.id);
+
+        const card = document.createElement('div');
+        card.className = 'recipe-card';
+        card.dataset.id = recipe.id;
+
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'card-image';
+
+        if (recipe.image && recipe.image.trim() !== '') {
+          const cor = getCorDaPolpaPorNomeImagem(recipe.image);
+          if (cor) {
+            imageDiv.style.backgroundColor = cor;
+          } else {
+            imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
+          }
+          const img = document.createElement('img');
+          img.src = recipe.image;
+          img.alt = recipe.name;
+          img.addEventListener('error', () => {
+            imageDiv.innerHTML = '';
+            const span = document.createElement('span');
+            span.textContent = recipe.imageEmoji || '🍽️';
+            imageDiv.appendChild(span);
+          });
+          imageDiv.appendChild(img);
+        } else {
+          const span = document.createElement('span');
+          span.textContent = recipe.imageEmoji || '🍽️';
+          imageDiv.appendChild(span);
+          imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
+        }
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'card-content';
+
+        const title = document.createElement('h3');
+        title.textContent = recipe.name;
+
+        const desc = document.createElement('p');
+        desc.className = 'description';
+        desc.textContent = recipe.description;
+
+        const likeArea = document.createElement('div');
+        likeArea.className = 'like-area';
+
+        const likeBtn = document.createElement('button');
+        likeBtn.className = `like-btn${liked ? ' liked' : ''}`;
+        likeBtn.textContent = liked ? '♥' : '♡';
+        likeBtn.setAttribute('aria-label', liked ? 'Descurtir' : 'Curtir');
+        likeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleLike(recipe.id);
+        });
+
+        const likeCountSpan = document.createElement('span');
+        likeCountSpan.className = 'like-count';
+        likeCountSpan.textContent = count;
+
+        likeArea.appendChild(likeBtn);
+        likeArea.appendChild(likeCountSpan);
+
+        const footer = document.createElement('div');
+        footer.className = 'card-footer';
+        const btn = document.createElement('button');
+        btn.className = 'btn-recipe';
+        btn.textContent = 'Ver receita';
+        btn.addEventListener('click', () => openModal(recipe.id));
+        footer.appendChild(btn);
+
+        contentDiv.appendChild(title);
+        contentDiv.appendChild(desc);
+        contentDiv.appendChild(likeArea);
+        contentDiv.appendChild(footer);
+
+        card.appendChild(imageDiv);
+        card.appendChild(contentDiv);
+
+        return card;
+      }
+
+      receitasFiltradas.forEach(recipe => grid.appendChild(createCard(recipe)));
+    }
+
+    // -------------------------------------------------------------
+    // CARROSSEL – apenas sobremesas
+    // -------------------------------------------------------------
+    const carrossel = document.getElementById('carrossel');
+    const track = document.getElementById('carrosselTrack');
+    const indicadoresContainer = document.getElementById('carrosselIndicadores');
+    const btnPrev = document.getElementById('carrosselPrev');
+    const btnNext = document.getElementById('carrosselNext');
+
+    let carrosselIndice = 0;
+    let carrosselTotal = 0;
+    let intervaloMs = parseInt(carrossel.dataset.intervalo, 10) || 3000;
+    let autoTimer = null;
+    let arrastando = false;
+    let startX = 0;
+    let deltaX = 0;
+    let larguraCarrossel = 0;
+
+    function criarIndicadores(total) {
+      indicadoresContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const btn = document.createElement('button');
+        btn.setAttribute('data-index', i);
+        btn.setAttribute('aria-label', `Slide ${i + 1}`);
+        if (i === 0) btn.classList.add('ativo');
+        btn.addEventListener('click', () => {
+          irPara(i);
+          reiniciarAuto();
+        });
+        indicadoresContainer.appendChild(btn);
+      }
+    }
+
+    function atualizarIndicadores() {
+      const botoes = indicadoresContainer.querySelectorAll('button');
+      botoes.forEach((btn, i) => {
+        btn.classList.toggle('ativo', i === carrosselIndice);
+      });
+    }
+
+    function atualizarPosicao(comTransicao) {
+      if (!comTransicao) carrossel.classList.add('sem-transicao');
+      track.style.transform = `translateX(${-carrosselIndice * 100}%)`;
+      if (!comTransicao) {
+        void track.offsetWidth;
+        carrossel.classList.remove('sem-transicao');
+      }
+      atualizarIndicadores();
+    }
+
+    function irPara(i) {
+      const total = carrosselTotal;
+      if (total === 0) return;
+      carrosselIndice = ((i % total) + total) % total;
+      atualizarPosicao(true);
+    }
+
+    function proximo() { irPara(carrosselIndice + 1); }
+    function anterior() { irPara(carrosselIndice - 1); }
+
+    function iniciarAuto() {
+      pararAuto();
+      if (intervaloMs > 0 && carrosselTotal > 1) {
+        autoTimer = setInterval(proximo, intervaloMs);
+      }
+    }
+    function pararAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+    function reiniciarAuto() {
+      pararAuto();
+      iniciarAuto();
+    }
+
+    function configurarEventosCarrossel() {
+      carrossel.addEventListener('mouseenter', pararAuto);
+      carrossel.addEventListener('mouseleave', iniciarAuto);
+
+      if (btnPrev) {
+        btnPrev.addEventListener('click', (e) => {
+          e.stopPropagation();
+          anterior();
+          reiniciarAuto();
+        });
+      }
+      if (btnNext) {
+        btnNext.addEventListener('click', (e) => {
+          e.stopPropagation();
+          proximo();
+          reiniciarAuto();
+        });
+      }
+
+      function inicioArrasto(x) {
+        if (carrosselTotal === 0) return;
+        arrastando = true;
+        startX = x;
+        deltaX = 0;
+        larguraCarrossel = carrossel.clientWidth;
+        carrossel.classList.add('arrastando');
+        carrossel.classList.add('sem-transicao');
+        pararAuto();
+      }
+
+      function moverArrasto(x) {
+        if (!arrastando) return;
+        deltaX = x - startX;
+        const offset = (-carrosselIndice * larguraCarrossel) + deltaX;
+        track.style.transform = `translateX(${offset}px)`;
+      }
+
+      function fimArrasto() {
+        if (!arrastando) return;
+        arrastando = false;
+        carrossel.classList.remove('arrastando');
+        carrossel.classList.remove('sem-transicao');
+        if (carrosselTotal === 0) return;
+        const limite = larguraCarrossel * 0.2;
+        if (deltaX <= -limite) {
+          irPara(carrosselIndice + 1);
+        } else if (deltaX >= limite) {
+          irPara(carrosselIndice - 1);
+        } else {
+          atualizarPosicao(true);
+        }
+        iniciarAuto();
+      }
+
+      carrossel.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        inicioArrasto(e.clientX);
+      });
+      window.addEventListener('mousemove', (e) => moverArrasto(e.clientX));
+      window.addEventListener('mouseup', fimArrasto);
+
+      carrossel.addEventListener('touchstart', (e) => {
+        inicioArrasto(e.touches[0].clientX);
+      }, { passive: true });
+      carrossel.addEventListener('touchmove', (e) => {
+        moverArrasto(e.touches[0].clientX);
+      }, { passive: true });
+      carrossel.addEventListener('touchend', fimArrasto);
+
+      window.addEventListener('resize', () => {
+        larguraCarrossel = carrossel.clientWidth;
+        if (carrosselTotal > 0) atualizarPosicao(false);
+      });
+    }
+
+    function renderCarrossel() {
+      const slides = getSlidesData();
+      carrosselTotal = slides.length;
+      carrosselIndice = 0;
+
+      track.innerHTML = '';
+
+      if (carrosselTotal === 0) {
+        const emptySlide = document.createElement('div');
+        emptySlide.className = 'carrossel-slide';
+        emptySlide.style.backgroundColor = '#ffffff';
+        emptySlide.innerHTML = '<span style="color:#666; font-size:24px;">Nenhuma imagem disponível</span>';
+        track.appendChild(emptySlide);
+        carrosselTotal = 1;
+        carrosselIndice = 0;
+        criarIndicadores(1);
+        atualizarPosicao(false);
+        pararAuto();
+        return;
+      }
+
+      slides.forEach((slideData) => {
+        const slideDiv = document.createElement('div');
+        slideDiv.className = 'carrossel-slide';
+        const cor = getCorDaPolpaPorNomeImagem(slideData.src);
+        if (cor) slideDiv.style.backgroundColor = cor;
+        const img = document.createElement('img');
+        img.src = slideData.src;
+        img.alt = slideData.alt;
+        slideDiv.appendChild(img);
+        track.appendChild(slideDiv);
+      });
+
+      criarIndicadores(carrosselTotal);
+      atualizarPosicao(false);
+      pararAuto();
+      iniciarAuto();
+    }
+
+    // -------------------------------------------------------------
+    // MODAL
+    // -------------------------------------------------------------
+    const overlay = document.getElementById('modalOverlay');
+    const closeBtn = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalIngredients = document.getElementById('modalIngredients');
+    const modalInstructions = document.getElementById('modalInstructions');
+
+    function openModal(id) {
+      const recipe = allRecipes.find(r => r.id === id);
+      if (!recipe) return;
+
+      modalTitle.textContent = recipe.name;
+      modalSubtitle.textContent = recipe.description;
+
+      modalIngredients.innerHTML = '';
+      recipe.ingredients.forEach(ing => {
+        const li = document.createElement('li');
+        li.textContent = ing;
+        modalIngredients.appendChild(li);
+      });
+
+      modalInstructions.textContent = recipe.instructions;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // -------------------------------------------------------------
+    // FILTRO – agora apenas "todas" e "sobremesa" (ambas iguais)
+    // -------------------------------------------------------------
+    function filtrarCategoria(categoria) {
+      categoriaAtual = categoria;
+      renderCards(categoria);
+      renderCarrossel();
+    }
+
+    document.querySelectorAll('.menu-revendedor-sub a[data-categoria]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const cat = this.dataset.categoria;
+        filtrarCategoria(cat);
+      });
+    });
+
+    // -------------------------------------------------------------
+    // INICIALIZAÇÃO
+    // -------------------------------------------------------------
+    filtrarCategoria('todas');
+    configurarEventosCarrossel();
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      document.body.classList.add('scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.body.classList.remove('scrolling');
+      }, 150);
+    });
+
+    console.log('Catálogo de Sobremesas inicializado (Drinks removidos).');
+    console.log('Título "SOBREMESAS" agora com o mesmo padrão do "ATENDIMENTO" (fonte Luckiest Guy, vermelho com contorno branco).');
+  </script>
+
+</body>
+</html>
