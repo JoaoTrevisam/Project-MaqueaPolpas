@@ -28,6 +28,11 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
     body {
       font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
       background: #008349;
@@ -42,25 +47,24 @@
 
     .receitas-main {
       flex: 1;
-      padding: 2rem 1.5rem;
+      padding: 100px 0 2rem 0;   /* 60px de espaço abaixo do header */
       display: flex;
       flex-direction: column;
       align-items: center;
       font-size: 21px;
       font-weight: bold;
+      width: 100%;
     }
-
-    .spacer-top { height: 5px; }
 
     /* ============================================================
        TÍTULO PRINCIPAL - MESMO PADRÃO DO "ATENDIMENTO"
        ============================================================ */
     .titulo-principal {
       font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
-      font-size: 4.0rem;  /* mesmo tamanho do ATENDIMENTO */
+      font-size: 4.0rem;
       font-weight: 400;
       line-height: 1.2;
-      letter-spacing: 6px;  /* mesmo espaçamento do ATENDIMENTO */
+      letter-spacing: 6px;
       color: #D83135;
       text-shadow: 
         -2px -2px 0 #fff,
@@ -68,8 +72,9 @@
         -2px 2px 0 #fff,
         2px 2px 0 #fff,
         0 0 8px #ffffff4d;
-      margin: 1.5rem 0 2rem 0;
+      margin: 0 0 2rem 0;
       text-align: center;
+      padding: 0 1rem;
     }
 
     @media (max-width: 992px) {
@@ -90,7 +95,6 @@
       position: relative;
     }
 
-    /* Submenu base - BORDAS RETAS como no quem-somos.html */
     .menu-top-sub {
       display: none;
       position: absolute;
@@ -99,21 +103,18 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       padding: 2px 20px;
       z-index: 1000;
-      border-radius: 0 !important; /* BORDAS RETAS */
+      border-radius: 0 !important;
     }
 
-    /* Posição do submenu - mesmo do quem-somos.html */
     .menu-has-sub .menu-top-sub {
       top: 39px;
     }
 
-    /* SUBMENU DO CATÁLOGO - LARGURA PERSONALIZADA (igual ao quem-somos.html) */
     .menu-catalogo-sub {
       min-width: 272px;
       max-width: 272px;
     }
 
-    /* SUBMENU DAS RECEITAS - LARGURA PERSONALIZADA (igual ao quem-somos.html) */
     .menu-revendedor-sub {
       min-width: 230px;
       max-width: 230px;
@@ -133,22 +134,20 @@
       padding: 0;
     }
 
-    /* ---- ESTILO SUAVE (padrão) ---- */
     .menu-top-sub-item a {
       display: block;
       padding: 12px 24px;
-      color: #008349 !important;           /* CINZA SUAVE - igual ao quem-somos.html */
+      color: #008349 !important;
       text-decoration: none;
-      font-weight: 400 !important;      /* NORMAL - igual ao quem-somos.html */
+      font-weight: 400 !important;
       transition: color 0.3s ease, font-weight 0.3s ease;
       font-size: 18px;
       background: transparent !important;
     }
 
-    /* ---- HOVER (verde suave) ---- */
     .menu-top-sub-item a:hover {
-      color: #008349 !important;         /* VERDE - igual ao quem-somos.html */
-      font-weight: 600 !important;       /* NEGRITO - igual ao quem-somos.html */
+      color: #008349 !important;
+      font-weight: 600 !important;
       background: transparent !important;
     }
 
@@ -174,88 +173,6 @@
       }
     }
 
-    /* ============================================================
-       CARROSSEL – MESMO ESTILO DA PÁGINA DE POLPAS
-       ============================================================ */
-    :root {
-      --carrossel-altura: 550px;
-      --carrossel-largura-max: 1400px;
-      --carrossel-radius: 50px;
-      --carrossel-offset-y: 0.5rem;
-      --carrossel-espaco-inferior: 2rem;
-    }
-
-    .carrossel-wrapper {
-      width: 100%;
-      max-width: var(--carrossel-largura-max);
-      margin: var(--carrossel-offset-y) auto var(--carrossel-espaco-inferior);
-      padding: 0 15px;
-    }
-
-    .carrossel {
-      position: relative;
-      width: 100%;
-      height: var(--carrossel-altura);
-      overflow: hidden;
-      border-radius: var(--carrossel-radius);
-      background: #ffffff;
-      cursor: grab;
-      user-select: none;
-      -webkit-user-select: none;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    }
-
-    .carrossel.arrastando { cursor: grabbing; }
-
-    .carrossel-track {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-    }
-
-    .carrossel.sem-transicao .carrossel-track { transition: none; }
-
-    .carrossel-slide {
-      flex: 0 0 100%;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ffffff;
-      cursor: default;
-    }
-
-    .carrossel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      pointer-events: none;
-      -webkit-user-drag: none;
-      padding: 12px;
-    }
-
-    .carrossel-btn {
-      display: none;
-    }
-
-    @media (max-width: 700px) {
-      :root { --carrossel-altura: 320px; }
-      .carrossel-wrapper { padding: 0 8px; }
-      .carrossel-indicadores { gap: 6px; padding: 5px 12px; }
-      .carrossel-indicadores button { width: 9px; height: 9px; }
-    }
-
-    @media (max-width: 450px) {
-      :root { --carrossel-altura: 200px; }
-      .carrossel-slide img { padding: 4px; }
-      .carrossel-indicadores button { width: 7px; height: 7px; }
-    }
-
     /* ----- CATÁLOGO (grid único) ----- */
     .catalog-grid {
       display: grid;
@@ -263,9 +180,10 @@
       gap: 2rem;
       max-width: 1400px;
       width: 100%;
+      padding: 0 1.5rem;
     }
 
-    /* ----- CARD (fontes alinhadas com o modal) ----- */
+    /* ----- CARD ----- */
     .recipe-card {
       background: #FFFDD0;
       border-radius: 24px;
@@ -373,7 +291,7 @@
     }
 
     /* ============================================================
-       MODAL – TAMANHO AUMENTADO E FONTES AJUSTADAS
+       MODAL
        ============================================================ */
     .modal-overlay {
       position: fixed;
@@ -412,6 +330,7 @@
       transform: scale(0.92) translateY(20px);
       transition: transform 0.3s ease;
       max-height: 85vh;
+      overflow-y: auto;
       position: relative;
       top: auto;
       left: auto;
@@ -590,8 +509,8 @@
     }
 
     @media (max-width: 600px) {
-      .receitas-main { padding: 1rem 0.8rem; }
-      .catalog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .receitas-main { padding: 40px 0 1rem 0; }
+      .catalog-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
     }
 
     body.scrolling .recipe-card:hover {
@@ -745,7 +664,7 @@
 <body>
 
   <!-- ============================================================
-       BLOCO SEARCH-BKG (copiado da home)
+       BLOCO SEARCH-BKG
        ============================================================ -->
   <div class="search-bkg">
     <div class="container">
@@ -763,7 +682,7 @@
   </div>
 
   <!-- ============================================================
-       HEADER – COM SUBMENUS NO PADRÃO DO QUEM-SOMOS
+       HEADER
        ============================================================ -->
   <header class="header">
     <div class="container">
@@ -785,7 +704,7 @@
               <li class="menu-onde-encontrar">
                 <a href="../QuemSomos/quem-somos.html">Quem somos</a>
               </li>
-              <!-- CATÁLOGO DE SABORES (igual à home) -->
+              <!-- CATÁLOGO DE SABORES -->
               <li class="menu-catalogo menu-has-sub">
                 <a href="../SaboresGOOD/index.html">Nosso Catálogo</a>
                 <div class="menu-top-sub menu-catalogo-sub">
@@ -808,7 +727,7 @@
                   </ul>
                 </div>
               </li>
-              <!-- RECEITAS – com os 3 itens exatos -->
+              <!-- RECEITAS -->
               <li class="menu-revendedor menu-has-sub">
                 <a>Receitas</a>
                 <div class="menu-top-sub menu-revendedor-sub">
@@ -843,26 +762,12 @@
     </div>
   </header>
 
-  <div class="spacer-top"></div>
-
   <!-- ============================================================
-       MAIN
+       MAIN – SEM CARROSSEL, COM 60px ABAIXO DO HEADER
        ============================================================ -->
   <main class="receitas-main">
 
-    <!-- ===== CARROSSEL ===== -->
-    <section class="carrossel-wrapper" aria-label="Galeria de receitas">
-      <div class="carrossel" id="carrossel" data-intervalo="3000">
-        <div class="carrossel-track" id="carrosselTrack">
-          <!-- Os slides serão gerados dinamicamente via JavaScript -->
-        </div>
-        <button class="carrossel-btn prev" id="carrosselPrev" aria-label="Anterior">‹</button>
-        <button class="carrossel-btn next" id="carrosselNext" aria-label="Próximo">›</button>
-        <div class="carrossel-indicadores" id="carrosselIndicadores"></div>
-      </div>
-    </section>
-
-    <!-- TÍTULO PRINCIPAL - MESMO PADRÃO DO "ATENDIMENTO" -->
+    <!-- TÍTULO PRINCIPAL -->
     <h1 class="titulo-principal" id="tituloLinha">
       TODAS AS RECEITAS
     </h1>
@@ -959,11 +864,11 @@
   </script>
 
   <!-- ============================================================
-       SCRIPTS PRINCIPAIS – FILTRO, CARROSSEL E SCROLL
+       SCRIPTS PRINCIPAIS
        ============================================================ -->
   <script>
     // -------------------------------------------------------------
-    // 0. SCROLL – adiciona classe 'scrolled' ao body
+    // 0. SCROLL
     // -------------------------------------------------------------
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -1210,50 +1115,7 @@
     ];
 
     // -------------------------------------------------------------
-    // 2. DADOS DOS SLIDES DO CARROSSEL
-    // -------------------------------------------------------------
-    const slideMap = {
-      'bombonscupuacu': 2,
-      'BatidinhadeAcerola': 14,
-      'BrowniecomMoussedeMorango': 11,
-      'BatidinhadeCupuacu': 15,
-      'CheesecakedeAbacaxi': 1,
-      'BatidinhadeUva': 17,
-      'CheesecakedeAmora': 3,
-      'CaipirinhadeCaju': 18,
-      'CheesecakedeGoiaba': 4,
-      'CaipirinhadeKiwi': 19,
-      'MousseDeAbacaxiComCoco': 9,
-      'CosmopolitandeGoiaba': 20,
-      'MousseDeCupuacu': 6,
-      'GindeAbacaxicomHortela': 21,
-      'MoussedeManga': 7,
-      'MojitodeMorango': 23,
-      'MousseDeMaracuja': 8,
-      'MoscowMuledeAcerola': 16,
-      'PavedeMorangocomSuspiro': 5,
-      'MoscowMuledeFrutasVermelhas': 13,
-      'PetitSuissedeFrutasVermelhas': 10,
-      'PinaColada': 22,
-      'TortadeLimao': 12,
-      'SodaTropicaldeManga': 24
-    };
-
-    function getSlidesData() {
-      return Object.entries(slideMap).map(([key, id]) => {
-        const recipe = allRecipes.find(r => r.id === id);
-        const categoria = recipe && recipe.id <= 12 ? 'sobremesa' : 'drink';
-        return {
-          id: id,
-          src: `img/receitas/${key}.png`,
-          alt: recipe ? recipe.name : key,
-          categoria: categoria
-        };
-      });
-    }
-
-    // -------------------------------------------------------------
-    // 3. GERENCIAMENTO DE CURTIDAS (localStorage) – mantido
+    // 2. CURTIDAS
     // -------------------------------------------------------------
     const LIKES_COUNT_KEY = 'recipeLikesCount';
     const USER_LIKES_KEY = 'recipeLikedByUser';
@@ -1300,7 +1162,7 @@
     }
 
     // -------------------------------------------------------------
-    // 4. CORES DAS POLPAS (para fundo dos cards)
+    // 3. CORES DAS POLPAS
     // -------------------------------------------------------------
     const cores = {
       'Polpa de Abacaxi': '#F7E47A',
@@ -1373,9 +1235,9 @@
     }
 
     // -------------------------------------------------------------
-    // 5. RENDERIZAÇÃO DO GRID COM FILTRO (agora com "todas")
+    // 4. RENDERIZAÇÃO DO GRID
     // -------------------------------------------------------------
-    let categoriaAtual = 'todas'; // padrão: todas as receitas
+    let categoriaAtual = 'todas';
 
     const grid = document.getElementById('catalogGrid');
     const tituloEl = document.getElementById('tituloLinha');
@@ -1394,7 +1256,6 @@
         receitasFiltradas = allRecipes;
       }
 
-      // Atualiza título com o mesmo padrão do ATENDIMENTO
       let texto = 'TODAS AS RECEITAS';
       if (categoria === 'sobremesa') texto = 'SOBREMESAS';
       else if (categoria === 'drink') texto = 'DRINKS';
@@ -1492,205 +1353,7 @@
     }
 
     // -------------------------------------------------------------
-    // 6. CARROSSEL DINÂMICO (agora suporta "todas")
-    // -------------------------------------------------------------
-    const carrossel = document.getElementById('carrossel');
-    const track = document.getElementById('carrosselTrack');
-    const indicadoresContainer = document.getElementById('carrosselIndicadores');
-    const btnPrev = document.getElementById('carrosselPrev');
-    const btnNext = document.getElementById('carrosselNext');
-
-    let carrosselIndice = 0;
-    let carrosselTotal = 0;
-    let intervaloMs = parseInt(carrossel.dataset.intervalo, 10) || 3000;
-    let autoTimer = null;
-    let arrastando = false;
-    let startX = 0;
-    let deltaX = 0;
-    let larguraCarrossel = 0;
-
-    function criarIndicadores(total) {
-      indicadoresContainer.innerHTML = '';
-      for (let i = 0; i < total; i++) {
-        const btn = document.createElement('button');
-        btn.setAttribute('data-index', i);
-        btn.setAttribute('aria-label', `Slide ${i + 1}`);
-        if (i === 0) btn.classList.add('ativo');
-        btn.addEventListener('click', () => {
-          irPara(i);
-          reiniciarAuto();
-        });
-        indicadoresContainer.appendChild(btn);
-      }
-    }
-
-    function atualizarIndicadores() {
-      const botoes = indicadoresContainer.querySelectorAll('button');
-      botoes.forEach((btn, i) => {
-        btn.classList.toggle('ativo', i === carrosselIndice);
-      });
-    }
-
-    function atualizarPosicao(comTransicao) {
-      if (!comTransicao) carrossel.classList.add('sem-transicao');
-      track.style.transform = `translateX(${-carrosselIndice * 100}%)`;
-      if (!comTransicao) {
-        void track.offsetWidth;
-        carrossel.classList.remove('sem-transicao');
-      }
-      atualizarIndicadores();
-    }
-
-    function irPara(i) {
-      const total = carrosselTotal;
-      if (total === 0) return;
-      carrosselIndice = ((i % total) + total) % total;
-      atualizarPosicao(true);
-    }
-
-    function proximo() { irPara(carrosselIndice + 1); }
-    function anterior() { irPara(carrosselIndice - 1); }
-
-    function iniciarAuto() {
-      pararAuto();
-      if (intervaloMs > 0 && carrosselTotal > 1) {
-        autoTimer = setInterval(proximo, intervaloMs);
-      }
-    }
-    function pararAuto() {
-      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
-    }
-    function reiniciarAuto() {
-      pararAuto();
-      iniciarAuto();
-    }
-
-    function configurarEventosCarrossel() {
-      carrossel.addEventListener('mouseenter', pararAuto);
-      carrossel.addEventListener('mouseleave', iniciarAuto);
-
-      if (btnPrev) {
-        btnPrev.addEventListener('click', (e) => {
-          e.stopPropagation();
-          anterior();
-          reiniciarAuto();
-        });
-      }
-      if (btnNext) {
-        btnNext.addEventListener('click', (e) => {
-          e.stopPropagation();
-          proximo();
-          reiniciarAuto();
-        });
-      }
-
-      function inicioArrasto(x) {
-        if (carrosselTotal === 0) return;
-        arrastando = true;
-        startX = x;
-        deltaX = 0;
-        larguraCarrossel = carrossel.clientWidth;
-        carrossel.classList.add('arrastando');
-        carrossel.classList.add('sem-transicao');
-        pararAuto();
-      }
-
-      function moverArrasto(x) {
-        if (!arrastando) return;
-        deltaX = x - startX;
-        const offset = (-carrosselIndice * larguraCarrossel) + deltaX;
-        track.style.transform = `translateX(${offset}px)`;
-      }
-
-      function fimArrasto() {
-        if (!arrastando) return;
-        arrastando = false;
-        carrossel.classList.remove('arrastando');
-        carrossel.classList.remove('sem-transicao');
-        if (carrosselTotal === 0) return;
-        const limite = larguraCarrossel * 0.2;
-        if (deltaX <= -limite) {
-          irPara(carrosselIndice + 1);
-        } else if (deltaX >= limite) {
-          irPara(carrosselIndice - 1);
-        } else {
-          atualizarPosicao(true);
-        }
-        iniciarAuto();
-      }
-
-      carrossel.addEventListener('mousedown', (e) => {
-        e.preventDefault();
-        inicioArrasto(e.clientX);
-      });
-      window.addEventListener('mousemove', (e) => moverArrasto(e.clientX));
-      window.addEventListener('mouseup', fimArrasto);
-
-      carrossel.addEventListener('touchstart', (e) => {
-        inicioArrasto(e.touches[0].clientX);
-      }, { passive: true });
-      carrossel.addEventListener('touchmove', (e) => {
-        moverArrasto(e.touches[0].clientX);
-      }, { passive: true });
-      carrossel.addEventListener('touchend', fimArrasto);
-
-      window.addEventListener('resize', () => {
-        larguraCarrossel = carrossel.clientWidth;
-        if (carrosselTotal > 0) atualizarPosicao(false);
-      });
-    }
-
-    function renderCarrossel(categoria) {
-      let slides = getSlidesData();
-      if (categoria === 'todas') {
-        // mostra todos
-      } else if (categoria === 'sobremesa') {
-        slides = slides.filter(s => s.categoria === 'sobremesa');
-      } else if (categoria === 'drink') {
-        slides = slides.filter(s => s.categoria === 'drink');
-      } else {
-        slides = [];
-      }
-
-      carrosselTotal = slides.length;
-      carrosselIndice = 0;
-
-      track.innerHTML = '';
-
-      if (carrosselTotal === 0) {
-        const emptySlide = document.createElement('div');
-        emptySlide.className = 'carrossel-slide';
-        emptySlide.style.backgroundColor = '#ffffff';
-        emptySlide.innerHTML = '<span style="color:#666; font-size:24px;">Nenhuma imagem disponível</span>';
-        track.appendChild(emptySlide);
-        carrosselTotal = 1;
-        carrosselIndice = 0;
-        criarIndicadores(1);
-        atualizarPosicao(false);
-        pararAuto();
-        return;
-      }
-
-      slides.forEach((slideData) => {
-        const slideDiv = document.createElement('div');
-        slideDiv.className = 'carrossel-slide';
-        const cor = getCorDaPolpaPorNomeImagem(slideData.src);
-        if (cor) slideDiv.style.backgroundColor = cor;
-        const img = document.createElement('img');
-        img.src = slideData.src;
-        img.alt = slideData.alt;
-        slideDiv.appendChild(img);
-        track.appendChild(slideDiv);
-      });
-
-      criarIndicadores(carrosselTotal);
-      atualizarPosicao(false);
-      pararAuto();
-      iniciarAuto();
-    }
-
-    // -------------------------------------------------------------
-    // 7. MODAL
+    // 5. MODAL
     // -------------------------------------------------------------
     const overlay = document.getElementById('modalOverlay');
     const closeBtn = document.getElementById('modalClose');
@@ -1732,12 +1395,11 @@
     });
 
     // -------------------------------------------------------------
-    // 8. FILTRO PRINCIPAL – submenu (agora com 3 opções)
+    // 6. FILTRO PRINCIPAL
     // -------------------------------------------------------------
     function filtrarCategoria(categoria) {
       categoriaAtual = categoria;
       renderCards(categoria);
-      renderCarrossel(categoria);
     }
 
     document.querySelectorAll('.menu-revendedor-sub a[data-categoria]').forEach(link => {
@@ -1749,10 +1411,9 @@
     });
 
     // -------------------------------------------------------------
-    // 9. INICIALIZAÇÃO (padrão: todas as receitas)
+    // 7. INICIALIZAÇÃO
     // -------------------------------------------------------------
     filtrarCategoria('todas');
-    configurarEventosCarrossel();
 
     let scrollTimeout;
     window.addEventListener('scroll', () => {
@@ -1763,9 +1424,7 @@
       }, 150);
     });
 
-    console.log('Catálogo de Receitas inicializado com filtros (Todas, Sobremesas, Drinks).');
-    console.log('Submenus no padrão do quem-somos.html (bordas retas, cores suaves).');
-    console.log('Título "TODAS AS RECEITAS" agora com o mesmo padrão do "ATENDIMENTO" (fonte Luckiest Guy, vermelho com contorno branco).');
+    console.log('Catálogo de Receitas inicializado (sem carrossel). Título: TODAS AS RECEITAS.');
   </script>
 
 </body>
