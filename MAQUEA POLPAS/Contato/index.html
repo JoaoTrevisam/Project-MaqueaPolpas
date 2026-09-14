@@ -136,30 +136,40 @@
             height: 50px;
             background-color: var(--cream);
         }
+
+        /* ============================================================
+           LOGO DO HEADER - BLOCO BASE (MOBILE / PADRÃO)
+           ============================================================
+           Aqui você altera os tamanhos da logo no CELULAR (mobile).
+           ============================================================ */
         .marca {
             position: absolute;
             top: 0;
             left: 0;
             z-index: 20;
-            width: 140px;  /* ALTERADO: aumentado de 120px para 160px */
-            height: 50px;
+            width: 140px;          /* ← LARGURA da área da logo (mobile) */
+            height: 50px;          /* ← ALTURA da área da logo (mobile) */
             display: flex;
             align-items: flex-start;
-            margin-left: 110px;
-            margin-top: 9px;
+            margin-left: 110px;    /* ← POSIÇÃO horizontal da logo (mobile) */
+            margin-top: 9px;       /* ← POSIÇÃO vertical da logo (mobile) */
         }
         .marca img {
             position: relative;
             z-index: 2;
-            width: 110px !important;  /* ALTERADO: aumentado de 112px para 140px */
-            height: auto !important;
+            width: 110px !important;   /* ← LARGURA da imagem da logo (mobile) */
+            height: auto !important;   /* ← ALTURA automática (mantém proporção) */
             max-width: none;
             object-fit: contain;
-            margin: 8px 0 0;
+            margin: 8px 0 0;           /* ← AJUSTE vertical fino da imagem (mobile) */
         }
         .marca::before {
             content: none;
         }
+        /* ============================================================
+           FIM DO BLOCO BASE DA LOGO (MOBILE)
+           ============================================================ */
+
         .menu-top {
             position: absolute;
             top: 50px;
@@ -626,17 +636,27 @@
             .header {
                 height: 3.6rem;
             }
+
+            /* ============================================================
+               LOGO DO HEADER - BLOCO DESKTOP (a partir de 767px)
+               ============================================================
+               Aqui você altera os tamanhos da logo no COMPUTADOR (desktop).
+               ============================================================ */
             .marca {
-                width: 200px;  /* ALTERADO: aumentado de 160px para 200px */
-                height: 3.4rem;
-                margin-left: 110px;
-                margin-top: 8px;
+                width: 200px;          /* ← LARGURA da área da logo (desktop) */
+                height: 3.4rem;        /* ← ALTURA da área da logo (desktop) */
+                margin-left: 110.5px;    /* ← POSIÇÃO horizontal da logo (desktop) */
+                margin-top: 10px;       /* ← POSIÇÃO vertical da logo (desktop) */
             }
             .marca img {
-                width: 180px !important;  /* ALTERADO: aumentado de 160px para 180px */
-                height: auto !important;
-                margin-top: -2px;
+                width: 170px !important;   /* ← LARGURA da imagem da logo (desktop) */
+                height: auto !important;   /* ← ALTURA automática (mantém proporção) */
+                margin-top: -2px;          /* ← AJUSTE vertical fino da imagem (desktop) */
             }
+            /* ============================================================
+               FIM DO BLOCO DESKTOP DA LOGO
+               ============================================================ */
+
             .menu-top {
                 position: relative;
                 top: 0;
@@ -684,7 +704,7 @@
                 width: auto;
                 min-width: 220px;
                 padding: 12px 20px;
-                margin-top: 2px;              /* ALTERADO: era 7px, agora 2px (mais para cima) */
+                margin-top: 2px;
                 background-color: #FFFDD0;
                 border-radius: 0 !important;
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -695,10 +715,10 @@
             .menu-top-sub::before {
                 content: "";
                 position: absolute;
-                top: -2px;                    /* ALTERADO: acompanha o margin-top */
+                top: -2px;
                 left: 0;
                 width: 100%;
-                height: 2px;                  /* ALTERADO: acompanha o margin-top */
+                height: 2px;
                 background: transparent;
             }
             
@@ -750,7 +770,7 @@
                 background: transparent !important;
                 transition: all 0.2s ease !important;
                 text-decoration: none !important;
-                border-bottom: none !important;  /* ALTERADO: removida a linha horizontal */
+                border-bottom: none !important;
             }
             
             .menu-top-sub-item a:hover {
@@ -833,7 +853,7 @@
                 font-weight: 400 !important;
                 white-space: normal !important;
                 pointer-events: auto !important;
-                border-bottom: none !important;  /* ALTERADO: removida a linha horizontal também no mobile */
+                border-bottom: none !important;
             }
 
             .menu-top.open>ul>li.menu-has-sub .menu-top-sub-item a:hover,
@@ -1767,28 +1787,6 @@
             font-weight: 700 !important;
         }
 
-        .marca {
-            width: 120px;
-            height: 50px;
-        }
-        .marca img {
-            width: 112px;
-            height: auto;
-            margin: 8px 0 0;
-        }
-
-        @media (min-width: 767px) {
-            .marca {
-                width: 160px;
-                height: 3.4rem;
-            }
-            .marca img {
-                width: 160px;
-                height: auto;
-                margin-top: -2px;
-            }
-        }
-
         .footer-center {
             flex: 0 0 auto;
             margin: 0 50px;
@@ -2592,7 +2590,7 @@
             }
 
             // ============================================================
-            // ENVIO DO E-MAIL VIA FORMSUBMIT (como estava antes)
+            // ENVIO DO E-MAIL VIA FORMSUBMIT
             // ============================================================
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
