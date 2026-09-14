@@ -653,6 +653,13 @@
             .menu-top>ul>li {
                 padding-bottom: 0.5rem;
             }
+            
+            /* Garante que a área de hover do item com submenu alcance o submenu */
+            .menu-top>ul>li.menu-has-sub {
+                padding-bottom: 0.8rem;
+                margin-bottom: -0.3rem;
+            }
+            
             .menu-top>ul>li,
             .menu-top>ul>li a {
                 font-size: var(--navProductFontSize);
@@ -671,16 +678,28 @@
             
             .menu-top-sub {
                 position: absolute;
-                top: calc(100% + 7px) !important;  /* ALTERADO: abaixado em 20px */
+                top: 100% !important;
                 left: 0;
                 display: none;
                 width: auto;
                 min-width: 220px;
                 padding: 12px 20px;
+                margin-top: 2px;              /* ALTERADO: era 7px, agora 2px (mais para cima) */
                 background-color: #FFFDD0;
                 border-radius: 0 !important;
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
                 z-index: 1000;
+            }
+            
+            /* PONTE INVISÍVEL: cobre o gap entre o link e o submenu */
+            .menu-top-sub::before {
+                content: "";
+                position: absolute;
+                top: -2px;                    /* ALTERADO: acompanha o margin-top */
+                left: 0;
+                width: 100%;
+                height: 2px;                  /* ALTERADO: acompanha o margin-top */
+                background: transparent;
             }
             
             /* Mostra submenu no hover - CORREÇÃO PRINCIPAL */
@@ -797,6 +816,12 @@
                 box-shadow: none !important;
                 border-radius: 0 !important;
                 pointer-events: auto !important;
+                margin-top: 0 !important;
+            }
+
+            .menu-top.open>ul>li.menu-has-sub .menu-top-sub::before,
+            .menu-top.open>ul>li.menu-franquia .menu-top-sub::before {
+                display: none !important;
             }
 
             .menu-top.open>ul>li.menu-has-sub .menu-top-sub-item a,
@@ -987,11 +1012,10 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 65.3 65.3'%3E%3Ccircle cx='32.7' cy='32.7' r='32.7' fill='%23D83135'/%3E%3Cpath fill='%23fff' d='M45.2 22.3c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2c0-1.2 1-2.2 2.2-2.2s2.2 1 2.2 2.2zM42.4 32.4c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4S27.8 23 33 23s9.4 4.2 9.4 9.4zm-3.4 0c0-3.3-2.7-6-6-6s-6 2.7-6 6 2.7 6 6 6 6-2.7 6-6zM52 24.8c0-6.4-5.1-11.5-11.5-11.5H24.8c-6.4 0-11.5 5.1-11.5 11.5v15.7c0 6.4 5.1 11.5 11.5 11.5h15.7C46.9 52 52 46.9 52 40.5V24.8zm-3.8 15.5c0 4.4-3.5 7.9-7.9 7.9H25c-4.4 0-7.9-3.5-7.9-7.9V25c0-4.4 3.5-7.9 7.9-7.9h15.3c4.4 0 7.9 3.5 7.9 7.9v15.3z'/%3E%3C/svg%3E") !important;
         }
 
-        /* ===== LOGO DO FOOTER - MESMO TAMANHO DO HEADER ===== */
+        /* ===== LOGO DO FOOTER - TAMANHO AJUSTADO ===== */
         .footer-center img {
-            width: 160px !important;
-            max-width: 160px !important;
-            height: auto;
+            max-height: 80px;
+            width: auto;
             display: block;
             margin: 0 auto;
             object-fit: contain;
@@ -999,8 +1023,8 @@
 
         @media (max-width: 768px) {
             .footer-center img {
-                width: 120px !important;
-                max-width: 120px !important;
+                max-height: 60px;
+                width: auto;
             }
         }
 
@@ -1034,6 +1058,7 @@
             }
             .footer-center img {
                 max-height: 60px;
+                width: auto;
             }
         }
         @media (max-width: 480px) {
@@ -1772,20 +1797,13 @@
             justify-content: center;
         }
 
+        /* ===== LOGO DO FOOTER - TAMANHO AJUSTADO (bloco final) ===== */
         .footer-center img {
-            width: 160px !important;
-            max-width: 160px !important;
-            height: auto;
+            max-height: 80px;
+            width: auto;
             display: block;
             margin: 0 auto;
             object-fit: contain;
-        }
-
-        @media (min-width: 767px) {
-            .footer-center img {
-                width: 160px !important;
-                max-width: 160px !important;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1796,8 +1814,8 @@
                 margin: 10px 0;
             }
             .footer-center img {
-                width: 120px !important;
-                max-width: 120px !important;
+                max-height: 60px;
+                width: auto;
             }
         }
 
