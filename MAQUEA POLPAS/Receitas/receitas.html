@@ -47,7 +47,7 @@
 
     .receitas-main {
       flex: 1;
-      padding: 100px 0 2rem 0;   /* 60px de espaço abaixo do header */
+      padding: 100px 0 2rem 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -57,7 +57,7 @@
     }
 
     /* ============================================================
-       TÍTULO PRINCIPAL - MESMO PADRÃO DO "ATENDIMENTO"
+       TÍTULO PRINCIPAL
        ============================================================ */
     .titulo-principal {
       font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
@@ -78,22 +78,16 @@
     }
 
     @media (max-width: 992px) {
-      .titulo-principal {
-        font-size: 2.8rem;
-      }
+      .titulo-principal { font-size: 2.8rem; }
     }
     @media (max-width: 576px) {
-      .titulo-principal {
-        font-size: 2.2rem;
-      }
+      .titulo-principal { font-size: 2.2rem; }
     }
 
     /* ============================================================
-       SUBMENU – MESMO PADRÃO SUAVE DO QUEM-SOMOS.HTML
+       SUBMENU
        ============================================================ */
-    .menu-has-sub {
-      position: relative;
-    }
+    .menu-has-sub { position: relative; }
 
     .menu-top-sub {
       display: none;
@@ -106,33 +100,13 @@
       border-radius: 0 !important;
     }
 
-    .menu-has-sub .menu-top-sub {
-      top: 39px;
-    }
+    .menu-has-sub .menu-top-sub { top: 39px; }
+    .menu-catalogo-sub { min-width: 272px; max-width: 272px; }
+    .menu-revendedor-sub { min-width: 230px; max-width: 230px; }
+    .menu-has-sub:hover .menu-top-sub { display: block; }
 
-    .menu-catalogo-sub {
-      min-width: 272px;
-      max-width: 272px;
-    }
-
-    .menu-revendedor-sub {
-      min-width: 230px;
-      max-width: 230px;
-    }
-
-    .menu-has-sub:hover .menu-top-sub {
-      display: block;
-    }
-
-    .menu-top-sub ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .menu-top-sub-item {
-      padding: 0;
-    }
+    .menu-top-sub ul { list-style: none; padding: 0; margin: 0; }
+    .menu-top-sub-item { padding: 0; }
 
     .menu-top-sub-item a {
       display: block;
@@ -152,7 +126,7 @@
     }
 
     /* ============================================================
-       BARRA SEPARADORA VERMELHA (igual à da home)
+       BARRA SEPARADORA VERMELHA (rodapé)
        ============================================================ */
     .barra-separadora {
       width: 100%;
@@ -161,19 +135,43 @@
       border-top: 1rem solid #D83135;
     }
     @media (max-width:700px) {
-      .barra-separadora {
-        margin-top: 0;
-        border-top-width: 0.75rem;
-      }
+      .barra-separadora { margin-top: 0; border-top-width: 0.75rem; }
     }
     @media (max-width:450px) {
-      .barra-separadora {
-        margin-top: 0;
+      .barra-separadora { margin-top: 0; border-top-width: 0.6rem; }
+    }
+
+    /* ============================================================
+       BARRA SEPARADORA INTERNA (de fora a fora - largura total)
+       ============================================================ */
+    .barra-separadora-interna {
+      display: block;
+      width: 100vw;
+      position: relative;
+      left: 0%;
+      right: 0%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      border-top: 1rem solid #D83135;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 700px) {
+      .barra-separadora-interna {
+        border-top-width: 0.75rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    @media (max-width: 450px) {
+      .barra-separadora-interna {
         border-top-width: 0.6rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
     }
 
-    /* ----- CATÁLOGO (grid único) ----- */
+    /* ----- CATÁLOGO (grid) ----- */
     .catalog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -201,9 +199,7 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 6px 14px rgba(0, 0, 0, 0.04);
     }
 
-    :root {
-      --card-image-height: 315px;
-    }
+    :root { --card-image-height: 315px; }
 
     .card-image {
       width: 100%;
@@ -258,9 +254,7 @@
       font-weight: bold;
     }
 
-    .like-area {
-      display: none;
-    }
+    .like-area { display: none; }
 
     .card-footer {
       display: flex;
@@ -340,17 +334,9 @@
       font-weight: bold;
     }
 
-    .modal::-webkit-scrollbar { 
-      width: 6px;
-    }
-    .modal::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-    .modal::-webkit-scrollbar-thumb {
-      background: #D83135;
-      border-radius: 10px;
-    }
+    .modal::-webkit-scrollbar { width: 6px; }
+    .modal::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+    .modal::-webkit-scrollbar-thumb { background: #D83135; border-radius: 10px; }
 
     .modal-overlay.active .modal { transform: scale(1) translateY(0); }
 
@@ -400,14 +386,8 @@
       font-weight: bold;
     }
 
-    .modal-section {
-      margin-bottom: 1rem;
-      margin-top: 35px;
-    }
-
-    .modal-section:first-of-type {
-      margin-top: 0;
-    }
+    .modal-section { margin-bottom: 1rem; margin-top: 35px; }
+    .modal-section:first-of-type { margin-top: 0; }
 
     .modal-section h4 {
       color: #D83135;
@@ -455,57 +435,25 @@
     }
 
     @media (max-width: 700px) {
-      .modal {
-        max-width: 95%;
-        padding: 20px 22px 24px;
-        min-height: 300px;
-        font-size: 18px;
-        max-height: 80vh;
-      }
-      .modal h2 { 
-        font-size: 20px !important; 
-        margin-bottom: 12px; 
-      }
-      .modal .subtitle { 
-        font-size: 18px !important; 
-        margin-bottom: 12px; 
-      }
+      .modal { max-width: 95%; padding: 20px 22px 24px; min-height: 300px; font-size: 18px; max-height: 80vh; }
+      .modal h2 { font-size: 20px !important; margin-bottom: 12px; }
+      .modal .subtitle { font-size: 18px !important; margin-bottom: 12px; }
       .modal-section { margin-top: 12px; }
       .modal-section h4 { font-size: 18px !important; }
       .modal-section ul li { font-size: 18px !important; }
       .modal-section p { font-size: 18px !important; }
-      .modal-close { 
-        width: 36px; 
-        height: 36px; 
-        font-size: 26px; 
-      }
+      .modal-close { width: 36px; height: 36px; font-size: 26px; }
     }
 
     @media (max-width: 500px) {
-      .modal {
-        max-width: 98%;
-        padding: 16px 16px 20px;
-        min-height: 250px;
-        font-size: 16px;
-        max-height: 75vh;
-      }
-      .modal h2 { 
-        font-size: 18px !important; 
-        margin-bottom: 10px; 
-      }
-      .modal .subtitle { 
-        font-size: 16px !important; 
-        margin-bottom: 10px; 
-      }
+      .modal { max-width: 98%; padding: 16px 16px 20px; min-height: 250px; font-size: 16px; max-height: 75vh; }
+      .modal h2 { font-size: 18px !important; margin-bottom: 10px; }
+      .modal .subtitle { font-size: 16px !important; margin-bottom: 10px; }
       .modal-section { margin-top: 10px; }
       .modal-section h4 { font-size: 16px !important; }
       .modal-section ul li { font-size: 16px !important; }
       .modal-section p { font-size: 16px !important; }
-      .modal-close { 
-        width: 32px; 
-        height: 32px; 
-        font-size: 22px; 
-      }
+      .modal-close { width: 32px; height: 32px; font-size: 22px; }
     }
 
     @media (max-width: 600px) {
@@ -593,20 +541,9 @@
       flex-wrap: wrap;
       gap: 20px;
     }
-    .footer-left {
-      flex: 1 1 auto;
-      text-align: center;
-      min-width: 150px;
-    }
-    .footer-center {
-      flex: 0 0 auto;
-      margin: 0 50px;
-    }
-    .footer-right {
-      flex: 1 1 auto;
-      text-align: right;
-      min-width: 150px;
-    }
+    .footer-left { flex: 1 1 auto; text-align: center; min-width: 150px; }
+    .footer-center { flex: 0 0 auto; margin: 0 50px; }
+    .footer-right { flex: 1 1 auto; text-align: right; min-width: 150px; }
     .footer-left p {
       color: #ffffff;
       font-weight: 600;
@@ -636,16 +573,8 @@
     .redesocial-icon.instagram {
       background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjRjcwMCIgZD0iTTIyNC4xIDQxMWMtMTAzIDAtMTg3LTg0LTE4Ny0xODdzODQtMTg3IDE4Ny0xODcgMTg3IDg0IDE4NyAxODctODQgMTg3LTE4NyAxODd6bTAtMzM0Yy04MSAwLTE0NyA2Ni0xNDcgMTQ3czY2IDE0NyAxNDcgMTQ3IDE0Ny02NiAxNDctMTQ3LTY2LTE0Ny0xNDctMTQ3eiIvPjwvc3ZnPg==');
     }
-    .footer-center img {
-      max-height: 80px;
-      width: auto;
-      display: block;
-    }
-    .footer-right .endereco {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #ffffff;
-    }
+    .footer-center img { max-height: 80px; width: auto; display: block; }
+    .footer-right .endereco { font-size: 14px; line-height: 1.6; color: #ffffff; }
     .footer-right .endereco strong { font-weight: 700; color: #ffffff; }
 
     @media (max-width: 768px) {
@@ -763,7 +692,7 @@
   </header>
 
   <!-- ============================================================
-       MAIN – SEM CARROSSEL, COM 60px ABAIXO DO HEADER
+       MAIN
        ============================================================ -->
   <main class="receitas-main">
 
@@ -794,7 +723,7 @@
 
   </main>
 
-  <!-- ===== BARRA SEPARADORA VERMELHA ===== -->
+  <!-- ===== BARRA SEPARADORA VERMELHA (rodapé) ===== -->
   <div class="barra-separadora" style="margin-top:0; border-top:1rem solid #D83135;"></div>
 
   <!-- ============================================================
@@ -1242,8 +1171,103 @@
     const grid = document.getElementById('catalogGrid');
     const tituloEl = document.getElementById('tituloLinha');
 
+    function createCard(recipe) {
+      const count = getLikeCount(recipe.id);
+      const liked = getUserLike(recipe.id);
+
+      const card = document.createElement('div');
+      card.className = 'recipe-card';
+      card.dataset.id = recipe.id;
+
+      const imageDiv = document.createElement('div');
+      imageDiv.className = 'card-image';
+
+      if (recipe.image && recipe.image.trim() !== '') {
+        const cor = getCorDaPolpaPorNomeImagem(recipe.image);
+        if (cor) {
+          imageDiv.style.backgroundColor = cor;
+        } else {
+          imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
+        }
+        const img = document.createElement('img');
+        img.src = recipe.image;
+        img.alt = recipe.name;
+        img.addEventListener('error', () => {
+          imageDiv.innerHTML = '';
+          const span = document.createElement('span');
+          span.textContent = recipe.imageEmoji || '🍽️';
+          imageDiv.appendChild(span);
+        });
+        imageDiv.appendChild(img);
+      } else {
+        const span = document.createElement('span');
+        span.textContent = recipe.imageEmoji || '🍽️';
+        imageDiv.appendChild(span);
+        imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
+      }
+
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'card-content';
+
+      const title = document.createElement('h3');
+      title.textContent = recipe.name;
+
+      const desc = document.createElement('p');
+      desc.className = 'description';
+      desc.textContent = recipe.description;
+
+      const likeArea = document.createElement('div');
+      likeArea.className = 'like-area';
+
+      const likeBtn = document.createElement('button');
+      likeBtn.className = `like-btn${liked ? ' liked' : ''}`;
+      likeBtn.textContent = liked ? '♥' : '♡';
+      likeBtn.setAttribute('aria-label', liked ? 'Descurtir' : 'Curtir');
+      likeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleLike(recipe.id);
+      });
+
+      const likeCountSpan = document.createElement('span');
+      likeCountSpan.className = 'like-count';
+      likeCountSpan.textContent = count;
+
+      likeArea.appendChild(likeBtn);
+      likeArea.appendChild(likeCountSpan);
+
+      const footer = document.createElement('div');
+      footer.className = 'card-footer';
+      const btn = document.createElement('button');
+      btn.className = 'btn-recipe';
+      btn.textContent = 'Ver receita';
+      btn.addEventListener('click', () => openModal(recipe.id));
+      footer.appendChild(btn);
+
+      contentDiv.appendChild(title);
+      contentDiv.appendChild(desc);
+      contentDiv.appendChild(likeArea);
+      contentDiv.appendChild(footer);
+
+      card.appendChild(imageDiv);
+      card.appendChild(contentDiv);
+
+      return card;
+    }
+
+    // Cria um grid separado (usado para renderizar múltiplos grids quando há separador)
+    function createGridElement() {
+      const g = document.createElement('div');
+      g.className = 'catalog-grid';
+      return g;
+    }
+
     function renderCards(categoria) {
-      grid.innerHTML = '';
+      // Limpa tudo do main, exceto o título e o modal
+      const main = document.querySelector('.receitas-main');
+      const modalOverlay = document.getElementById('modalOverlay');
+
+      // Remove grids e barras internas antigas
+      main.querySelectorAll('.catalog-grid, .barra-separadora-interna').forEach(el => el.remove());
 
       let receitasFiltradas = [];
       if (categoria === 'todas') {
@@ -1261,95 +1285,42 @@
       else if (categoria === 'drink') texto = 'DRINKS';
       tituloEl.textContent = texto;
 
+      // Referência para inserir antes do modal
+      const referenciaInsercao = modalOverlay;
+
       if (receitasFiltradas.length === 0) {
-        grid.innerHTML = '<p style="grid-column:1/-1; color:#fff; font-size:24px;">Nenhuma receita encontrada.</p>';
+        const p = document.createElement('p');
+        p.style.cssText = 'color:#fff; font-size:24px;';
+        p.textContent = 'Nenhuma receita encontrada.';
+        main.insertBefore(p, referenciaInsercao);
         return;
       }
 
-      function createCard(recipe) {
-        const count = getLikeCount(recipe.id);
-        const liked = getUserLike(recipe.id);
+      // Se for "todas", separa sobremesas e drinks com a barra de largura total
+      if (categoria === 'todas') {
+        const sobremesas = receitasFiltradas.filter(r => r.id <= 12);
+        const drinks = receitasFiltradas.filter(r => r.id > 12);
 
-        const card = document.createElement('div');
-        card.className = 'recipe-card';
-        card.dataset.id = recipe.id;
+        // Grid de sobremesas
+        const gridSobremesas = createGridElement();
+        sobremesas.forEach(r => gridSobremesas.appendChild(createCard(r)));
+        main.insertBefore(gridSobremesas, referenciaInsercao);
 
-        const imageDiv = document.createElement('div');
-        imageDiv.className = 'card-image';
+        // Barra separadora de fora a fora (fora do grid)
+        const divisor = document.createElement('div');
+        divisor.className = 'barra-separadora-interna';
+        main.insertBefore(divisor, referenciaInsercao);
 
-        if (recipe.image && recipe.image.trim() !== '') {
-          const cor = getCorDaPolpaPorNomeImagem(recipe.image);
-          if (cor) {
-            imageDiv.style.backgroundColor = cor;
-          } else {
-            imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
-          }
-          const img = document.createElement('img');
-          img.src = recipe.image;
-          img.alt = recipe.name;
-          img.addEventListener('error', () => {
-            imageDiv.innerHTML = '';
-            const span = document.createElement('span');
-            span.textContent = recipe.imageEmoji || '🍽️';
-            imageDiv.appendChild(span);
-          });
-          imageDiv.appendChild(img);
-        } else {
-          const span = document.createElement('span');
-          span.textContent = recipe.imageEmoji || '🍽️';
-          imageDiv.appendChild(span);
-          imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
-        }
-
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'card-content';
-
-        const title = document.createElement('h3');
-        title.textContent = recipe.name;
-
-        const desc = document.createElement('p');
-        desc.className = 'description';
-        desc.textContent = recipe.description;
-
-        const likeArea = document.createElement('div');
-        likeArea.className = 'like-area';
-
-        const likeBtn = document.createElement('button');
-        likeBtn.className = `like-btn${liked ? ' liked' : ''}`;
-        likeBtn.textContent = liked ? '♥' : '♡';
-        likeBtn.setAttribute('aria-label', liked ? 'Descurtir' : 'Curtir');
-        likeBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          toggleLike(recipe.id);
-        });
-
-        const likeCountSpan = document.createElement('span');
-        likeCountSpan.className = 'like-count';
-        likeCountSpan.textContent = count;
-
-        likeArea.appendChild(likeBtn);
-        likeArea.appendChild(likeCountSpan);
-
-        const footer = document.createElement('div');
-        footer.className = 'card-footer';
-        const btn = document.createElement('button');
-        btn.className = 'btn-recipe';
-        btn.textContent = 'Ver receita';
-        btn.addEventListener('click', () => openModal(recipe.id));
-        footer.appendChild(btn);
-
-        contentDiv.appendChild(title);
-        contentDiv.appendChild(desc);
-        contentDiv.appendChild(likeArea);
-        contentDiv.appendChild(footer);
-
-        card.appendChild(imageDiv);
-        card.appendChild(contentDiv);
-
-        return card;
+        // Grid de drinks
+        const gridDrinks = createGridElement();
+        drinks.forEach(r => gridDrinks.appendChild(createCard(r)));
+        main.insertBefore(gridDrinks, referenciaInsercao);
+      } else {
+        // Para categorias filtradas, apenas um grid único
+        const g = createGridElement();
+        receitasFiltradas.forEach(r => g.appendChild(createCard(r)));
+        main.insertBefore(g, referenciaInsercao);
       }
-
-      receitasFiltradas.forEach(recipe => grid.appendChild(createCard(recipe)));
     }
 
     // -------------------------------------------------------------
@@ -1424,7 +1395,7 @@
       }, 150);
     });
 
-    console.log('Catálogo de Receitas inicializado (sem carrossel). Título: TODAS AS RECEITAS.');
+    console.log('Catálogo de Receitas inicializado.');
   </script>
 
 </body>
