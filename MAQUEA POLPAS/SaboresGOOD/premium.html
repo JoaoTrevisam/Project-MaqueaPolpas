@@ -671,6 +671,7 @@
       transform: translate(-50%, -50%);
     }
 
+    /* ===== WHATSAPP (APENAS IMAGEM LogoWPP.png, 60px) ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 30px;
@@ -680,14 +681,15 @@
       text-decoration: none;
       transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .whatsapp-float i {
-      font-size: 60px;
-      color: #25D366;
+    .whatsapp-float img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
       filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
       transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .whatsapp-float:hover i { transform: scale(1.12) rotate(-4deg); }
-    .whatsapp-float:active i { transform: scale(0.92); }
+    .whatsapp-float:hover img { transform: scale(1.12) rotate(-4deg); }
+    .whatsapp-float:active img { transform: scale(0.92); }
     .whatsapp-float .whatsapp-tooltip {
       position: absolute;
       right: calc(100% + 12px);
@@ -721,12 +723,12 @@
     }
     @media (max-width: 576px) {
       .whatsapp-float { bottom: 20px; right: 20px; }
-      .whatsapp-float i { font-size: 48px; }
+      .whatsapp-float img { width: 48px; height: 48px; }
       .whatsapp-float .whatsapp-tooltip { display: none; }
     }
     @media (max-width: 400px) {
       .whatsapp-float { bottom: 16px; right: 16px; }
-      .whatsapp-float i { font-size: 40px; }
+      .whatsapp-float img { width: 40px; height: 40px; }
     }
 
     /* rodapé */
@@ -1097,13 +1099,12 @@
     </div>
   </footer>
 
-  <!-- WHATSAPP -->
+  <!-- WHATSAPP (APENAS IMAGEM LogoWPP.png, 60px) -->
   <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AAs%21"
      target="_blank"
      class="whatsapp-float"
      aria-label="Fale conosco no WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-    <span class="whatsapp-tooltip">Fale conosco</span>
+    <img src="./componentes-home/image/LogoWPP.png" alt="WhatsApp">
   </a>
 
   <script>

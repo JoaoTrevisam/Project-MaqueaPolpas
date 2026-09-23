@@ -139,36 +139,31 @@
 
         /* ============================================================
            LOGO DO HEADER - BLOCO BASE (MOBILE / PADRÃO)
-           ============================================================
-           Aqui você altera os tamanhos da logo no CELULAR (mobile).
            ============================================================ */
         .marca {
             position: absolute;
             top: 0;
             left: 0;
             z-index: 20;
-            width: 140px;          /* ← LARGURA da área da logo (mobile) */
-            height: 50px;          /* ← ALTURA da área da logo (mobile) */
+            width: 140px;
+            height: 50px;
             display: flex;
             align-items: flex-start;
-            margin-left: 110px;    /* ← POSIÇÃO horizontal da logo (mobile) */
-            margin-top: 9px;       /* ← POSIÇÃO vertical da logo (mobile) */
+            margin-left: 110px;
+            margin-top: 9px;
         }
         .marca img {
             position: relative;
             z-index: 2;
-            width: 110px !important;   /* ← LARGURA da imagem da logo (mobile) */
-            height: auto !important;   /* ← ALTURA automática (mantém proporção) */
+            width: 110px !important;
+            height: auto !important;
             max-width: none;
             object-fit: contain;
-            margin: 8px 0 0;           /* ← AJUSTE vertical fino da imagem (mobile) */
+            margin: 8px 0 0;
         }
         .marca::before {
             content: none;
         }
-        /* ============================================================
-           FIM DO BLOCO BASE DA LOGO (MOBILE)
-           ============================================================ */
 
         .menu-top {
             position: absolute;
@@ -639,23 +634,18 @@
 
             /* ============================================================
                LOGO DO HEADER - BLOCO DESKTOP (a partir de 767px)
-               ============================================================
-               Aqui você altera os tamanhos da logo no COMPUTADOR (desktop).
                ============================================================ */
             .marca {
-                width: 200px;          /* ← LARGURA da área da logo (desktop) */
-                height: 3.4rem;        /* ← ALTURA da área da logo (desktop) */
-                margin-left: 110.5px;    /* ← POSIÇÃO horizontal da logo (desktop) */
-                margin-top: 10px;       /* ← POSIÇÃO vertical da logo (desktop) */
+                width: 200px;
+                height: 3.4rem;
+                margin-left: 110.5px;
+                margin-top: 10px;
             }
             .marca img {
-                width: 170px !important;   /* ← LARGURA da imagem da logo (desktop) */
-                height: auto !important;   /* ← ALTURA automática (mantém proporção) */
-                margin-top: -2px;          /* ← AJUSTE vertical fino da imagem (desktop) */
+                width: 170px !important;
+                height: auto !important;
+                margin-top: -2px;
             }
-            /* ============================================================
-               FIM DO BLOCO DESKTOP DA LOGO
-               ============================================================ */
 
             .menu-top {
                 position: relative;
@@ -668,13 +658,12 @@
             }
             .menu-top>ul {
                 padding-top: 1.4rem;
-                margin-left: -20px;
+                margin-left: -60px;
             }
             .menu-top>ul>li {
                 padding-bottom: 0.5rem;
             }
             
-            /* Garante que a área de hover do item com submenu alcance o submenu */
             .menu-top>ul>li.menu-has-sub {
                 padding-bottom: 0.8rem;
                 margin-bottom: -0.3rem;
@@ -689,9 +678,6 @@
                 cursor: pointer;
             }
             
-            /* ============================================================
-               SUBMENUS - ESTILO CORRETO PARA DESKTOP
-               ============================================================ */
             .menu-top>ul>li.menu-has-sub {
                 position: relative;
             }
@@ -711,7 +697,6 @@
                 z-index: 1000;
             }
             
-            /* PONTE INVISÍVEL: cobre o gap entre o link e o submenu */
             .menu-top-sub::before {
                 content: "";
                 position: absolute;
@@ -722,17 +707,14 @@
                 background: transparent;
             }
             
-            /* Mostra submenu no hover - CORREÇÃO PRINCIPAL */
             .menu-top>ul>li.menu-has-sub:hover .menu-top-sub {
                 display: block !important;
             }
             
-            /* Mostra submenu quando o link recebe foco (para acessibilidade) */
             .menu-top>ul>li.menu-has-sub:focus-within .menu-top-sub {
                 display: block !important;
             }
             
-            /* Larguras fixas dos submenus */
             .menu-catalogo-sub {
                 min-width: 272px !important;
                 max-width: 272px !important;
@@ -1090,6 +1072,7 @@
             }
         }
 
+        /* ===== WHATSAPP (APENAS IMAGEM LogoWPP.png, 60px) ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -1105,9 +1088,10 @@
         .whatsapp-float:active {
             transform: scale(0.92);
         }
-        .whatsapp-float i {
-            font-size: 60px;
-            color: #25D366;
+        .whatsapp-float img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
             filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
         }
         .whatsapp-float .whatsapp-tooltip {
@@ -1146,8 +1130,9 @@
                 bottom: 20px;
                 right: 20px;
             }
-            .whatsapp-float i {
-                font-size: 48px;
+            .whatsapp-float img {
+                width: 48px;
+                height: 48px;
             }
             .whatsapp-float .whatsapp-tooltip {
                 display: none;
@@ -1158,8 +1143,9 @@
                 bottom: 16px;
                 right: 16px;
             }
-            .whatsapp-float i {
-                font-size: 40px;
+            .whatsapp-float img {
+                width: 40px;
+                height: 40px;
             }
         }
 
@@ -1496,34 +1482,46 @@
         }
 
         /* ============================================================
-           AJUSTE - Mover "MANDE UM CURRÍCULO" 20px para a ESQUERDA
+           AJUSTE - ALINHAR OS TÍTULOS "MANDE UMA MENSAGEM" E "ATENDIMENTO"
+           NA MESMA ALTURA E POSIÇÃO
            ============================================================ */
-        
-        /* Remove margins negativos anteriores */
-        .col-sm-8.pb-4 {
+
+        .row-eq-height .col-sm-8.pb-4.offset-sm-2.offset-md-1 {
             margin-left: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 1.5rem !important;
         }
 
-        .col-sm-4.pb-4 {
-            margin-left: 0 !important;
+        .row-eq-height {
+            display: flex !important;
+            align-items: flex-start !important;
         }
 
-        /* Mover a coluna do formulário 20px para a esquerda usando transform */
+        .row-eq-height > [class*="col-"] {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        .row-eq-height .contato-title {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            line-height: 1.2 !important;
+        }
+
         @media (min-width: 576px) {
-            .col-sm-8.pb-4 {
+            .row-eq-height .col-sm-8.pb-4 {
                 transform: translateX(-95px) !important;
             }
         }
 
-        /* Em telas menores, remove o deslocamento para não quebrar o layout */
         @media (max-width: 575px) {
-            .col-sm-8.pb-4 {
-                transform: translateX(50px) !important;
+            .row-eq-height .col-sm-8.pb-4 {
+                transform: translateX(0) !important;
             }
         }
 
         /* ============================================================
-          FIM DOS AJUSTES - Mover "MANDE UM CURRÍCULO" 20px para ESQUERDA
+          FIM DOS AJUSTES - ALINHAMENTO DOS TÍTULOS
           ============================================================ */
 
         #sendContact #cep {
@@ -2217,10 +2215,9 @@
         </div>
     </footer>
 
-    <!-- ===== WHATSAPP ===== -->
+    <!-- ===== WHATSAPP (APENAS IMAGEM LogoWPP.png, 60px) ===== -->
     <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AA%21" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Fale conosco</span>
+        <img src="../Princpal/image/LogoWPP.png" alt="WhatsApp">
     </a>
 
     <!-- ===== TOAST DE SUCESSO ===== -->

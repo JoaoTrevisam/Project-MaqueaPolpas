@@ -88,14 +88,13 @@
            ============================================================ */
         .about-center .titulo-principal {
             font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
-            font-size: 4.3rem;  /* ← ALTERE AQUI O TAMANHO DO TÍTULO "Quem somos?" */
+            font-size: 4.3rem;
             font-weight: 400;
             line-height: 1.2;
             text-align: center;
             margin-bottom: 4px;
-            color: #D83135; /* VERMELHO */
+            color: #D83135;
             letter-spacing: 3px;
-            /* CONTORNO BRANCO */
             text-shadow: 
                 -2px -2px 0 #fff,
                 2px -2px 0 #fff,
@@ -105,13 +104,12 @@
         }
         .about-center .subtitulo {
             font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
-            font-size: 2.8rem;  /* ← ALTERE AQUI O TAMANHO DO TÍTULO "Somos a MAQUEA POLPAS!" */
+            font-size: 2.8rem;
             font-weight: 400;
             text-align: center;
             margin-bottom: 30px;
             letter-spacing: 4.4px;
-            color: #D83135; /* VERMELHO */
-            /* CONTORNO BRANCO */
+            color: #D83135;
             text-shadow: 
                 -2px -2px 0 #fff,
                 2px -2px 0 #fff,
@@ -231,10 +229,10 @@
                 padding: 0 10px;
             }
             .about-center .titulo-principal {
-                font-size: 2.8rem;  /* ← TAMANHO PARA TABLET */
+                font-size: 2.8rem;
             }
             .about-center .subtitulo {
-                font-size: 2.2rem;  /* ← TAMANHO PARA TABLET */
+                font-size: 2.2rem;
             }
             .about-center .p-bloco {
                 font-size: 1.05rem;
@@ -248,10 +246,10 @@
                 max-height: 140px;
             }
             .about-center .titulo-principal {
-                font-size: 2.2rem;  /* ← TAMANHO PARA CELULAR */
+                font-size: 2.2rem;
             }
             .about-center .subtitulo {
-                font-size: 1.8rem;  /* ← TAMANHO PARA CELULAR */
+                font-size: 1.8rem;
             }
             .about-center .p-bloco {
                 font-size: 0.95rem;
@@ -394,7 +392,7 @@
         }
 
         /* ============================================================
-           ESTILOS DO BOTÃO WHATSAPP (com ícone Bootstrap Icons)
+           ESTILOS DO BOTÃO WHATSAPP (com imagem LogoWPP.png)
            ============================================================ */
         .whatsapp-float {
             position: fixed;
@@ -405,16 +403,17 @@
             text-decoration: none;
             transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .whatsapp-float i {
-            font-size: 60px;
-            color: #25D366;
+        .whatsapp-float img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
             filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
             transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .whatsapp-float:hover i {
+        .whatsapp-float:hover img {
             transform: scale(1.12) rotate(-4deg);
         }
-        .whatsapp-float:active i {
+        .whatsapp-float:active img {
             transform: scale(0.92);
         }
         .whatsapp-float .whatsapp-tooltip {
@@ -450,12 +449,12 @@
         }
         @media (max-width: 576px) {
             .whatsapp-float { bottom: 20px; right: 20px; }
-            .whatsapp-float i { font-size: 48px; }
+            .whatsapp-float img { width: 48px; height: 48px; }
             .whatsapp-float .whatsapp-tooltip { display: none; }
         }
         @media (max-width: 400px) {
             .whatsapp-float { bottom: 16px; right: 16px; }
-            .whatsapp-float i { font-size: 40px; }
+            .whatsapp-float img { width: 40px; height: 40px; }
         }
 
         /* ============================================================
@@ -489,9 +488,6 @@
             position: relative;
         }
         
-        /* ============================================================
-           ESTILO BASE DOS SUBMENUS (BORDAS RETAS E SEM ARREDONDAMENTO)
-           ============================================================ */
         .menu-top-sub {
             display: none;
             position: absolute;
@@ -500,28 +496,20 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             padding: 2px 20px;
             z-index: 1000;
-            border-radius: 0 !important; /* BORDAS RETAS */
+            border-radius: 0 !important;
         }
         
-        /* ============================================================
-           AJUSTE DE POSIÇÃO DOS SUBMENUS (PARA CIMA)
-           ============================================================ */
         .menu-has-sub .menu-top-sub {
-            top: 39px; /* MESMA POSIÇÃO DO CÓDIGO MEMORIZADO */
+            top: 39px;
         }
         
-        /* ============================================================
-           TAMANHO INDIVIDUAL DE CADA SUBMENU
-           ============================================================ */
-        /* SUBMENU DO CATÁLOGO - LARGURA PERSONALIZADA */
         .menu-catalogo-sub {
-            min-width: 272px; /* MESMO TAMANHO DO CÓDIGO MEMORIZADO */
+            min-width: 272px;
             max-width: 272px;
         }
         
-        /* SUBMENU DAS RECEITAS - LARGURA PERSONALIZADA */
         .menu-revendedor-sub {
-            min-width: 230px; /* MESMO TAMANHO DO CÓDIGO MEMORIZADO */
+            min-width: 230px;
             max-width: 230px;
         }
         
@@ -732,14 +720,14 @@
     </footer>
 
     <!-- ============================================================ -->
-    <!-- BOTÃO WHATSAPP COM ÍCONE DO BOOTSTRAP ICONS E VERDE          -->
+    <!-- BOTÃO WHATSAPP COM IMAGEM LogoWPP.png                        -->
     <!-- ============================================================ -->
     <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AAs%21"
        target="_blank"
        class="whatsapp-float"
        aria-label="Fale conosco no WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-        <span class="whatsapp-tooltip">Fale conosco</span>
+        <img src="./componentes-home/image/LogoWPP.png" alt="WhatsApp">
+        
     </a>
 
     <script>
