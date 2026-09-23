@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Maquea Polpas | CONTATO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@
             opacity: 0.6;
             cursor: not-allowed;
         }
-        
+
         /* ============================================================
           ESTRUTURA PARA RODAPÉ NO FINAL
           ============================================================ */
@@ -49,30 +49,28 @@
             line-height: 1.3;
             background: #008349;
         }
-        
-        /* CONTEÚDO PRINCIPAL - OCUPA TODO O ESPAÇO DISPONÍVEL */
+
         .page-space {
             flex: 1 0 auto;
         }
-        
-        /* RODAPÉ - FICA NO FINAL */
+
         .footer-custom {
             flex-shrink: 0;
             background-color: #3E464C;
             padding: 30px 0 20px;
         }
-        
+
         .barra-separadora {
             flex-shrink: 0;
             width: 100%;
             margin-left: auto;
             border-top: 1rem solid #D83135;
         }
-        
+
         .header {
             flex-shrink: 0;
         }
-        
+
         .spacer-top {
             flex-shrink: 0;
         }
@@ -102,31 +100,17 @@
             margin-right: -12px;
             margin-left: -12px;
         }
-        .row>* {
+        .row > * {
             min-height: 1px;
             padding-right: 12px;
             padding-left: 12px;
         }
-        .col-3 {
-            flex: 0 0 auto;
-            width: 25%;
-        }
-        .col-4 {
-            flex: 0 0 auto;
-            width: 33.333333%;
-        }
-        .col-5 {
-            flex: 0 0 auto;
-            width: 41.666667%;
-        }
-        .col-9 {
-            flex: 0 0 auto;
-            width: 75%;
-        }
-        .col-12 {
-            flex: 0 0 auto;
-            width: 100%;
-        }
+        .col-3 { flex: 0 0 auto; width: 25%; }
+        .col-4 { flex: 0 0 auto; width: 33.333333%; }
+        .col-5 { flex: 0 0 auto; width: 41.666667%; }
+        .col-9 { flex: 0 0 auto; width: 75%; }
+        .col-12 { flex: 0 0 auto; width: 100%; }
+
         .header {
             position: fixed;
             top: 0;
@@ -180,28 +164,28 @@
             padding: 2rem;
             background-color: var(--cream);
         }
-        .menu-top>ul {
+        .menu-top > ul {
             display: inline-flex;
             padding-top: 24px;
             margin-left: 10px;
         }
-        .menu-top>ul>li {
+        .menu-top > ul > li {
             position: relative;
             flex-grow: 1;
             margin: 0 1.6rem 0 0;
             color: var(--green);
         }
-        .menu-top.open>ul {
+        .menu-top.open > ul {
             display: block;
             width: 100%;
             margin-left: 0;
         }
-        .menu-top.open>ul>li {
+        .menu-top.open > ul > li {
             display: block;
             padding: 1rem 0;
         }
-        .menu-top>ul>li a,
-        .menu-top>ul>li span {
+        .menu-top > ul > li a,
+        .menu-top > ul > li span {
             margin: 0;
             padding: 0;
             color: var(--green);
@@ -210,17 +194,17 @@
             line-height: 1;
             cursor: pointer;
         }
-        .menu-top>ul>li:hover,
-        .menu-top>ul>li:hover>a,
-        .menu-top>ul>li:hover>span,
-        .menu-top>ul>li a:hover,
-        .menu-top>ul>li.active a {
+        .menu-top > ul > li:hover,
+        .menu-top > ul > li:hover > a,
+        .menu-top > ul > li:hover > span,
+        .menu-top > ul > li a:hover,
+        .menu-top > ul > li.active a {
             color: var(--green);
             font-weight: 700;
         }
 
         /* ============================================================
-           SUBMENUS CORRIGIDOS
+           SUBMENUS
            ============================================================ */
         .menu-top-sub {
             position: relative;
@@ -246,26 +230,26 @@
             color: var(--green);
             font-weight: 700;
         }
-        .menu-top>ul>li.menu-has-sub {
+        .menu-top > ul > li.menu-has-sub {
             position: relative;
         }
-        .menu-top>ul>li.menu-franquia .menu-top-sub {
+        .menu-top > ul > li.menu-franquia .menu-top-sub {
             min-width: 13rem;
             max-width: none;
         }
-        .menu-top>ul>li.menu-franquia .menu-top-sub ul {
+        .menu-top > ul > li.menu-franquia .menu-top-sub ul {
             display: block;
         }
-        .menu-top>ul>li.menu-franquia .menu-top-sub-item {
+        .menu-top > ul > li.menu-franquia .menu-top-sub-item {
             display: block;
             width: 100%;
             margin: 0;
             padding: 0;
         }
-        .menu-top>ul>li.menu-franquia .menu-top-sub-item+.menu-top-sub-item {
+        .menu-top > ul > li.menu-franquia .menu-top-sub-item + .menu-top-sub-item {
             margin-top: 0.45rem;
         }
-        .menu-top>ul>li.menu-franquia .menu-top-sub-item a {
+        .menu-top > ul > li.menu-franquia .menu-top-sub-item a {
             display: block;
             padding: 0.12rem 0;
             white-space: nowrap;
@@ -274,6 +258,10 @@
             padding: 0.7rem 0 0;
             box-shadow: none;
         }
+
+        /* ============================================================
+           BOTÃO HAMBÚRGUER - COR #D83135
+           ============================================================ */
         .menu-hamb {
             position: relative;
             display: block;
@@ -291,17 +279,12 @@
             width: 100%;
             height: 3px;
             border-radius: 1px;
-            background-color: var(--primaryColor);
+            background-color: #D83135; /* 👈 COR DO HAMBÚRGUER (vermelho) */
         }
-        .menu-hamb span:nth-child(1) {
-            top: 7px;
-        }
-        .menu-hamb span:nth-child(2) {
-            top: 14px;
-        }
-        .menu-hamb span:nth-child(3) {
-            top: 21px;
-        }
+        .menu-hamb span:nth-child(1) { top: 7px; }
+        .menu-hamb span:nth-child(2) { top: 14px; }
+        .menu-hamb span:nth-child(3) { top: 21px; }
+
         .search-icon {
             display: none !important;
         }
@@ -313,8 +296,8 @@
         .bkg-page-contato {
             padding: 48px 0 64px;
         }
-        
-        /* ===== TÍTULOS COM LUCKIEST GUY E VERMELHO ===== */
+
+        /* ===== TÍTULOS ===== */
         .contato-title {
             font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
             font-size: 4.0rem;
@@ -322,7 +305,7 @@
             line-height: 1.2;
             letter-spacing: 6px;
             color: #D83135;
-            text-shadow: 
+            text-shadow:
                 -2px -2px 0 #fff,
                 2px -2px 0 #fff,
                 -2px 2px 0 #fff,
@@ -330,7 +313,7 @@
                 0 0 8px #ffffff4d;
             margin-bottom: 1.6rem;
         }
-        
+
         .contato-subtitle {
             font-family: 'Luckiest Guy', 'Fredoka', 'Nunito', sans-serif;
             font-size: 4.2rem;
@@ -338,7 +321,7 @@
             line-height: 1.2;
             letter-spacing: 3px;
             color: #D83135;
-            text-shadow: 
+            text-shadow:
                 -2px -2px 0 #fff,
                 2px -2px 0 #fff,
                 -2px 2px 0 #fff,
@@ -346,22 +329,14 @@
                 0 0 8px #ffffff4d;
             margin-bottom: 1rem;
         }
-        
+
         @media (max-width: 992px) {
-            .contato-title {
-                font-size: 2.8rem;
-            }
-            .contato-subtitle {
-                font-size: 2.2rem;
-            }
+            .contato-title { font-size: 2.8rem; }
+            .contato-subtitle { font-size: 2.2rem; }
         }
         @media (max-width: 576px) {
-            .contato-title {
-                font-size: 2.2rem;
-            }
-            .contato-subtitle {
-                font-size: 1.8rem;
-            }
+            .contato-title { font-size: 2.2rem; }
+            .contato-subtitle { font-size: 1.8rem; }
         }
 
         #sendContact .label-inline {
@@ -500,15 +475,9 @@
         .contato-text a:hover {
             text-decoration: underline;
         }
-        .mt-4 {
-            margin-top: 1.5rem;
-        }
-        .pb-4 {
-            padding-bottom: 1.5rem;
-        }
-        .mt-3 {
-            margin-top: 0.75rem;
-        }
+        .mt-4 { margin-top: 1.5rem; }
+        .pb-4 { padding-bottom: 1.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
 
         /* ===== Footer ===== */
         .footer {
@@ -577,64 +546,29 @@
             width: 100%;
             height: auto;
         }
+
+        /* ============================================================
+          MEDIA QUERIES - RESPONSIVIDADE COMPLETA
+          ============================================================ */
         @media (min-width: 576px) {
-            .container {
-                max-width: 540px;
-            }
-            .col-sm-1 {
-                flex: 0 0 auto;
-                width: 8.333333%;
-            }
-            .col-sm-3 {
-                flex: 0 0 auto;
-                width: 25%;
-            }
-            .col-sm-4 {
-                flex: 0 0 auto;
-                width: 33.333333%;
-            }
-            .col-sm-6 {
-                flex: 0 0 auto;
-                width: 50%;
-            }
-            .col-sm-8 {
-                flex: 0 0 auto;
-                width: 66.666667%;
-            }
-            .d-sm-none {
-                display: none !important;
-            }
+            .container { max-width: 540px; }
+            .col-sm-1 { flex: 0 0 auto; width: 8.333333%; }
+            .col-sm-3 { flex: 0 0 auto; width: 25%; }
+            .col-sm-4 { flex: 0 0 auto; width: 33.333333%; }
+            .col-sm-6 { flex: 0 0 auto; width: 50%; }
+            .col-sm-8 { flex: 0 0 auto; width: 66.666667%; }
+            .d-sm-none { display: none !important; }
         }
         @media (min-width: 767px) {
-            html,
-            body {
-                font-size: 16px;
-            }
-            .container {
-                max-width: 720px;
-            }
-            .col-md-2 {
-                flex: 0 0 auto;
-                width: 16.666667%;
-            }
-            .col-md-8 {
-                flex: 0 0 auto;
-                width: 66.666667%;
-            }
-            .col-md-9 {
-                flex: 0 0 auto;
-                width: 75%;
-            }
-            .offset-md-2 {
-                margin-left: 16.666667%;
-            }
-            .header {
-                height: 3.6rem;
-            }
+            html, body { font-size: 16px; }
+            .container { max-width: 720px; }
+            .col-md-2 { flex: 0 0 auto; width: 16.666667%; }
+            .col-md-8 { flex: 0 0 auto; width: 66.666667%; }
+            .col-md-9 { flex: 0 0 auto; width: 75%; }
+            .offset-md-2 { margin-left: 16.666667%; }
+            .header { height: 3.6rem; }
 
-            /* ============================================================
-               LOGO DO HEADER - BLOCO DESKTOP (a partir de 767px)
-               ============================================================ */
+            /* LOGO DO HEADER - DESKTOP */
             .marca {
                 width: 200px;
                 height: 3.4rem;
@@ -656,32 +590,32 @@
                 margin-left: 10px;
                 overflow: visible;
             }
-            .menu-top>ul {
+            .menu-top > ul {
                 padding-top: 1.4rem;
                 margin-left: -60px;
             }
-            .menu-top>ul>li {
+            .menu-top > ul > li {
                 padding-bottom: 0.5rem;
             }
-            
-            .menu-top>ul>li.menu-has-sub {
+
+            .menu-top > ul > li.menu-has-sub {
                 padding-bottom: 0.8rem;
                 margin-bottom: -0.3rem;
             }
-            
-            .menu-top>ul>li,
-            .menu-top>ul>li a {
+
+            .menu-top > ul > li,
+            .menu-top > ul > li a {
                 font-size: var(--navProductFontSize);
                 line-height: 1rem;
             }
-            .menu-top>ul>li:hover {
+            .menu-top > ul > li:hover {
                 cursor: pointer;
             }
-            
-            .menu-top>ul>li.menu-has-sub {
+
+            .menu-top > ul > li.menu-has-sub {
                 position: relative;
             }
-            
+
             .menu-top-sub {
                 position: absolute;
                 top: 100% !important;
@@ -696,7 +630,7 @@
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
                 z-index: 1000;
             }
-            
+
             .menu-top-sub::before {
                 content: "";
                 position: absolute;
@@ -706,15 +640,15 @@
                 height: 2px;
                 background: transparent;
             }
-            
-            .menu-top>ul>li.menu-has-sub:hover .menu-top-sub {
+
+            .menu-top > ul > li.menu-has-sub:hover .menu-top-sub {
                 display: block !important;
             }
-            
-            .menu-top>ul>li.menu-has-sub:focus-within .menu-top-sub {
+
+            .menu-top > ul > li.menu-has-sub:focus-within .menu-top-sub {
                 display: block !important;
             }
-            
+
             .menu-catalogo-sub {
                 min-width: 272px !important;
                 max-width: 272px !important;
@@ -723,25 +657,25 @@
                 min-width: 230px !important;
                 max-width: 230px !important;
             }
-            
+
             .menu-top-sub ul {
                 display: block !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 list-style: none !important;
             }
-            
+
             .menu-top-sub-item {
                 display: block !important;
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
-            
-            .menu-top-sub-item+.menu-top-sub-item {
+
+            .menu-top-sub-item + .menu-top-sub-item {
                 margin-top: 0 !important;
             }
-            
+
             .menu-top-sub-item a {
                 display: block !important;
                 padding: 10px 4px !important;
@@ -754,27 +688,27 @@
                 text-decoration: none !important;
                 border-bottom: none !important;
             }
-            
+
             .menu-top-sub-item a:hover {
                 color: #008349 !important;
                 font-weight: 700 !important;
                 background: transparent !important;
                 border-bottom-color: transparent;
             }
-            
+
             .menu-top-sub-item:last-child a {
                 border-bottom: none;
             }
-            
-            .menu-top>ul>li.menu-franquia .menu-top-sub {
+
+            .menu-top > ul > li.menu-franquia .menu-top-sub {
                 left: 0;
                 width: 13rem;
                 padding: 0.85rem 1rem;
             }
-            .menu-top>ul>li.menu-franquia .menu-top-sub-item {
+            .menu-top > ul > li.menu-franquia .menu-top-sub-item {
                 margin: 0;
             }
-            .menu-top>ul>li.menu-franquia .menu-top-sub-item+.menu-top-sub-item {
+            .menu-top > ul > li.menu-franquia .menu-top-sub-item + .menu-top-sub-item {
                 margin-top: 0.45rem;
             }
             .spacer-top {
@@ -785,29 +719,20 @@
             }
         }
         @media (min-width: 992px) {
-            .container {
-                max-width: 960px;
-            }
+            .container { max-width: 960px; }
         }
         @media (min-width: 1200px) {
-            html,
-            body {
-                font-size: 18px;
-            }
-            .container {
-                max-width: 1140px;
-            }
-            .text-green {
-                color: var(--green) !important;
-            }
+            html, body { font-size: 18px; }
+            .container { max-width: 1140px; }
+            .text-green { color: var(--green) !important; }
         }
 
         /* ============================================================
           AJUSTES PARA MOBILE - SUBMENUS OCUPAM A LARGURA TOTAL
           ============================================================ */
         @media (max-width: 766px) {
-            .menu-top.open>ul>li.menu-has-sub .menu-top-sub,
-            .menu-top.open>ul>li.menu-franquia .menu-top-sub {
+            .menu-top.open > ul > li.menu-has-sub .menu-top-sub,
+            .menu-top.open > ul > li.menu-franquia .menu-top-sub {
                 position: static !important;
                 display: block !important;
                 width: 100% !important;
@@ -821,13 +746,13 @@
                 margin-top: 0 !important;
             }
 
-            .menu-top.open>ul>li.menu-has-sub .menu-top-sub::before,
-            .menu-top.open>ul>li.menu-franquia .menu-top-sub::before {
+            .menu-top.open > ul > li.menu-has-sub .menu-top-sub::before,
+            .menu-top.open > ul > li.menu-franquia .menu-top-sub::before {
                 display: none !important;
             }
 
-            .menu-top.open>ul>li.menu-has-sub .menu-top-sub-item a,
-            .menu-top.open>ul>li.menu-franquia .menu-top-sub-item a {
+            .menu-top.open > ul > li.menu-has-sub .menu-top-sub-item a,
+            .menu-top.open > ul > li.menu-franquia .menu-top-sub-item a {
                 display: block !important;
                 padding: 0.35rem 0 !important;
                 color: #008349 !important;
@@ -838,8 +763,8 @@
                 border-bottom: none !important;
             }
 
-            .menu-top.open>ul>li.menu-has-sub .menu-top-sub-item a:hover,
-            .menu-top.open>ul>li.menu-franquia .menu-top-sub-item a:hover {
+            .menu-top.open > ul > li.menu-has-sub .menu-top-sub-item a:hover,
+            .menu-top.open > ul > li.menu-franquia .menu-top-sub-item a:hover {
                 color: #008349 !important;
                 font-weight: 700 !important;
             }
@@ -848,7 +773,6 @@
         /* ===================================================
           ALTERAÇÕES SOLICITADAS (APENAS NO CONTEÚDO)
           =================================================== */
-
         .page-space,
         .bkg-page-contato {
             background-color: var(--green) !important;
@@ -942,14 +866,10 @@
             border-top: 1rem solid #D83135;
         }
         @media (max-width:700px) {
-            .barra-separadora {
-                border-top-width: 0.75rem;
-            }
+            .barra-separadora { border-top-width: 0.75rem; }
         }
         @media (max-width:450px) {
-            .barra-separadora {
-                border-top-width: 0.6rem;
-            }
+            .barra-separadora { border-top-width: 0.6rem; }
         }
 
         .footer-custom {
@@ -1014,7 +934,6 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 65.3 65.3'%3E%3Ccircle cx='32.7' cy='32.7' r='32.7' fill='%23D83135'/%3E%3Cpath fill='%23fff' d='M45.2 22.3c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2c0-1.2 1-2.2 2.2-2.2s2.2 1 2.2 2.2zM42.4 32.4c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4S27.8 23 33 23s9.4 4.2 9.4 9.4zm-3.4 0c0-3.3-2.7-6-6-6s-6 2.7-6 6 2.7 6 6 6 6-2.7 6-6zM52 24.8c0-6.4-5.1-11.5-11.5-11.5H24.8c-6.4 0-11.5 5.1-11.5 11.5v15.7c0 6.4 5.1 11.5 11.5 11.5h15.7C46.9 52 52 46.9 52 40.5V24.8zm-3.8 15.5c0 4.4-3.5 7.9-7.9 7.9H25c-4.4 0-7.9-3.5-7.9-7.9V25c0-4.4 3.5-7.9 7.9-7.9h15.3c4.4 0 7.9 3.5 7.9 7.9v15.3z'/%3E%3C/svg%3E") !important;
         }
 
-        /* ===== LOGO DO FOOTER - TAMANHO AJUSTADO ===== */
         .footer-center img {
             max-height: 80px;
             width: auto;
@@ -1064,15 +983,11 @@
             }
         }
         @media (max-width: 480px) {
-            .footer-left p {
-                font-size: 14px;
-            }
-            .footer-right .endereco {
-                font-size: 13px;
-            }
+            .footer-left p { font-size: 14px; }
+            .footer-right .endereco { font-size: 13px; }
         }
 
-        /* ===== WHATSAPP (APENAS IMAGEM LogoWPP.png, 60px) ===== */
+        /* ===== WHATSAPP ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -1246,12 +1161,12 @@
             transition: left 0.28s cubic-bezier(0.34, 1.45, 0.64, 1);
         }
 
-        .switch-input:checked+.switch-icon {
+        .switch-input:checked + .switch-icon {
             background-color: var(--green);
             border-color: rgba(255, 255, 255, 0.85);
         }
 
-        .switch-input:checked+.switch-icon::after {
+        .switch-input:checked + .switch-icon::after {
             left: calc(100% - var(--sw-h) + var(--sw-pad));
         }
 
@@ -1263,7 +1178,7 @@
             width: calc(var(--sw-h) - (var(--sw-pad) * 2) + 3px);
         }
 
-        .switch-input:focus-visible+.switch-icon {
+        .switch-input:focus-visible + .switch-icon {
             outline: 3px solid #fff;
             outline-offset: 3px;
         }
@@ -1379,8 +1294,8 @@
         }
 
         @media (min-width: 576px) and (max-width: 766px) {
-            .bkg-page-contato>.container>.row>.col-sm-8,
-            .bkg-page-contato>.container>.row>.col-sm-4 {
+            .bkg-page-contato > .container > .row > .col-sm-8,
+            .bkg-page-contato > .container > .row > .col-sm-4 {
                 width: 100%;
             }
             .contato-info-bloco {
@@ -1476,16 +1391,12 @@
                 --sw-w: 56px;
                 --sw-h: 30px;
             }
-            .switch-title {
-                font-size: 0.95rem;
-            }
+            .switch-title { font-size: 0.95rem; }
         }
 
         /* ============================================================
-           AJUSTE - ALINHAR OS TÍTULOS "MANDE UMA MENSAGEM" E "ATENDIMENTO"
-           NA MESMA ALTURA E POSIÇÃO
+           AJUSTE - ALINHAR OS TÍTULOS
            ============================================================ */
-
         .row-eq-height .col-sm-8.pb-4.offset-sm-2.offset-md-1 {
             margin-left: 0 !important;
             padding-top: 0 !important;
@@ -1520,10 +1431,6 @@
             }
         }
 
-        /* ============================================================
-          FIM DOS AJUSTES - ALINHAMENTO DOS TÍTULOS
-          ============================================================ */
-
         #sendContact #cep {
             flex: 1;
             width: 100%;
@@ -1538,9 +1445,7 @@
             line-height: 1.5;
             margin-top: 6px;
         }
-        .endereco-linha span {
-            white-space: nowrap;
-        }
+        .endereco-linha span { white-space: nowrap; }
         .endereco-linha .separador {
             color: #fff;
             font-weight: 400 !important;
@@ -1553,9 +1458,7 @@
             }
         }
 
-        .street-loading {
-            position: relative;
-        }
+        .street-loading { position: relative; }
         .street-loading::after {
             content: "⏳";
             position: absolute;
@@ -1566,12 +1469,8 @@
             animation: spin 1s linear infinite;
         }
         @keyframes spin {
-            from {
-                transform: translateY(-50%) rotate(0deg);
-            }
-            to {
-                transform: translateY(-50%) rotate(360deg);
-            }
+            from { transform: translateY(-50%) rotate(0deg); }
+            to { transform: translateY(-50%) rotate(360deg); }
         }
 
         .contador-ruas {
@@ -1596,13 +1495,8 @@
             animation: pulse 1s ease-in-out infinite;
         }
         @keyframes pulse {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .toast-notification {
@@ -1687,7 +1581,6 @@
             }
         }
 
-        /* ESTILOS PARA LOGRADOURO E NÚMERO - MESMO TAMANHO DE CIDADE E UF */
         .endereco-row {
             display: flex;
             flex-wrap: wrap;
@@ -1740,7 +1633,6 @@
             }
         }
 
-        /* ===== AJUSTE - ATENDIMENTO NA MESMA LINHA QUE MANDE UM CURRÍCULO ===== */
         .contato-info-bloco .contato-title {
             margin-top: 0;
             padding-top: 0;
@@ -1774,26 +1666,17 @@
             font-weight: 700 !important;
         }
 
-        .menu-top>ul>li a,
-        .menu-top>ul>li span {
+        .menu-top > ul > li a,
+        .menu-top > ul > li span {
             color: var(--green) !important;
             font-size: var(--navProductFontSize) !important;
         }
-        .menu-top>ul>li a:hover,
-        .menu-top>ul>li span:hover {
+        .menu-top > ul > li a:hover,
+        .menu-top > ul > li span:hover {
             color: var(--green) !important;
             font-weight: 700 !important;
         }
 
-        .footer-center {
-            flex: 0 0 auto;
-            margin: 0 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ===== LOGO DO FOOTER - TAMANHO AJUSTADO (bloco final) ===== */
         .footer-center img {
             max-height: 80px;
             width: auto;
@@ -1815,15 +1698,13 @@
             }
         }
 
-        /* ============================================================
-          AJUSTE - CONTATO ABAIXADO EM 5px (2px + 5px = 7px)
-          ============================================================ */
-        .menu-top>ul>li.menu-franquia {
+        /* ===== CONTATO ABAIXADO ===== */
+        .menu-top > ul > li.menu-franquia {
             margin-left: 0;
             padding-top: 3.3px;
         }
-        
-        .menu-top>ul>li.menu-franquia a {
+
+        .menu-top > ul > li.menu-franquia a {
             display: inline;
             padding: 0;
             background-color: transparent;
@@ -1832,8 +1713,8 @@
             font-weight: 500;
             transition: none;
         }
-        
-        .menu-top>ul>li.menu-franquia a:hover {
+
+        .menu-top > ul > li.menu-franquia a:hover {
             background-color: transparent;
             color: var(--green) !important;
             transform: none;
@@ -1841,12 +1722,12 @@
         }
 
         @media (min-width: 767px) {
-            .menu-top>ul>li.menu-franquia {
+            .menu-top > ul > li.menu-franquia {
                 padding-top: 3.3px;
             }
         }
 
-        /* ===== TOAST DE SUCESSO CENTRALIZADO ===== */
+        /* ===== TOAST DE SUCESSO ===== */
         .toast-success-overlay {
             position: fixed;
             top: 0;
@@ -1919,7 +1800,6 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* ===== ESTILO PARA ERROS ===== */
         .field-error {
             color: #ffffff !important;
             font-size: 0.85rem !important;
@@ -1927,7 +1807,6 @@
             margin-top: 4px;
         }
 
-        /* ===== SPINNER DO BOTÃO ===== */
         .spinner {
             display: inline-block;
             width: 20px;
@@ -1938,9 +1817,6 @@
             animation: spin 0.8s ease infinite;
             vertical-align: middle;
             margin-right: 8px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -1998,7 +1874,6 @@
                                     </ul>
                                 </div>
                             </li>
-                            <!-- === O ITEM "Contato" ABAIXADO EM 5px === -->
                             <li class="menu-franquia">
                                 <a href="../Contato/index.html">Contato</a>
                             </li>
@@ -2022,13 +1897,11 @@
         <div class="bkg-page bkg-page-contato">
             <div class="container">
                 <div class="row row-eq-height">
-                    <!-- Coluna do formulário -->
                     <div class="col-sm-8 col-12 pb-4 offset-sm-2 offset-md-1">
                         <h1 class="contato-title" style="font-size: 40px; margin-right: 0; white-space: nowrap;">MANDE UMA MENSAGEM PRA GENTE</h1>
 
                         <form action="https://formsubmit.co/joao.miguel.umfg@gmail.com" method="POST" name="sendContact" id="sendContact" enctype="multipart/form-data" novalidate>
 
-                            <!-- ===== CAMPOS PRINCIPAIS ===== -->
                             <div class="label-inline label-row">
                                 <label for="name"><strong>Nome:</strong></label>
                                 <input type="text" name="name" id="name" autocomplete="off" maxlength="40" required>
@@ -2049,7 +1922,6 @@
                                 <input type="text" name="cep" id="cep" autocomplete="off" maxlength="9" placeholder="">
                             </div>
 
-                            <!-- ===== CIDADE E UF ===== -->
                             <div class="row cidade-uf-row">
                                 <div class="col-cidade">
                                     <div class="label-inline label-row">
@@ -2077,7 +1949,6 @@
                                 </div>
                             </div>
 
-                            <!-- ===== LOGRADOURO E NÚMERO (mesmo tamanho de Cidade e UF) ===== -->
                             <div class="endereco-row">
                                 <div class="col-logradouro">
                                     <div class="label-row">
@@ -2104,7 +1975,6 @@
                                 <span class="contador-mensagem" id="contadorMensagem">0 / 5000 caracteres</span>
                             </div>
 
-                            <!-- ===== SWITCH CURRÍCULO ===== -->
                             <div class="curriculo-switch-row">
                                 <input type="checkbox" id="toggleCurriculo" class="switch-input" aria-controls="curriculoPanel" aria-expanded="false">
                                 <label for="toggleCurriculo" class="switch-icon" id="switchIcon" title="Habilitar / desabilitar envio de currículo" aria-label="Habilitar ou desabilitar o envio de currículo"></label>
@@ -2114,11 +1984,9 @@
                                 </label>
                             </div>
 
-                            <!-- ===== PAINEL DO CURRÍCULO ===== -->
                             <div class="curriculo-panel" id="curriculoPanel">
                                 <h2 class="contato-title" style="font-size: 40px; line-height: 1; text-align: center; margin-bottom: 1.5rem;">MANDE SEU CURRÍCULO AQUI</h2>
 
-                                <!-- APENAS UPLOAD DO ARQUIVO -->
                                 <div class="label-inline label-col mt-3">
                                     <label for="file"><strong>Envie seu currículo em PDF ou DOC:</strong></label>
                                     <input type="file" name="file" id="file" accept=".pdf,.doc,.docx" disabled>
@@ -2126,7 +1994,6 @@
                                 </div>
                             </div>
 
-                            <!-- ===== CAMPOS OCULTOS ===== -->
                             <input type="hidden" name="_subject" id="assuntoEmail" value="Site Maquea Polpas - Fale Conosco">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
@@ -2143,7 +2010,6 @@
                         </form>
                     </div>
 
-                    <!-- ===== COLUNA DIREITA - ATENDIMENTO ===== -->
                     <div class="col-sm-4 col-12 pb-4">
                         <div class="contato-text contato-info-bloco">
                             <h2 class="contato-title" style="font-size: 40px; line-height: 1.2;">ATENDIMENTO</h2>
@@ -2154,16 +2020,16 @@
                             </p>
                             <p>
                                 <strong>E-mail:</strong>
-                                <a href="/cdn-cgi/l/email-protection#68020709074605010f1d0d04461d050e0f280f05090104460b0705" class="text-green"><span class="__cf_email__" data-cfemail="91fbfef0febffcf8f6e4f4fdbfe4fcf7f6d1f6fcf0f8fdbff2fefc">joao.miguel.umfg@gmail.com</span></a>
+                                <a href="mailto:joao.miguel.umfg@gmail.com" class="text-green">joao.miguel.umfg@gmail.com</a>
                             </p>
 
                             <div style="margin-top: 1.1rem;">
-                                <a href="/cdn-cgi/l/email-protection#e48e8b858bca898d83918188ca91898283a48389858d88ca878b89" class="text-green"><span class="__cf_email__" data-cfemail="a5cfcac4ca8bc8ccc2d0c0c98bd0c8c3c2e5c2c8c4ccc98bc6cac8">joao.miguel.umfg@gmail.com</span></a>
+                                <a href="mailto:joao.miguel.umfg@gmail.com" class="text-green">joao.miguel.umfg@gmail.com</a>
                             </div>
 
                             <div style="margin-top: 1.1rem;">
                                 <p><strong class="text-green">Unidade Japurá-PR</strong></p>
-                                <div style="position: relative; width: 110%; padding-bottom: 65%; height: 0; overflow: hidden; margin-bottom: 0.8rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <div style="position: relative; width: 100%; padding-bottom: 65%; height: 0; overflow: hidden; margin-bottom: 0.8rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                                     <iframe src="https://www.google.com/maps?q=Tv.+S%C3%A3o+Jos%C3%A9,+93,+Jardim+Morada+do+Sol+II+Parte,+Japur%C3%A1,+PR,+87225-000&z=16&output=embed" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
@@ -2174,10 +2040,8 @@
         </div>
     </main>
 
-    <!-- BARRA SEPARADORA -->
     <div class="barra-separadora"></div>
 
-    <!-- RODAPÉ -->
     <footer class="footer-custom">
         <div class="container">
             <div class="footer-layout">
@@ -2215,12 +2079,10 @@
         </div>
     </footer>
 
-    <!-- ===== WHATSAPP (APENAS IMAGEM LogoWPP.png, 60px) ===== -->
     <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AA%21" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
         <img src="../Princpal/image/LogoWPP.png" alt="WhatsApp">
     </a>
 
-    <!-- ===== TOAST DE SUCESSO ===== -->
     <div class="toast-success-overlay" id="toastOverlay"></div>
     <div class="toast-success-modal" id="toastSuccess">
         <span class="toast-icon">✅</span>
@@ -2236,6 +2098,7 @@
 
         function showToast(message) {
             const toast = document.getElementById('toastNotification');
+            if (!toast) return;
             toast.textContent = message;
             toast.className = 'toast-notification';
             void toast.offsetWidth;
@@ -2246,18 +2109,11 @@
             }, 5000);
         }
 
-        // ============================================================
-        // FUNÇÃO PARA OBTER SAUDAÇÃO BASEADA NO HORÁRIO
-        // ============================================================
         function getSaudacao() {
             const hora = new Date().getHours();
-            if (hora >= 5 && hora < 12) {
-                return "Bom dia";
-            } else if (hora >= 12 && hora < 18) {
-                return "Boa tarde";
-            } else {
-                return "Boa noite";
-            }
+            if (hora >= 5 && hora < 12) return "Bom dia";
+            if (hora >= 12 && hora < 18) return "Boa tarde";
+            return "Boa noite";
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -2267,7 +2123,6 @@
             const toastOverlay = document.getElementById('toastOverlay');
             const toastCloseBtn = document.getElementById('toastCloseBtn');
 
-            // ===== CAMPOS =====
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const phoneInput = document.getElementById('phone');
@@ -2294,7 +2149,6 @@
                 history.replaceState(null, '', urlAtual);
             }
 
-            // ===== MÁSCARA DE TELEFONE =====
             phoneInput.addEventListener('input', function() {
                 let value = this.value.replace(/\D/g, '');
                 if (value.length > 11) value = value.slice(0, 11);
@@ -2305,7 +2159,6 @@
                 this.value = formatted;
             });
 
-            // ===== MÁSCARA DE CEP =====
             cepInput.addEventListener('input', function() {
                 let value = this.value.replace(/\D/g, '');
                 if (value.length > 8) value = value.slice(0, 8);
@@ -2315,7 +2168,6 @@
                 this.value = value;
             });
 
-            // ===== BUSCAR CEP =====
             async function buscarCep(cep) {
                 if (cep.length !== 8) return;
                 try {
@@ -2373,7 +2225,6 @@
             }
             toggleUfArrow();
 
-            // ===== VALIDAÇÃO DO NÚMERO =====
             numberInput.addEventListener('input', function() {
                 let value = this.value.replace(/\D/g, '');
                 if (value.startsWith('0')) {
@@ -2385,7 +2236,6 @@
                 this.value = value;
             });
 
-            // ===== SWITCH CURRÍCULO =====
             function updateCurriculoState() {
                 const on = toggleCurriculo.checked;
                 curriculoPanel.classList.toggle('is-open', on);
@@ -2403,7 +2253,6 @@
             toggleCurriculo.addEventListener('change', updateCurriculoState);
             updateCurriculoState();
 
-            // ===== CONTADOR DE MENSAGEM =====
             const LIMITE_MENSAGEM = 5000;
             const contadorMensagem = document.getElementById('contadorMensagem');
 
@@ -2417,7 +2266,6 @@
             messageInput.addEventListener('input', atualizarContador);
             atualizarContador();
 
-            // ===== FUNÇÃO PARA MOSTRAR TOAST DE SUCESSO =====
             function showSuccessToast() {
                 toastSuccess.classList.add('show');
                 toastOverlay.classList.add('show');
@@ -2433,7 +2281,6 @@
             toastCloseBtn.addEventListener('click', hideSuccessToast);
             toastOverlay.addEventListener('click', hideSuccessToast);
 
-            // ===== FUNÇÃO PARA LIMPAR TODOS OS CAMPOS =====
             function limparCampos() {
                 nameInput.value = '';
                 emailInput.value = '';
@@ -2464,7 +2311,6 @@
                 document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
             }
 
-            // ===== FUNÇÃO PARA CRIAR ERROS =====
             function createErrorSpan(inputElement) {
                 const existing = inputElement.parentNode.querySelector('.field-error');
                 if (existing) return existing;
@@ -2511,84 +2357,52 @@
             clearErrorOnInput(messageInput, messageError);
             clearErrorOnInput(fileInput, fileError);
 
-            // ============================================================
-            // VALIDAÇÃO DO FORMULÁRIO
-            // ============================================================
             function validateForm() {
                 let hasError = false;
 
-                if (nameInput.value.trim() === '') {
-                    nameError.textContent = '';
-                    hasError = true;
-                } else nameError.textContent = '';
+                if (nameInput.value.trim() === '') { nameError.textContent = ''; hasError = true; }
+                else nameError.textContent = '';
 
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailInput.value.trim())) {
-                    emailError.textContent = '';
-                    hasError = true;
-                } else emailError.textContent = '';
+                if (!emailRegex.test(emailInput.value.trim())) { emailError.textContent = ''; hasError = true; }
+                else emailError.textContent = '';
 
-                if (!/^\(\d{2}\) \d{5}-\d{4}$/.test(phoneInput.value.trim())) {
-                    phoneError.textContent = '';
-                    hasError = true;
-                } else phoneError.textContent = '';
+                if (!/^\(\d{2}\) \d{5}-\d{4}$/.test(phoneInput.value.trim())) { phoneError.textContent = ''; hasError = true; }
+                else phoneError.textContent = '';
 
-                if (!ufSelect.value) {
-                    ufError.textContent = '';
-                    hasError = true;
-                } else ufError.textContent = '';
+                if (!ufSelect.value) { ufError.textContent = ''; hasError = true; }
+                else ufError.textContent = '';
 
-                if (cityInput.value.trim() === '') {
-                    cityError.textContent = '';
-                    hasError = true;
-                } else cityError.textContent = '';
+                if (cityInput.value.trim() === '') { cityError.textContent = ''; hasError = true; }
+                else cityError.textContent = '';
 
-                if (streetInput.value.trim() === '') {
-                    streetError.textContent = '';
-                    hasError = true;
-                } else streetError.textContent = '';
+                if (streetInput.value.trim() === '') { streetError.textContent = ''; hasError = true; }
+                else streetError.textContent = '';
 
-                if (numberInput.value.trim() === '') {
-                    numberError.textContent = '';
-                    hasError = true;
-                } else if (numberInput.value.startsWith('0')) {
-                    numberError.textContent = '';
-                    hasError = true;
-                } else numberError.textContent = '';
+                if (numberInput.value.trim() === '') { numberError.textContent = ''; hasError = true; }
+                else if (numberInput.value.startsWith('0')) { numberError.textContent = ''; hasError = true; }
+                else numberError.textContent = '';
 
-                if (subjectInput.value.trim() === '') {
-                    subjectError.textContent = '';
-                    hasError = true;
-                } else subjectError.textContent = '';
+                if (subjectInput.value.trim() === '') { subjectError.textContent = ''; hasError = true; }
+                else subjectError.textContent = '';
 
-                if (messageInput.value.trim() === '') {
-                    messageError.textContent = '';
-                    hasError = true;
-                } else messageError.textContent = '';
+                if (messageInput.value.trim() === '') { messageError.textContent = ''; hasError = true; }
+                else messageError.textContent = '';
 
                 if (toggleCurriculo.checked) {
                     const file = fileInput.files[0];
-                    if (!file) {
-                        fileError.textContent = '';
-                        hasError = true;
-                    } else {
+                    if (!file) { fileError.textContent = ''; hasError = true; }
+                    else {
                         const ext = file.name.split('.').pop().toLowerCase();
-                        if (!['pdf', 'doc', 'docx'].includes(ext)) {
-                            fileError.textContent = '';
-                            hasError = true;
-                        } else if (file.size > 10 * 1024 * 1024) {
-                            fileError.textContent = '';
-                            hasError = true;
-                        } else fileError.textContent = '';
+                        if (!['pdf', 'doc', 'docx'].includes(ext)) { fileError.textContent = ''; hasError = true; }
+                        else if (file.size > 10 * 1024 * 1024) { fileError.textContent = ''; hasError = true; }
+                        else fileError.textContent = '';
                     }
                 } else fileError.textContent = '';
 
                 return !hasError;
             }
 
-            // ============================================================
-            // ENVIO DO E-MAIL VIA FORMSUBMIT
-            // ============================================================
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
@@ -2605,15 +2419,10 @@
 
                 try {
                     const formData = new FormData(form);
-
                     const saudacao = getSaudacao();
                     const dataHora = new Date().toLocaleString('pt-BR', {
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        second: '2-digit'
+                        day: '2-digit', month: '2-digit', year: 'numeric',
+                        hour: '2-digit', minute: '2-digit', second: '2-digit'
                     });
 
                     formData.append('_subject', assuntoEmail.value);

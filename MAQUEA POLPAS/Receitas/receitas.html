@@ -11,9 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet">
-  <!-- Fonte Luckiest Guy (mesma do ATENDIMENTO) -->
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <!-- Bootstrap Icons (para o ícone do WhatsApp) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./componentes-home/module/bootstrap-5.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./componentes-home/pages/css/header.css">
@@ -22,16 +20,9 @@
 
   <style>
     /* ----- RESET & BASE ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
+    html, body { overflow-x: hidden; width: 100%; }
 
     body {
       font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
@@ -66,23 +57,16 @@
       line-height: 1.2;
       letter-spacing: 6px;
       color: #D83135;
-      text-shadow: 
-        -2px -2px 0 #fff,
-        2px -2px 0 #fff,
-        -2px 2px 0 #fff,
-        2px 2px 0 #fff,
+      text-shadow:
+        -2px -2px 0 #fff, 2px -2px 0 #fff,
+        -2px 2px 0 #fff, 2px 2px 0 #fff,
         0 0 8px #ffffff4d;
       margin: 0 0 2rem 0;
       text-align: center;
       padding: 0 1rem;
     }
-
-    @media (max-width: 992px) {
-      .titulo-principal { font-size: 2.8rem; }
-    }
-    @media (max-width: 576px) {
-      .titulo-principal { font-size: 2.2rem; }
-    }
+    @media (max-width: 992px) { .titulo-principal { font-size: 2.8rem; } }
+    @media (max-width: 576px) { .titulo-principal { font-size: 2.2rem; } }
 
     /* ============================================================
        SUBMENU
@@ -117,8 +101,8 @@
       transition: color 0.3s ease, font-weight 0.3s ease;
       font-size: 18px;
       background: transparent !important;
+      cursor: pointer;
     }
-
     .menu-top-sub-item a:hover {
       color: #008349 !important;
       font-weight: 600 !important;
@@ -126,7 +110,7 @@
     }
 
     /* ============================================================
-       BARRA SEPARADORA VERMELHA (rodapé)
+       BARRAS SEPARADORAS
        ============================================================ */
     .barra-separadora {
       width: 100%;
@@ -134,72 +118,69 @@
       margin-top: 0;
       border-top: 1rem solid #D83135;
     }
-    @media (max-width:700px) {
-      .barra-separadora { margin-top: 0; border-top-width: 0.75rem; }
-    }
-    @media (max-width:450px) {
-      .barra-separadora { margin-top: 0; border-top-width: 0.6rem; }
-    }
+    @media (max-width:700px) { .barra-separadora { margin-top: 0; border-top-width: 0.75rem; } }
+    @media (max-width:450px) { .barra-separadora { margin-top: 0; border-top-width: 0.6rem; } }
 
-    /* ============================================================
-       BARRA SEPARADORA INTERNA (de fora a fora - largura total)
-       ============================================================ */
     .barra-separadora-interna {
       display: block;
       width: 100vw;
       position: relative;
-      left: 0%;
-      right: 0%;
-      margin-left: -50vw;
-      margin-right: -50vw;
+      left: 50%;
+      transform: translateX(-50%);
       border-top: 1rem solid #D83135;
       margin-top: 2rem;
       margin-bottom: 2rem;
     }
     @media (max-width: 700px) {
-      .barra-separadora-interna {
-        border-top-width: 0.75rem;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
+      .barra-separadora-interna { border-top-width: 0.75rem; margin-top: 1.5rem; margin-bottom: 1.5rem; }
     }
     @media (max-width: 450px) {
-      .barra-separadora-interna {
-        border-top-width: 0.6rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      }
+      .barra-separadora-interna { border-top-width: 0.6rem; margin-top: 1rem; margin-bottom: 1rem; }
     }
 
-    /* ----- CATÁLOGO (grid) ----- */
+    /* ============================================================
+       CATÁLOGO (grid)
+       ============================================================ */
     .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 1.4rem;
       max-width: 1400px;
       width: 100%;
       padding: 0 1.5rem;
+      align-items: stretch;
+    }
+    @media (max-width: 1100px) {
+      .catalog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 800px) {
+      .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .catalog-grid { grid-template-columns: 1fr; gap: 1.2rem; padding: 0 1rem; }
     }
 
     /* ----- CARD ----- */
     .recipe-card {
       background: #FFFDD0;
-      border-radius: 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 4px 10px rgba(0, 0, 0, 0.03);
+      border-radius: 20px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06), 0 3px 8px rgba(0, 0, 0, 0.03);
       overflow: hidden;
       transition: transform 0.25s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: bold;
+      height: 100%;
+      min-height: 0;
     }
-
     .recipe-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 6px 14px rgba(0, 0, 0, 0.04);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.04);
     }
 
-    :root { --card-image-height: 315px; }
+    :root { --card-image-height: 190px; }
 
     .card-image {
       width: 100%;
@@ -210,89 +191,165 @@
       justify-content: center;
       background-image: radial-gradient(circle at 20% 30%, #f1deef 0%, #ffffff 100%);
       overflow: hidden;
+      flex-shrink: 0;
     }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
+    .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .card-image span {
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(4px);
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 40px;
       color: #4d3a2b;
       z-index: 1;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: bold;
     }
 
     .card-content {
-      padding: 1.2rem 1.5rem 1.5rem;
+      padding: 0.9rem 1rem 1rem;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.45rem;
+      min-height: 0;
     }
 
     .card-content h3 {
       color: #D83135;
-      line-height: 1.3;
+      line-height: 1.25;
       text-align: center;
-      font-size: 22px !important;
+      font-size: 18px !important;
       font-weight: bold;
     }
 
     .card-content .description {
       color: #008349;
-      line-height: 1.5;
+      line-height: 1.45;
       text-align: left;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: bold;
+      flex: 1;
     }
 
-    .like-area { display: none; }
+    /* ============================================================
+       ESTRELAS — MÉDIA DEPOIS DAS ESTRELAS
+       ============================================================ */
+    .card-interactions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+      flex-wrap: wrap;
+    }
 
+    .stars-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 1px;
+      font-size: 18px;
+      line-height: 1;
+      user-select: none;
+    }
+    .star {
+      cursor: pointer;
+      color: #cfcfcf;
+      transition: transform 0.15s ease, color 0.15s ease;
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: inherit;
+      line-height: 1;
+      font-family: inherit;
+    }
+    .star:hover { transform: scale(1.15); }
+    .star.active { color: #F5B301; }
+    .star.hovered { color: #F5B301; }
+
+    .rating-info {
+      font-size: 13px;
+      color: #008349;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* ============================================================
+       RODAPÉ DO CARD: Chat + Ver receita
+       ============================================================ */
     .card-footer {
       display: flex;
-      justify-content: flex-end;
+      gap: 0.5rem;
       margin-top: auto;
       width: 100%;
       padding-top: 0.5rem;
       background-color: transparent !important;
       border-top: none !important;
+      flex-shrink: 0;
     }
 
-    .btn-recipe {
-      background: #D83135;
-      border: none;
-      color: #fff;
-      padding: 0.4rem 1.4rem;
+    .card-footer .chat-btn,
+    .card-footer .btn-recipe {
+      flex: 1 1 0;
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.45rem 0.6rem;
       border-radius: 40px;
       cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 4px 8px rgba(107, 76, 59, 0.15);
-      font-size: 16px;
+      font-size: 13px;
       font-weight: bold;
+      font-family: inherit;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 8px rgba(107, 76, 59, 0.12);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .btn-recipe:hover {
+    .card-footer .chat-btn {
       background: #008349;
-      transform: scale(1.02);
+      color: #fff;
     }
+    .card-footer .chat-btn:hover { background: #D83135; transform: scale(1.02); }
+    .card-footer .chat-btn i { font-size: 14px; }
+    .card-footer .chat-btn .msg-count {
+      background: #D83135;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 10px;
+      min-width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+    .card-footer .chat-btn:hover .msg-count { background: #fff; color: #D83135; }
+
+    .card-footer .btn-recipe {
+      background: #D83135;
+      color: #fff;
+    }
+    .card-footer .btn-recipe:hover { background: #008349; transform: scale(1.02); }
+    .card-footer .btn-recipe i { font-size: 14px; }
 
     /* ============================================================
-       MODAL
+       MODAL RECEITA
        ============================================================ */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(6px);
       display: flex;
@@ -304,7 +361,6 @@
       z-index: 2147483647;
       padding: 20px;
     }
-
     .modal-overlay.active {
       opacity: 1;
       visibility: visible;
@@ -326,18 +382,12 @@
       max-height: 85vh;
       overflow-y: auto;
       position: relative;
-      top: auto;
-      left: auto;
-      z-index: auto;
-      outline: none;
       font-size: 20px;
       font-weight: bold;
     }
-
     .modal::-webkit-scrollbar { width: 6px; }
     .modal::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
     .modal::-webkit-scrollbar-thumb { background: #D83135; border-radius: 10px; }
-
     .modal-overlay.active .modal { transform: scale(1) translateY(0); }
 
     .modal-close {
@@ -361,12 +411,9 @@
       z-index: 10;
       flex-shrink: 0;
       margin-bottom: 0;
+      font-family: inherit;
     }
-
-    .modal-close:hover {
-      background: rgba(0, 0, 0, 0.15);
-      transform: rotate(90deg);
-    }
+    .modal-close:hover { background: rgba(0, 0, 0, 0.15); transform: rotate(90deg); }
 
     .modal h2 {
       color: #D83135;
@@ -377,7 +424,6 @@
       font-weight: bold;
       margin-top: -4px;
     }
-
     .modal .subtitle {
       color: #008349;
       margin-bottom: 20px;
@@ -385,10 +431,8 @@
       font-size: 20px !important;
       font-weight: bold;
     }
-
     .modal-section { margin-bottom: 1rem; margin-top: 35px; }
     .modal-section:first-of-type { margin-top: 0; }
-
     .modal-section h4 {
       color: #D83135;
       margin-bottom: 0.5rem;
@@ -398,16 +442,13 @@
       font-size: 20px !important;
       font-weight: bold;
     }
-
     .modal-section h4::before {
       content: '';
       display: inline-block;
-      width: 5px;
-      height: 20px;
+      width: 5px; height: 20px;
       background: #008349;
       border-radius: 6px;
     }
-
     .modal-section ul {
       list-style: none;
       display: flex;
@@ -415,7 +456,6 @@
       gap: 0.5rem 1rem;
       padding-left: 0;
     }
-
     .modal-section ul li {
       background: #D83135;
       padding: 0.3rem 1rem;
@@ -424,7 +464,6 @@
       font-size: 20px !important;
       font-weight: bold;
     }
-
     .modal-section p {
       white-space: pre-line;
       color: #008349;
@@ -444,7 +483,6 @@
       .modal-section p { font-size: 18px !important; }
       .modal-close { width: 36px; height: 36px; font-size: 26px; }
     }
-
     @media (max-width: 500px) {
       .modal { max-width: 98%; padding: 16px 16px 20px; min-height: 250px; font-size: 16px; max-height: 75vh; }
       .modal h2 { font-size: 18px !important; margin-bottom: 10px; }
@@ -458,16 +496,251 @@
 
     @media (max-width: 600px) {
       .receitas-main { padding: 40px 0 1rem 0; }
-      .catalog-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
     }
 
-    body.scrolling .recipe-card:hover {
-      transform: none !important;
-      box-shadow: none !important;
+    body.scrolling .recipe-card:hover { transform: none !important; box-shadow: none !important; }
+
+    /* ============================================================
+       MODAL DE CHAT
+       ============================================================ */
+    .chat-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0s 0.3s;
+      z-index: 2147483647;
+      padding: 20px;
+    }
+    .chat-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0s 0s;
+    }
+
+    .chat-modal {
+      background: #FFFDD0;
+      max-width: 720px;
+      width: 100%;
+      max-height: 88vh;
+      border-radius: 28px;
+      padding: 26px 28px 22px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.94) translateY(15px);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      position: relative;
+    }
+    .chat-overlay.active .chat-modal { transform: scale(1) translateY(0); }
+
+    .chat-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .chat-header h3 {
+      color: #D83135;
+      font-size: 22px !important;
+      font-weight: bold;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .chat-header p {
+      color: #008349;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px 0 0;
+    }
+    .chat-close {
+      background: rgba(0, 0, 0, 0.08);
+      border: none;
+      color: #7d6a58;
+      cursor: pointer;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      flex-shrink: 0;
+      font-family: inherit;
+    }
+    .chat-close:hover { background: rgba(0, 0, 0, 0.15); transform: rotate(90deg); }
+
+    .chat-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px 4px 6px 0;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 120px;
+    }
+    .chat-list::-webkit-scrollbar { width: 6px; }
+    .chat-list::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+    .chat-list::-webkit-scrollbar-thumb { background: #D83135; border-radius: 10px; }
+
+    .chat-empty {
+      text-align: center;
+      color: #008349;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 24px 10px;
+      opacity: 0.8;
+    }
+
+    .chat-message {
+      background: #fff8dc;
+      border-left: 5px solid #008349;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    .chat-message .cm-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .chat-message .cm-name {
+      color: #D83135;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .chat-message .cm-date {
+      color: #008349;
+      font-size: 12px;
+      font-weight: bold;
+      opacity: 0.85;
+    }
+    .chat-message .cm-text {
+      color: #008349;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-bottom: 8px;
+    }
+    /* Avaliação exibida ABAIXO da mensagem */
+    .chat-message .cm-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-top: 1px dashed #00834955;
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+    .chat-message .cm-rating-stars {
+      color: #F5B301;
+      font-size: 16px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .chat-message .cm-rating-stars .off { color: #cfcfcf; }
+    .chat-message .cm-rating-label {
+      color: #008349;
+      font-size: 12px;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+    .chat-form {
+      border-top: 2px dashed #00834955;
+      padding-top: 14px;
+    }
+    .chat-form .form-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .chat-form input,
+    .chat-form textarea {
+      width: 100%;
+      border: 2px solid #00834955;
+      border-radius: 12px;
+      padding: 9px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: inherit;
+      color: #008349;
+      background: #fffef5;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .chat-form input:focus,
+    .chat-form textarea:focus { border-color: #008349; }
+
+    .chat-form .form-row input { flex: 1 1 100%; }
+
+    .chat-form textarea {
+      resize: vertical;
+      min-height: 80px;
+      max-height: 160px;
+      margin-bottom: 6px;
+    }
+
+    .char-counter {
+      font-size: 12px;
+      color: #008349;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 8px;
+    }
+    .char-counter.limit { color: #D83135; }
+
+    .chat-form .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .chat-form .form-error {
+      color: #D83135;
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: auto;
+    }
+
+    .btn-send {
+      background: #D83135;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 26px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+    .btn-send:hover { background: #008349; transform: scale(1.03); }
+
+    @media (max-width: 600px) {
+      .chat-modal { padding: 18px 16px 16px; max-height: 92vh; border-radius: 22px; }
+      .chat-header h3 { font-size: 18px !important; }
     }
 
     /* ============================================================
-       WHATSAPP FLOAT (APENAS IMAGEM LogoWPP.png, 60px)
+       WHATSAPP FLOAT
        ============================================================ */
     .whatsapp-float {
       position: fixed;
@@ -479,8 +752,7 @@
       transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .whatsapp-float img {
-      width: 70px;
-      height: 70px;
+      width: 70px; height: 70px;
       object-fit: contain;
       filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
       transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -507,17 +779,13 @@
     .whatsapp-float .whatsapp-tooltip::after {
       content: "";
       position: absolute;
-      right: -8px;
-      top: 50%;
+      right: -8px; top: 50%;
       transform: translateY(-50%);
       border-left: 8px solid rgba(0, 0, 0, 0.8);
       border-top: 8px solid transparent;
       border-bottom: 8px solid transparent;
     }
-    .whatsapp-float:hover .whatsapp-tooltip {
-      opacity: 1;
-      transform: translateY(-50%) translateX(0);
-    }
+    .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; transform: translateY(-50%) translateX(0); }
     @media (max-width: 576px) {
       .whatsapp-float { bottom: 20px; right: 20px; }
       .whatsapp-float img { width: 48px; height: 48px; }
@@ -531,10 +799,7 @@
     /* ============================================================
        RODAPÉ
        ============================================================ */
-    .footer-custom {
-      background-color: #3E464C;
-      padding: 30px 0 20px;
-    }
+    .footer-custom { background-color: #3E464C; padding: 30px 0 20px; }
     .footer-layout {
       display: flex;
       justify-content: space-between;
@@ -545,27 +810,12 @@
     .footer-left { flex: 1 1 auto; text-align: center; min-width: 150px; }
     .footer-center { flex: 0 0 auto; margin: 0 50px; }
     .footer-right { flex: 1 1 auto; text-align: right; min-width: 150px; }
-    .footer-left p {
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 16px;
-      margin: 0 0 8px 0;
-    }
-    .footer-left .redes-sociais-icons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 4px;
-    }
+    .footer-left p { color: #ffffff; font-weight: 600; font-size: 16px; margin: 0 0 8px 0; }
+    .footer-left .redes-sociais-icons { display: flex; gap: 16px; justify-content: center; margin-top: 4px; }
     .footer-left .redes-sociais-icons a {
-      display: inline-block;
-      width: 36px;
-      height: 36px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.9;
-      transition: opacity 0.2s;
+      display: inline-block; width: 36px; height: 36px;
+      background-size: contain; background-repeat: no-repeat; background-position: center;
+      opacity: 0.9; transition: opacity 0.2s;
     }
     .footer-left .redes-sociais-icons a:hover { opacity: 1; }
     .redesocial-icon.facebook {
@@ -593,9 +843,7 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       BLOCO SEARCH-BKG
-       ============================================================ -->
+  <!-- BLOCO SEARCH-BKG -->
   <div class="search-bkg">
     <div class="container">
       <div class="search-content">
@@ -611,9 +859,7 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       HEADER
-       ============================================================ -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container">
       <div class="row">
@@ -628,56 +874,31 @@
         <div class="col-3 col-sm-8 col-md-9">
           <nav class="menu-top">
             <ul>
-              <li class="menu-empresa">
-                <a href="../Princpal/home.html">Home</a>
-              </li>
-              <li class="menu-onde-encontrar">
-                <a href="../QuemSomos/quem-somos.html">Quem somos</a>
-              </li>
-              <!-- CATÁLOGO DE SABORES -->
+              <li class="menu-empresa"><a href="../Princpal/home.html">Home</a></li>
+              <li class="menu-onde-encontrar"><a href="../QuemSomos/quem-somos.html">Quem somos</a></li>
               <li class="menu-catalogo menu-has-sub">
                 <a href="../SaboresGOOD/index.html">Nosso Catálogo</a>
                 <div class="menu-top-sub menu-catalogo-sub">
                   <ul>
-                    <li class="menu-top-sub-item">
-                      <a href="../SaboresGOOD/index.html">Linha Completa</a>
-                    </li>
-                    <li class="menu-top-sub-item">
-                      <a href="../SaboresGOOD/tropical.html">Linha Tropical</a>
-                    </li>
-                    <li class="menu-top-sub-item">
-                      <a href="../SaboresGOOD/premium.html">Linha Frutas Premium</a>
-                    </li>
-                    <li class="menu-top-sub-item">
-                      <a href="../SaboresGOOD/acai.html">Linha Açaí</a>
-                    </li>
-                    <li class="menu-top-sub-item">
-                      <a href="../SaboresGOOD/variados.html">Linha Variados</a>
-                    </li>
+                    <li class="menu-top-sub-item"><a href="../SaboresGOOD/index.html">Linha Completa</a></li>
+                    <li class="menu-top-sub-item"><a href="../SaboresGOOD/tropical.html">Linha Tropical</a></li>
+                    <li class="menu-top-sub-item"><a href="../SaboresGOOD/premium.html">Linha Frutas Premium</a></li>
+                    <li class="menu-top-sub-item"><a href="../SaboresGOOD/acai.html">Linha Açaí</a></li>
+                    <li class="menu-top-sub-item"><a href="../SaboresGOOD/variados.html">Linha Variados</a></li>
                   </ul>
                 </div>
               </li>
-              <!-- RECEITAS -->
               <li class="menu-revendedor menu-has-sub">
                 <a>Receitas</a>
                 <div class="menu-top-sub menu-revendedor-sub">
                   <ul>
-                    <li class="menu-top-sub-item">
-                      <a href="../Receitas/receitas.html" data-categoria="todas">Todas as Receitas</a>
-                    </li>
-                    <li class="menu-top-sub-item">
-                      <a href="../Receitas/Sobremesas.html" data-categoria="sobremesa">Sobremesas</a>
-                    </li>
-                    <li class="menu-top-sub-item">
-                      <a href="../Receitas/drinks.html" data-categoria="drink">Drinks</a>
-                    </li>
+                    <li class="menu-top-sub-item"><a data-categoria="todas">Todas as Receitas</a></li>
+                    <li class="menu-top-sub-item"><a data-categoria="sobremesa">Sobremesas</a></li>
+                    <li class="menu-top-sub-item"><a data-categoria="drink">Drinks</a></li>
                   </ul>
                 </div>
               </li>
-              <!-- CONTATO -->
-              <li class="menu-franquia menu-has-sub">
-                <a href="../Contato/index.html">Contato</a>
-              </li>
+              <li class="menu-franquia menu-has-sub"><a href="../Contato/index.html">Contato</a></li>
             </ul>
           </nav>
         </div>
@@ -692,20 +913,13 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       MAIN
-       ============================================================ -->
+  <!-- MAIN -->
   <main class="receitas-main">
+    <h1 class="titulo-principal" id="tituloLinha">TODAS AS RECEITAS</h1>
 
-    <!-- TÍTULO PRINCIPAL -->
-    <h1 class="titulo-principal" id="tituloLinha">
-      TODAS AS RECEITAS
-    </h1>
-
-    <!-- GRID DE RECEITAS -->
     <div class="catalog-grid" id="catalogGrid"></div>
 
-    <!-- ===== MODAL ===== -->
+    <!-- MODAL RECEITA -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal" id="modalContent">
         <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
@@ -722,26 +936,60 @@
       </div>
     </div>
 
+    <!-- MODAL CHAT -->
+    <div class="chat-overlay" id="chatOverlay">
+      <div class="chat-modal" role="dialog" aria-modal="true">
+        <div class="chat-header">
+          <div>
+            <h3 id="chatTitle">Comentários da receita</h3>
+            <p id="chatSubtitle">Deixe sua mensagem ou veja o que já disseram.</p>
+          </div>
+          <button class="chat-close" id="chatClose" aria-label="Fechar">✕</button>
+        </div>
+
+        <div class="chat-list" id="chatList"></div>
+
+        <form class="chat-form" id="chatForm" novalidate>
+          <div class="form-row">
+            <input type="text" id="chatName" name="chatName" placeholder="Seu nome" maxlength="80" required>
+          </div>
+
+          <div class="form-row" style="align-items:center; gap:8px;">
+            <label style="font-size:13px; color:#008349; font-weight:bold;">Sua nota:</label>
+            <div id="chatStars" class="stars" role="radiogroup" aria-label="Escolha sua nota">
+              <button type="button" class="star" data-value="1" aria-label="1 estrela">★</button>
+              <button type="button" class="star" data-value="2" aria-label="2 estrelas">★</button>
+              <button type="button" class="star" data-value="3" aria-label="3 estrelas">★</button>
+              <button type="button" class="star" data-value="4" aria-label="4 estrelas">★</button>
+              <button type="button" class="star" data-value="5" aria-label="5 estrelas">★</button>
+            </div>
+            <span id="chatStarsInfo" style="font-size:12px; color:#008349; font-weight:bold;">(opcional)</span>
+          </div>
+
+          <textarea id="chatMessage" name="chatMessage" placeholder="Digite sua mensagem (até 3000 caracteres)..." maxlength="3000" required></textarea>
+          <div class="char-counter" id="charCounter">0 / 3000</div>
+          <div class="form-actions">
+            <span class="form-error" id="chatError"></span>
+            <button type="submit" class="btn-send"><i class="bi bi-send"></i> Enviar mensagem</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
   </main>
 
-  <!-- ===== BARRA SEPARADORA VERMELHA (rodapé) ===== -->
+  <!-- BARRA SEPARADORA VERMELHA -->
   <div class="barra-separadora" style="margin-top:0; border-top:1rem solid #D83135;"></div>
 
-  <!-- ============================================================
-       RODAPÉ
-       ============================================================ -->
+  <!-- RODAPÉ -->
   <footer class="footer-custom">
     <div class="container">
       <div class="footer-layout">
         <div class="footer-left">
           <p>Visite nossas redes sociais</p>
           <div class="redes-sociais-icons">
-            <a href="https://www.facebook.com/GebonSorvetesoficial/" target="_blank">
-              <span class="redesocial-icon facebook"></span>
-            </a>
-            <a href="https://www.instagram.com/gebonsorvetes/" target="_blank">
-              <span class="redesocial-icon instagram"></span>
-            </a>
+            <a href="https://www.facebook.com/GebonSorvetesoficial/" target="_blank"><span class="redesocial-icon facebook"></span></a>
+            <a href="https://www.instagram.com/gebonsorvetes/" target="_blank"><span class="redesocial-icon instagram"></span></a>
           </div>
         </div>
 
@@ -759,29 +1007,21 @@
             CEP: 87225-000
           </div>
           <div style="margin: 8px 0;"></div>
-          <div class="endereco">
-            Rua Travessa A, 15 Centro<br>
-          </div>
+          <div class="endereco">Rua Travessa A, 15 Centro<br></div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ============================================================
-       WHATSAPP FLOAT (APENAS IMAGEM LogoWPP.png, 60px)
-       ============================================================ -->
+  <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/554497585990?text=Ol%C3%A1%2C%20tudo%20bem%20%3F%20Vim%20pelo%20Site%20de%20voc%C3%AAs%21"
-     target="_blank"
-     class="whatsapp-float"
-     aria-label="Fale conosco no WhatsApp">
+     target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
     <img src="./img/LogoWPP.png" alt="WhatsApp">
   </a>
 
   <!-- ============================================================
        SCRIPTS
        ============================================================ -->
-
-  <!-- LGPD -->
   <script>
     function set_lgpd() {
       var d = new Date();
@@ -792,343 +1032,129 @@
     }
   </script>
 
-  <!-- ============================================================
-       SCRIPTS PRINCIPAIS
-       ============================================================ -->
   <script>
+    // -------------------------------------------------------------
+    // RESET inicial
+    // -------------------------------------------------------------
+    (function resetarDadosAntigos() {
+      const RESET_FLAG = 'receitasResetV2';
+      try {
+        if (!localStorage.getItem(RESET_FLAG)) {
+          localStorage.removeItem('recipeComments');
+          localStorage.removeItem('recipeRatings');
+          localStorage.setItem(RESET_FLAG, '1');
+          console.log('Chats e avaliações antigos foram limpos.');
+        }
+      } catch (e) {}
+    })();
+
     // -------------------------------------------------------------
     // 0. SCROLL
     // -------------------------------------------------------------
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) document.body.classList.add('scrolled');
+      else document.body.classList.remove('scrolled');
     });
 
     // -------------------------------------------------------------
     // 1. DADOS DAS RECEITAS
     // -------------------------------------------------------------
     const allRecipes = [
-      // ---- SOBREMESAS (id 1 a 12) ----
-      {
-        id: 1,
-        name: 'Bombons de Cupuaçu',
-        description: 'Bombons recheados com uma ganache cremosa de cupuaçu, cobertos com chocolate ao leite – uma explosão amazônica.',
-        image: 'img/receitas/bombonscupuacu.png',
-        imageEmoji: '🍫',
-        ingredients: [ 'Polpa de cupuaçu (150g)', 'Chocolate ao leite (300g)', 'Creme de leite (100g)', 'Açúcar (50g)', 'Manteiga (20g)' ],
-        instructions: 'Derreta o chocolate em banho-maria. À parte, aqueça a polpa de cupuaçu com o açúcar até reduzir um pouco, adicione o creme de leite e a manteiga, mexa até engrossar. Deixe esfriar. Modele bolinhas com o recheio, mergulhe no chocolate derretido e coloque para endurecer sobre papel manteiga.'
-      },
-      {
-        id: 2,
-        name: 'Bombons de Frutas Vermelhas',
-        description: 'Bombons de chocolate recheados com um creme aveludado de frutas vermelhas, combinando o sabor intenso das frutas com a doçura do chocolate.',
-        image: 'img/receitas/BombonsdeFrutasVermelhas.png',
-        imageEmoji: '🍓',
-        ingredients: [
-          'Polpa de frutas vermelhas (200g)',
-          'Chocolate meio amargo ou ao leite (350g)',
-          'Creme de leite (100g)',
-          'Leite condensado (80g)',
-          'Manteiga (15g)'
-        ],
-        instructions: 'Aqueça a polpa de frutas vermelhas em fogo baixo até reduzir levemente. Acrescente o leite condensado, o creme de leite e a manteiga, mexendo até formar um creme consistente. Deixe esfriar completamente. Derreta o chocolate e faça uma camada nas formas de bombom. Leve à geladeira por 10 minutos, recheie com o creme de frutas vermelhas e cubra com mais chocolate derretido. Retorne à geladeira por cerca de 30 minutos ou até os bombons endurecerem. Desenforme e sirva.'
-      },
-      {
-        id: 3,
-        name: 'Cheesecake de Abacaxi',
-        description: 'Cheesecake cremoso com cobertura de abacaxi, base de biscoito e um toque tropical e refrescante.',
-        image: 'img/receitas/CheesecakedeAbacaxi.png',
-        imageEmoji: '🍍',
-        ingredients: [ 'Biscoito maisena (200g)', 'Manteiga (100g)', 'Cream cheese (500g)', 'Açúcar (150g)', 'Ovos (2)', 'Polpa de abacaxi (200g)', 'Gelatina incolor (12g)' ],
-        instructions: 'Triture o biscoito e misture com a manteiga derretida, forre o fundo de uma forma. Bata o cream cheese, açúcar e ovos até ficar liso. Despeje sobre a base e asse a 160°C por 40 minutos. Prepare a cobertura: aqueça a polpa de abacaxi com açúcar a gosto, adicione a gelatina hidratada. Despeje sobre o cheesecake já frio e leve à geladeira por 4 horas.'
-      },
-      {
-        id: 4,
-        name: 'Cheesecake de Amora',
-        description: 'Cheesecake cremoso com cobertura de amora feita com polpa da fruta – uma sobremesa elegante, refrescante e levemente ácida.',
-        image: 'img/receitas/CheesecakedeAmora.png',
-        imageEmoji: '🫐',
-        ingredients: [ 'Polpa de amora (250g)', 'Biscoito maisena triturado (200g)', 'Manteiga derretida (100g)', 'Cream cheese (400g)', 'Leite condensado (1 lata)', 'Creme de leite (1 caixa)', 'Gelatina incolor sem sabor (1 envelope)', 'Açúcar (100g)', 'Água (50ml)' ],
-        instructions: 'Misture o biscoito triturado com a manteiga até formar uma farofa úmida e pressione no fundo de uma forma de aro removível. Leve à geladeira por 20 minutos. Bata o cream cheese, o leite condensado, o creme de leite e a gelatina hidratada e dissolvida até obter um creme homogêneo. Despeje sobre a base e leve à geladeira por pelo menos 4 horas. Para a cobertura, cozinhe a polpa de amora com o açúcar e a água até formar uma calda levemente espessa. Deixe esfriar completamente, espalhe sobre o cheesecake e sirva gelado.'
-      },
-      {
-        id: 5,
-        name: 'Cheesecake de Goiaba',
-        description: 'Cheesecake com base de biscoito e cobertura de goiaba, cremoso e com o doce equilibrado da fruta.',
-        image: 'img/receitas/CheesecakedeGoiaba.png',
-        imageEmoji: '🍐',
-        ingredients: [ 'Biscoito maisena (200g)', 'Manteiga (100g)', 'Cream cheese (500g)', 'Açúcar (150g)', 'Ovos (2)', 'Polpa de goiaba (200g)', 'Gelatina incolor (12g)' ],
-        instructions: 'Triture o biscoito e misture com a manteiga derretida, forre o fundo de uma forma. Bata o cream cheese, açúcar e ovos até ficar liso. Despeje sobre a base e asse a 160°C por 40 minutos. Prepare a cobertura: aqueça a polpa de goiaba com açúcar a gosto, adicione a gelatina hidratada. Despeje sobre o cheesecake já frio e leve à geladeira por 4 horas.'
-      },
-      {
-        id: 6,
-        name: 'Mousse de Abacaxi com Coco',
-        description: 'Mousse leve e cremosa feita com polpa de abacaxi e polpa de coco, combinando o sabor tropical do abacaxi com a suavidade do coco.',
-        image: 'img/receitas/MousseDeAbacaxiComCoco.png',
-        imageEmoji: '🍍',
-        ingredients: [ 'Polpa de abacaxi (200g)', 'Polpa de coco (100g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor sem sabor (1 envelope – 12g)', 'Água (5 colheres de sopa para hidratar a gelatina)', 'Coco ralado para decorar' ],
-        instructions: 'Hidrate e dissolva a gelatina conforme as instruções da embalagem. Bata no liquidificador a polpa de abacaxi, a polpa de coco, o leite condensado, o creme de leite e a gelatina dissolvida até obter um creme homogêneo. Distribua em taças ou em um refratário, leve à geladeira por cerca de 4 horas ou até firmar. Finalize com coco ralado antes de servir.'
-      },
-      {
-        id: 7,
-        name: 'Mousse de Cupuaçu',
-        description: 'Mousse leve e delicada com o sabor exótico e levemente ácido do cupuaçu, uma sobremesa amazônica.',
-        image: 'img/receitas/MousseDeCupuacu.png',
-        imageEmoji: '🍬',
-        ingredients: [ 'Polpa de cupuaçu (300g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor (12g)' ],
-        instructions: 'Hidrate a gelatina. Bata a polpa de cupuaçu, leite condensado e creme de leite no liquidificador. Adicione a gelatina dissolvida e bata rapidamente. Distribua em taças e leve à geladeira por 3 horas.'
-      },
-      {
-        id: 8,
-        name: 'Mousse de Manga',
-        description: 'Mousse cremoso e aerado com o sabor doce e tropical da manga, perfeito para sobremesas leves.',
-        image: 'img/receitas/MoussedeManga.png',
-        imageEmoji: '🥭',
-        ingredients: [ 'Polpa de manga (300g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor (12g)' ],
-        instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de manga, o leite condensado e o creme de leite. Adicione a gelatina dissolvida e bata até homogeneizar. Distribua em taças e leve à geladeira por 4 horas.'
-      },
-      {
-        id: 9,
-        name: 'Mousse de Maracujá',
-        description: 'Mousse cremoso e aerado com o equilíbrio perfeito entre o doce e o ácido da polpa de maracujá.',
-        image: 'img/receitas/MousseDeMaracuja.png',
-        imageEmoji: '🥭',
-        ingredients: [ 'Polpa de maracujá (200g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Gelatina incolor (12g)', 'Açúcar (a gosto)' ],
-        instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de maracujá, o leite condensado, o creme de leite e o açúcar. Adicione a gelatina dissolvida e bata mais um pouco. Despeje em taças e leve à geladeira por 4 horas.'
-      },
-      {
-        id: 10,
-        name: 'Pavê de Morango com Suspiro',
-        description: 'Pavê cremoso com camadas de biscoito champagne, creme de morango e suspiros crocantes, finalizado com morangos frescos.',
-        image: 'img/receitas/PavedeMorangocomSuspiro.png',
-        imageEmoji: '🍓',
-        ingredients: [ 'Polpa de morango (300g)', 'Biscoito champagne (200g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Leite (100ml)', 'Suspiros (150g)', 'Morangos frescos para decorar' ],
-        instructions: 'Bata a polpa de morango com o leite condensado e o creme de leite até formar um creme homogêneo. Umedeça os biscoitos champagne no leite e faça uma camada em um refratário. Cubra com uma camada do creme de morango e distribua parte dos suspiros quebrados. Repita as camadas até finalizar os ingredientes. Decore com morangos frescos e suspiros inteiros. Leve à geladeira por 4 horas antes de servir.'
-      },
-      {
-        id: 11,
-        name: 'Petit Suisse de Frutas Vermelhas',
-        description: 'Versão caseira do clássico petit suisse, cremosa e doce na medida certa, com o sabor inconfundível das frutas vermelhas – saudável e deliciosa.',
-        image: 'img/receitas/PetitSuissedeFrutasVermelhas.png',
-        imageEmoji: '🍓',
-        ingredients: [ 'Polpa de frutas vermelhas (200g)', 'Leite condensado (1 lata – 395g)', 'Creme de leite (1 caixa – 200g)', 'Iogurte natural (170g)', 'Gelatina incolor (12g)' ],
-        instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de frutas vermelhas, o leite condensado, o creme de leite e o iogurte natural. Adicione a gelatina dissolvida e bata até ficar homogêneo. Distribua em potinhos individuais e leve à geladeira por 4 horas. Sirva gelado.'
-      },
-      {
-        id: 12,
-        name: 'Torta de Limão',
-        description: 'Torta com base de biscoito, recheio cremoso de limão feito com polpa da fruta e merengue tostado – uma sobremesa cítrica e sofisticada.',
-        image: 'img/receitas/TortadeLimao.png',
-        imageEmoji: '🍋',
-        ingredients: [ 'Biscoito maisena (200g)', 'Manteiga (100g)', 'Leite condensado (1 lata – 395g)', 'Polpa de limão (150ml)', 'Creme de leite (1 caixa – 200g)', 'Claras de ovos (3)', 'Açúcar (150g)' ],
-        instructions: 'Triture o biscoito e misture com a manteiga derretida. Forre o fundo de uma forma. Bata o leite condensado, a polpa de limão e o creme de leite até engrossar. Despeje sobre a base. Para o merengue, bata as claras com o açúcar em neve, cubra a torta e leve ao forno para dourar (ou use maçarico). Leve à geladeira por 2 horas.'
-      },
-      // ---- DRINQUES (id 13 a 24) ----
-      {
-        id: 13,
-        name: 'Batidinha de Acerola',
-        description: 'Batida refrescante com a acidez da acerola, leite condensado e gelo – puro sabor tropical.',
-        image: 'img/receitas/BatidinhadeAcerola.png',
-        imageEmoji: '🥤',
-        ingredients: [ 'Polpa de acerola (200g)', 'Leite condensado (1/2 lata – 200g)', 'Leite (200ml)', 'Gelo a gosto' ],
-        instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar cremoso. Sirva em copos altos e decore com uma folha de hortelã.'
-      },
-      {
-        id: 14,
-        name: 'Batidinha de Cupuaçu',
-        description: 'Batidinha cremosa e doce com polpa de cupuaçu, leite condensado e gelo – um drink tropical e exótico.',
-        image: 'img/receitas/BatidinhadeCupuacu.png',
-        imageEmoji: '🥤',
-        ingredients: [ 'Polpa de cupuaçu (200g)', 'Leite condensado (1/2 lata – 200g)', 'Leite (200ml)', 'Gelo a gosto' ],
-        instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar homogêneo. Sirva em copos altos e decore com fatias de cupuaçu.'
-      },
-      {
-        id: 15,
-        name: 'Batidinha de Uva',
-        description: 'Batida doce e encorpada com polpa de uva integral, leite condensado e gelo – uma delícia roxa.',
-        image: 'img/receitas/BatidinhadeUva.png',
-        imageEmoji: '🍇',
-        ingredients: [ 'Polpa de uva (200g)', 'Leite condensado (1/2 lata – 200g)', 'Leite (200ml)', 'Gelo a gosto' ],
-        instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar homogêneo. Sirva em copos altos e decore com uvas inteiras.'
-      },
-    {
-        id: 16,
-        name: 'Caipirinha de Graviola',
-        description: 'Uma caipirinha cremosa e refrescante, combinando o sabor suave e tropical da graviola com cachaça, limão e açúcar.',
-        image: 'img/receitas/CaipirinhadeGraviola.png',
-        imageEmoji: '🍈',
-        ingredients: [
-          'Polpa de graviola (200g)',
-          'Cachaça (50ml)',
-          'Limão cortado em cubos (1 unidade)',
-          'Açúcar (2 colheres de sopa)',
-          'Gelo'
-        ],
-        instructions: 'Em um copo, macere o limão com o açúcar. Adicione a polpa de graviola, a cachaça e bastante gelo. Misture bem até incorporar todos os ingredientes. Sirva imediatamente e decore com uma fatia de limão.'
-      },
-      {
-        id: 17,
-        name: 'Caipirinha de Kiwi',
-        description: 'Uma caipirinha tropical e refrescante, combinando o sabor marcante do kiwi com cachaça, limão e açúcar.',
-        image: 'img/receitas/CaipirinhadeKiwi.png',
-        imageEmoji: '🥝',
-        ingredients: [ 'Polpa de kiwi (200g)', 'Cachaça (50ml)', 'Limão cortado em cubos (1 unidade)', 'Açúcar (2 colheres de sopa)', 'Gelo' ],
-        instructions: 'Em um copo, macere o limão com o açúcar. Adicione a polpa de kiwi, a cachaça e bastante gelo. Misture bem até incorporar todos os ingredientes. Sirva imediatamente e decore com uma fatia de kiwi.'
-      },
-      {
-        id: 18,
-        name: 'Cosmopolitan de Goiaba',
-        description: 'Versão tropical do clássico Cosmopolitan, com a doçura da goiaba, vodca e um toque cítrico – sofisticado e refrescante.',
-        image: 'img/receitas/CosmopolitandeGoiaba.png',
-        imageEmoji: '🍸',
-        ingredients: [ 'Polpa de goiaba (150g)', 'Vodca (50ml)', 'Suco de limão (20ml)', 'Xarope de açúcar (15ml)', 'Gelo' ],
-        instructions: 'Misture a polpa de goiaba, a vodca, o suco de limão e o xarope em uma coqueteleira com gelo. Agite bem, coe para uma taça de cocktail e decore com uma fatia de goiaba ou uma roda de limão.'
-      },
-      {
-        id: 19,
-        name: 'Gin de Abacaxi com Hortelã',
-        description: 'Drink sofisticado e refrescante com a acidez do abacaxi, gin e hortelã – perfeito para dias quentes.',
-        image: 'img/receitas/GindeAbacaxicomHortela.png',
-        imageEmoji: '🍸',
-        ingredients: [ 'Polpa de abacaxi (150g)', 'Gin (50ml)', 'Água com gás (100ml)', 'Hortelã (10 folhas)', 'Açúcar (10g)', 'Gelo' ],
-        instructions: 'Macere as folhas de hortelã com o açúcar. Adicione a polpa de abacaxi, o gin e o gelo em uma coqueteleira. Agite, coe para um copo baixo e complete com a água com gás. Decore com um ramo de hortelã e uma fatia de abacaxi.'
-      },
-      {
-        id: 20,
-        name: 'Mojito de Morango',
-        description: 'Drink refrescante com polpa de morango, hortelã, limão e água com gás – uma versão frutada do clássico mojito.',
-        image: 'img/receitas/MojitodeMorango.png',
-        imageEmoji: '🍓',
-        ingredients: [ 'Polpa de morango (200g)', 'Rum branco (50ml)', 'Limão (1 unidade)', 'Folhas de hortelã (10 unidades)', 'Açúcar (2 colheres de chá – 10g)', 'Água com gás (100ml)', 'Gelo' ],
-        instructions: 'Em um copo, macere levemente as folhas de hortelã com o açúcar e o suco do limão. Adicione a polpa de morango, o rum branco e bastante gelo. Complete com água com gás, misture delicadamente e decore com morangos e um ramo de hortelã.'
-      },
-      {
-        id: 21,
-        name: 'Moscow Mule de Acerola',
-        description: 'Versão frutada do clássico Moscow Mule, com polpa de acerola, vodca, gengibre e espuma cremosa – refrescante, cítrica e levemente picante.',
-        image: 'img/receitas/MoscowMuledeAcerola.png',
-        imageEmoji: '🍒',
-        ingredients: [ 'Polpa de acerola (200g)', 'Vodca (100ml)', 'Suco de limão (50ml)', 'Xarope de açúcar (30ml)', 'Refrigerante de gengibre ou ginger beer (200ml)', 'Espuma para Moscow Mule', 'Gelo a gosto' ],
-        instructions: 'Em uma caneca ou copo alto, coloque gelo, a vodca, a polpa de acerola, o suco de limão e o xarope de açúcar. Misture bem, complete com o refrigerante de gengibre e finalize com a espuma de Moscow Mule. Decore com acerolas e uma rodela de limão.'
-      },
-      {
-        id: 22,
-        name: 'Moscow Mule de Frutas Vermelhas',
-        description: 'Versão frutada do clássico Moscow Mule, com polpa de frutas vermelhas, vodca, gengibre e espuma cremosa – refrescante e levemente picante.',
-        image: 'img/receitas/MoscowMuledeFrutasVermelhas.png',
-        imageEmoji: '🍓',
-        ingredients: [ 'Polpa de frutas vermelhas (200g)', 'Vodca (100ml)', 'Suco de limão (50ml)', 'Xarope de açúcar (30ml)', 'Refrigerante de gengibre ou ginger beer (200ml)', 'Gelo a gosto', 'Espuma para Moscow Mule (opcional)' ],
-        instructions: 'Em uma caneca ou copo alto com gelo, adicione a vodca, o suco de limão, o xarope de açúcar e a polpa de frutas vermelhas. Misture bem e complete com o refrigerante de gengibre ou ginger beer. Finalize com a espuma característica do Moscow Mule e decore com frutas vermelhas.'
-      },
-      {
-        id: 23,
-        name: 'Piña Colada',
-        description: 'O clássico tropical com polpa de abacaxi, leite de coco e rum – cremoso e viciante.',
-        image: 'img/receitas/PinaColada.png',
-        imageEmoji: '🥥',
-        ingredients: [ 'Polpa de abacaxi (300g)', 'Leite de coco (200ml)', 'Rum (50ml)', 'Leite condensado (1/2 lata – 200g)', 'Gelo' ],
-        instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar homogêneo. Sirva em copos decorados com fatias de abacaxi e cereja.'
-      },
-      {
-        id: 24,
-        name: 'Soda Tropical de Manga',
-        description: 'Soda refrescante com polpa de manga, água com gás e limão – uma explosão de sabor tropical.',
-        image: 'img/receitas/SodaTropicaldeManga.png',
-        imageEmoji: '🥤',
-        ingredients: [ 'Polpa de manga (200g)', 'Água com gás (150ml)', 'Suco de limão (30ml)', 'Açúcar (20g)', 'Gelo' ],
-        instructions: 'Misture a polpa de manga com o suco de limão e o açúcar. Adicione gelo e complete com a água com gás. Mexa suavemente e sirva decorado com fatias de manga.'
-      }
+      { id: 1, name: 'Bombons de Cupuaçu', description: 'Bombons recheados com uma ganache cremosa de cupuaçu, cobertos com chocolate ao leite – uma explosão amazônica.', image: 'img/receitas/bombonscupuacu.png', imageEmoji: '🍫', ingredients: ['Polpa de cupuaçu (150g)','Chocolate ao leite (300g)','Creme de leite (100g)','Açúcar (50g)','Manteiga (20g)'], instructions: 'Derreta o chocolate em banho-maria. À parte, aqueça a polpa de cupuaçu com o açúcar até reduzir um pouco, adicione o creme de leite e a manteiga, mexa até engrossar. Deixe esfriar. Modele bolinhas com o recheio, mergulhe no chocolate derretido e coloque para endurecer sobre papel manteiga.' },
+      { id: 2, name: 'Bombons de Frutas Vermelhas', description: 'Bombons de chocolate recheados com um creme aveludado de frutas vermelhas, combinando o sabor intenso das frutas com a doçura do chocolate.', image: 'img/receitas/BombonsdeFrutasVermelhas.png', imageEmoji: '🍓', ingredients: ['Polpa de frutas vermelhas (200g)','Chocolate meio amargo ou ao leite (350g)','Creme de leite (100g)','Leite condensado (80g)','Manteiga (15g)'], instructions: 'Aqueça a polpa de frutas vermelhas em fogo baixo até reduzir levemente. Acrescente o leite condensado, o creme de leite e a manteiga, mexendo até formar um creme consistente. Deixe esfriar completamente. Derreta o chocolate e faça uma camada nas formas de bombom. Leve à geladeira por 10 minutos, recheie com o creme de frutas vermelhas e cubra com mais chocolate derretido. Retorne à geladeira por cerca de 30 minutos ou até os bombons endurecerem. Desenforme e sirva.' },
+      { id: 3, name: 'Cheesecake de Abacaxi', description: 'Cheesecake cremoso com cobertura de abacaxi, base de biscoito e um toque tropical e refrescante.', image: 'img/receitas/CheesecakedeAbacaxi.png', imageEmoji: '🍍', ingredients: ['Biscoito maisena (200g)','Manteiga (100g)','Cream cheese (500g)','Açúcar (150g)','Ovos (2)','Polpa de abacaxi (200g)','Gelatina incolor (12g)'], instructions: 'Triture o biscoito e misture com a manteiga derretida, forre o fundo de uma forma. Bata o cream cheese, açúcar e ovos até ficar liso. Despeje sobre a base e asse a 160°C por 40 minutos. Prepare a cobertura: aqueça a polpa de abacaxi com açúcar a gosto, adicione a gelatina hidratada. Despeje sobre o cheesecake já frio e leve à geladeira por 4 horas.' },
+      { id: 4, name: 'Cheesecake de Amora', description: 'Cheesecake cremoso com cobertura de amora feita com polpa da fruta – uma sobremesa elegante, refrescante e levemente ácida.', image: 'img/receitas/CheesecakedeAmora.png', imageEmoji: '🫐', ingredients: ['Polpa de amora (250g)','Biscoito maisena triturado (200g)','Manteiga derretida (100g)','Cream cheese (400g)','Leite condensado (1 lata)','Creme de leite (1 caixa)','Gelatina incolor sem sabor (1 envelope)','Açúcar (100g)','Água (50ml)'], instructions: 'Misture o biscoito triturado com a manteiga até formar uma farofa úmida e pressione no fundo de uma forma de aro removível. Leve à geladeira por 20 minutos. Bata o cream cheese, o leite condensado, o creme de leite e a gelatina hidratada e dissolvida até obter um creme homogêneo. Despeje sobre a base e leve à geladeira por pelo menos 4 horas. Para a cobertura, cozinhe a polpa de amora com o açúcar e a água até formar uma calda levemente espessa. Deixe esfriar completamente, espalhe sobre o cheesecake e sirva gelado.' },
+      { id: 5, name: 'Cheesecake de Goiaba', description: 'Cheesecake com base de biscoito e cobertura de goiaba, cremoso e com o doce equilibrado da fruta.', image: 'img/receitas/CheesecakedeGoiaba.png', imageEmoji: '🍐', ingredients: ['Biscoito maisena (200g)','Manteiga (100g)','Cream cheese (500g)','Açúcar (150g)','Ovos (2)','Polpa de goiaba (200g)','Gelatina incolor (12g)'], instructions: 'Triture o biscoito e misture com a manteiga derretida, forre o fundo de uma forma. Bata o cream cheese, açúcar e ovos até ficar liso. Despeje sobre a base e asse a 160°C por 40 minutos. Prepare a cobertura: aqueça a polpa de goiaba com açúcar a gosto, adicione a gelatina hidratada. Despeje sobre o cheesecake já frio e leve à geladeira por 4 horas.' },
+      { id: 6, name: 'Mousse de Abacaxi com Coco', description: 'Mousse leve e cremosa feita com polpa de abacaxi e polpa de coco, combinando o sabor tropical do abacaxi com a suavidade do coco.', image: 'img/receitas/MousseDeAbacaxiComCoco.png', imageEmoji: '🍍', ingredients: ['Polpa de abacaxi (200g)','Polpa de coco (100g)','Leite condensado (1 lata – 395g)','Creme de leite (1 caixa – 200g)','Gelatina incolor sem sabor (1 envelope – 12g)','Água (5 colheres de sopa para hidratar a gelatina)','Coco ralado para decorar'], instructions: 'Hidrate e dissolva a gelatina conforme as instruções da embalagem. Bata no liquidificador a polpa de abacaxi, a polpa de coco, o leite condensado, o creme de leite e a gelatina dissolvida até obter um creme homogêneo. Distribua em taças ou em um refratário, leve à geladeira por cerca de 4 horas ou até firmar. Finalize com coco ralado antes de servir.' },
+      { id: 7, name: 'Mousse de Cupuaçu', description: 'Mousse leve e delicada com o sabor exótico e levemente ácido do cupuaçu, uma sobremesa amazônica.', image: 'img/receitas/MousseDeCupuacu.png', imageEmoji: '🍬', ingredients: ['Polpa de cupuaçu (300g)','Leite condensado (1 lata – 395g)','Creme de leite (1 caixa – 200g)','Gelatina incolor (12g)'], instructions: 'Hidrate a gelatina. Bata a polpa de cupuaçu, leite condensado e creme de leite no liquidificador. Adicione a gelatina dissolvida e bata rapidamente. Distribua em taças e leve à geladeira por 3 horas.' },
+      { id: 8, name: 'Mousse de Manga', description: 'Mousse cremoso e aerado com o sabor doce e tropical da manga, perfeito para sobremesas leves.', image: 'img/receitas/MoussedeManga.png', imageEmoji: '🥭', ingredients: ['Polpa de manga (300g)','Leite condensado (1 lata – 395g)','Creme de leite (1 caixa – 200g)','Gelatina incolor (12g)'], instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de manga, o leite condensado e o creme de leite. Adicione a gelatina dissolvida e bata até homogeneizar. Distribua em taças e leve à geladeira por 4 horas.' },
+      { id: 9, name: 'Mousse de Maracujá', description: 'Mousse cremoso e aerado com o equilíbrio perfeito entre o doce e o ácido da polpa de maracujá.', image: 'img/receitas/MousseDeMaracuja.png', imageEmoji: '🥭', ingredients: ['Polpa de maracujá (200g)','Leite condensado (1 lata – 395g)','Creme de leite (1 caixa – 200g)','Gelatina incolor (12g)','Açúcar (a gosto)'], instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de maracujá, o leite condensado, o creme de leite e o açúcar. Adicione a gelatina dissolvida e bata mais um pouco. Despeje em taças e leve à geladeira por 4 horas.' },
+      { id: 10, name: 'Pavê de Morango com Suspiro', description: 'Pavê cremoso com camadas de biscoito champagne, creme de morango e suspiros crocantes, finalizado com morangos frescos.', image: 'img/receitas/PavedeMorangocomSuspiro.png', imageEmoji: '🍓', ingredients: ['Polpa de morango (300g)','Biscoito champagne (200g)','Leite condensado (1 lata – 395g)','Creme de leite (1 caixa – 200g)','Leite (100ml)','Suspiros (150g)','Morangos frescos para decorar'], instructions: 'Bata a polpa de morango com o leite condensado e o creme de leite até formar um creme homogêneo. Umedeça os biscoitos champagne no leite e faça uma camada em um refratário. Cubra com uma camada do creme de morango e distribua parte dos suspiros quebrados. Repita as camadas até finalizar os ingredientes. Decore com morangos frescos e suspiros inteiros. Leve à geladeira por 4 horas antes de servir.' },
+      { id: 11, name: 'Petit Suisse de Frutas Vermelhas', description: 'Versão caseira do clássico petit suisse, cremosa e doce na medida certa, com o sabor inconfundível das frutas vermelhas – saudável e deliciosa.', image: 'img/receitas/PetitSuissedeFrutasVermelhas.png', imageEmoji: '🍓', ingredients: ['Polpa de frutas vermelhas (200g)','Leite condensado (1 lata – 395g)','Creme de leite (1 caixa – 200g)','Iogurte natural (170g)','Gelatina incolor (12g)'], instructions: 'Hidrate a gelatina conforme a embalagem. Bata no liquidificador a polpa de frutas vermelhas, o leite condensado, o creme de leite e o iogurte natural. Adicione a gelatina dissolvida e bata até ficar homogêneo. Distribua em potinhos individuais e leve à geladeira por 4 horas. Sirva gelado.' },
+      { id: 12, name: 'Torta de Limão', description: 'Torta com base de biscoito, recheio cremoso de limão feito com polpa da fruta e merengue tostado – uma sobremesa cítrica e sofisticada.', image: 'img/receitas/TortadeLimao.png', imageEmoji: '🍋', ingredients: ['Biscoito maisena (200g)','Manteiga (100g)','Leite condensado (1 lata – 395g)','Polpa de limão (150ml)','Creme de leite (1 caixa – 200g)','Claras de ovos (3)','Açúcar (150g)'], instructions: 'Triture o biscoito e misture com a manteiga derretida. Forre o fundo de uma forma. Bata o leite condensado, a polpa de limão e o creme de leite até engrossar. Despeje sobre a base. Para o merengue, bata as claras com o açúcar em neve, cubra a torta e leve ao forno para dourar (ou use maçarico). Leve à geladeira por 2 horas.' },
+      { id: 13, name: 'Batidinha de Acerola', description: 'Batida refrescante com a acidez da acerola, leite condensado e gelo – puro sabor tropical.', image: 'img/receitas/BatidinhadeAcerola.png', imageEmoji: '🥤', ingredients: ['Polpa de acerola (200g)','Leite condensado (1/2 lata – 200g)','Leite (200ml)','Gelo a gosto'], instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar cremoso. Sirva em copos altos e decore com uma folha de hortelã.' },
+      { id: 14, name: 'Batidinha de Cupuaçu', description: 'Batidinha cremosa e doce com polpa de cupuaçu, leite condensado e gelo – um drink tropical e exótico.', image: 'img/receitas/BatidinhadeCupuacu.png', imageEmoji: '🥤', ingredients: ['Polpa de cupuaçu (200g)','Leite condensado (1/2 lata – 200g)','Leite (200ml)','Gelo a gosto'], instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar homogêneo. Sirva em copos altos e decore com fatias de cupuaçu.' },
+      { id: 15, name: 'Batidinha de Uva', description: 'Batida doce e encorpada com polpa de uva integral, leite condensado e gelo – uma delícia roxa.', image: 'img/receitas/BatidinhadeUva.png', imageEmoji: '🍇', ingredients: ['Polpa de uva (200g)','Leite condensado (1/2 lata – 200g)','Leite (200ml)','Gelo a gosto'], instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar homogêneo. Sirva em copos altos e decore com uvas inteiras.' },
+      { id: 16, name: 'Caipirinha de Graviola', description: 'Uma caipirinha cremosa e refrescante, combinando o sabor suave e tropical da graviola com cachaça, limão e açúcar.', image: 'img/receitas/CaipirinhadeGraviola.png', imageEmoji: '🍈', ingredients: ['Polpa de graviola (200g)','Cachaça (50ml)','Limão cortado em cubos (1 unidade)','Açúcar (2 colheres de sopa)','Gelo'], instructions: 'Em um copo, macere o limão com o açúcar. Adicione a polpa de graviola, a cachaça e bastante gelo. Misture bem até incorporar todos os ingredientes. Sirva imediatamente e decore com uma fatia de limão.' },
+      { id: 17, name: 'Caipirinha de Kiwi', description: 'Uma caipirinha tropical e refrescante, combinando o sabor marcante do kiwi com cachaça, limão e açúcar.', image: 'img/receitas/CaipirinhadeKiwi.png', imageEmoji: '🥝', ingredients: ['Polpa de kiwi (200g)','Cachaça (50ml)','Limão cortado em cubos (1 unidade)','Açúcar (2 colheres de sopa)','Gelo'], instructions: 'Em um copo, macere o limão com o açúcar. Adicione a polpa de kiwi, a cachaça e bastante gelo. Misture bem até incorporar todos os ingredientes. Sirva imediatamente e decore com uma fatia de kiwi.' },
+      { id: 18, name: 'Cosmopolitan de Goiaba', description: 'Versão tropical do clássico Cosmopolitan, com a doçura da goiaba, vodca e um toque cítrico – sofisticado e refrescante.', image: 'img/receitas/CosmopolitandeGoiaba.png', imageEmoji: '🍸', ingredients: ['Polpa de goiaba (150g)','Vodca (50ml)','Suco de limão (20ml)','Xarope de açúcar (15ml)','Gelo'], instructions: 'Misture a polpa de goiaba, a vodca, o suco de limão e o xarope em uma coqueteleira com gelo. Agite bem, coe para uma taça de cocktail e decore com uma fatia de goiaba ou uma roda de limão.' },
+      { id: 19, name: 'Gin de Abacaxi com Hortelã', description: 'Drink sofisticado e refrescante com a acidez do abacaxi, gin e hortelã – perfeito para dias quentes.', image: 'img/receitas/GindeAbacaxicomHortela.png', imageEmoji: '🍸', ingredients: ['Polpa de abacaxi (150g)','Gin (50ml)','Água com gás (100ml)','Hortelã (10 folhas)','Açúcar (10g)','Gelo'], instructions: 'Macere as folhas de hortelã com o açúcar. Adicione a polpa de abacaxi, o gin e o gelo em uma coqueteleira. Agite, coe para um copo baixo e complete com a água com gás. Decore com um ramo de hortelã e uma fatia de abacaxi.' },
+      { id: 20, name: 'Mojito de Morango', description: 'Drink refrescante com polpa de morango, hortelã, limão e água com gás – uma versão frutada do clássico mojito.', image: 'img/receitas/MojitodeMorango.png', imageEmoji: '🍓', ingredients: ['Polpa de morango (200g)','Rum branco (50ml)','Limão (1 unidade)','Folhas de hortelã (10 unidades)','Açúcar (2 colheres de chá – 10g)','Água com gás (100ml)','Gelo'], instructions: 'Em um copo, macere levemente as folhas de hortelã com o açúcar e o suco do limão. Adicione a polpa de morango, o rum branco e bastante gelo. Complete com água com gás, misture delicadamente e decore com morangos e um ramo de hortelã.' },
+      { id: 21, name: 'Moscow Mule de Acerola', description: 'Versão frutada do clássico Moscow Mule, com polpa de acerola, vodca, gengibre e espuma cremosa – refrescante, cítrica e levemente picante.', image: 'img/receitas/MoscowMuledeAcerola.png', imageEmoji: '🍒', ingredients: ['Polpa de acerola (200g)','Vodca (100ml)','Suco de limão (50ml)','Xarope de açúcar (30ml)','Refrigerante de gengibre ou ginger beer (200ml)','Espuma para Moscow Mule','Gelo a gosto'], instructions: 'Em uma caneca ou copo alto, coloque gelo, a vodca, a polpa de acerola, o suco de limão e o xarope de açúcar. Misture bem, complete com o refrigerante de gengibre e finalize com a espuma de Moscow Mule. Decore com acerolas e uma rodela de limão.' },
+      { id: 22, name: 'Moscow Mule de Frutas Vermelhas', description: 'Versão frutada do clássico Moscow Mule, com polpa de frutas vermelhas, vodca, gengibre e espuma cremosa – refrescante e levemente picante.', image: 'img/receitas/MoscowMuledeFrutasVermelhas.png', imageEmoji: '🍓', ingredients: ['Polpa de frutas vermelhas (200g)','Vodca (100ml)','Suco de limão (50ml)','Xarope de açúcar (30ml)','Refrigerante de gengibre ou ginger beer (200ml)','Gelo a gosto','Espuma para Moscow Mule (opcional)'], instructions: 'Em uma caneca ou copo alto com gelo, adicione a vodca, o suco de limão, o xarope de açúcar e a polpa de frutas vermelhas. Misture bem e complete com o refrigerante de gengibre ou ginger beer. Finalize com a espuma característica do Moscow Mule e decore com frutas vermelhas.' },
+      { id: 23, name: 'Piña Colada', description: 'O clássico tropical com polpa de abacaxi, leite de coco e rum – cremoso e viciante.', image: 'img/receitas/PinaColada.png', imageEmoji: '🥥', ingredients: ['Polpa de abacaxi (300g)','Leite de coco (200ml)','Rum (50ml)','Leite condensado (1/2 lata – 200g)','Gelo'], instructions: 'Bata todos os ingredientes no liquidificador com gelo até ficar homogêneo. Sirva em copos decorados com fatias de abacaxi e cereja.' },
+      { id: 24, name: 'Soda Tropical de Manga', description: 'Soda refrescante com polpa de manga, água com gás e limão – uma explosão de sabor tropical.', image: 'img/receitas/SodaTropicaldeManga.png', imageEmoji: '🥤', ingredients: ['Polpa de manga (200g)','Água com gás (150ml)','Suco de limão (30ml)','Açúcar (20g)','Gelo'], instructions: 'Misture a polpa de manga com o suco de limão e o açúcar. Adicione gelo e complete com a água com gás. Mexa suavemente e sirva decorado com fatias de manga.' }
     ];
 
     // -------------------------------------------------------------
-    // 2. CURTIDAS
+    // 2. STORAGE HELPERS
     // -------------------------------------------------------------
-    const LIKES_COUNT_KEY = 'recipeLikesCount';
-    const USER_LIKES_KEY = 'recipeLikedByUser';
+    const RATINGS_KEY  = 'recipeRatings';
+    const COMMENTS_KEY = 'recipeComments';
 
-    function loadLikesCount() {
-      const raw = localStorage.getItem(LIKES_COUNT_KEY);
-      try { return raw ? JSON.parse(raw) : {}; } catch { return {}; }
+    function safeParse(raw, fallback) {
+      try { return raw ? JSON.parse(raw) : fallback; } catch { return fallback; }
     }
-    function saveLikesCount(data) {
-      localStorage.setItem(LIKES_COUNT_KEY, JSON.stringify(data));
-    }
-    function loadUserLikes() {
-      const raw = localStorage.getItem(USER_LIKES_KEY);
-      try { return raw ? JSON.parse(raw) : {}; } catch { return {}; }
-    }
-    function saveUserLikes(data) {
-      localStorage.setItem(USER_LIKES_KEY, JSON.stringify(data));
-    }
-    function getLikeCount(recipeId) {
-      const counts = loadLikesCount();
-      return counts[recipeId] || 0;
-    }
-    function getUserLike(recipeId) {
-      const userLikes = loadUserLikes();
-      return !!userLikes[recipeId];
-    }
-    function toggleLike(recipeId) {
-      const userLikes = loadUserLikes();
-      const counts = loadLikesCount();
-      const alreadyLiked = !!userLikes[recipeId];
 
-      if (alreadyLiked) {
-        counts[recipeId] = (counts[recipeId] || 1) - 1;
-        if (counts[recipeId] <= 0) delete counts[recipeId];
-        delete userLikes[recipeId];
-      } else {
-        counts[recipeId] = (counts[recipeId] || 0) + 1;
-        userLikes[recipeId] = true;
-      }
+    function loadRatings() { return safeParse(localStorage.getItem(RATINGS_KEY), {}); }
+    function saveRatings(d) { localStorage.setItem(RATINGS_KEY, JSON.stringify(d)); }
 
-      saveLikesCount(counts);
-      saveUserLikes(userLikes);
-      renderCards(categoriaAtual);
+    function loadComments() { return safeParse(localStorage.getItem(COMMENTS_KEY), {}); }
+    function saveComments(d) { localStorage.setItem(COMMENTS_KEY, JSON.stringify(d)); }
+
+    function getRecipeRating(recipeId) {
+      const all = loadRatings();
+      const lista = Array.isArray(all[recipeId]) ? all[recipeId] : [];
+      if (lista.length === 0) return { media: 0, total: 0, count: 0, userStars: 0 };
+      const total = lista.reduce((acc, r) => acc + (r.stars || 0), 0);
+      const count = lista.length;
+      const userStars = lista[lista.length - 1]?.stars || 0;
+      return { media: total / count, total, count, userStars };
+    }
+
+    function addRating(recipeId, userName, stars) {
+      const all = loadRatings();
+      const lista = Array.isArray(all[recipeId]) ? all[recipeId] : [];
+      lista.push({
+        user: (userName || 'Anônimo').trim(),
+        stars: stars,
+        data: new Date().toISOString()
+      });
+      all[recipeId] = lista;
+      saveRatings(all);
+    }
+
+    function getComments(recipeId) {
+      const all = loadComments();
+      return all[recipeId] || [];
+    }
+    function addComment(recipeId, nome, mensagem, stars) {
+      const all = loadComments();
+      const lista = all[recipeId] || [];
+      lista.push({
+        nome: nome.trim(),
+        mensagem: mensagem.trim(),
+        stars: stars || 0,
+        data: new Date().toISOString()
+      });
+      all[recipeId] = lista;
+      saveComments(all);
+    }
+    function formatarData(iso) {
+      try {
+        const d = new Date(iso);
+        return d.toLocaleString('pt-BR', {
+          day: '2-digit', month: '2-digit', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      } catch { return ''; }
     }
 
     // -------------------------------------------------------------
     // 3. CORES DAS POLPAS
     // -------------------------------------------------------------
     const cores = {
-      'Polpa de Abacaxi': '#F7E47A',
-      'Polpa de Abacaxi com Hortelã': '#A8D08D',
-      'Polpa de Açaí': '#4A148C',
-      'Polpa de Acerola': '#E53935',
-      'Polpa de Acerola e Laranja': '#FF8F00',
-      'Polpa de Amora': '#6A1B9A',
-      'Polpa de Cacau': '#5D4037',
-      'Polpa de Cajá': '#F9A825',
-      'Polpa de Cajú': '#FF8F00',
-      'Polpa de Clorofila': '#43A047',
-      'Polpa de Coco': '#F5F5F5',
-      'Polpa de Cupuaçu': '#8D6E63',
-      'Polpa de Frutas Vermelhas': '#8B0000',
-      'Polpa de Goiaba': '#4CAF50',
-      'Polpa de Graviola': '#C8E6C9',
-      'Polpa de Kiwi': '#6B8E23',
-      'Polpa de Laranja': '#FF9800',
-      'Polpa de Limão': '#89F436',
-      'Polpa de Mamão': '#FFB74D',
-      'Polpa de Manga': '#FFB300',
-      'Polpa de Maracujá': '#FFC107',
-      'Polpa de Melão': '#f3d915',
-      'Polpa Mista': '#ff2121',
-      'Polpa de Morango': '#E53935',
-      'Polpa de Pêssego': '#FFAB91',
-      'Polpa de Tamarindo': '#795548',
-      'Polpa de Tangerina': '#FF6F00',
-      'Polpa de Umbu': '#C0CA33',
-      'Polpa de Uva': '#4B0082',
-      'Polpa de Morango (Fruta)': '#E53935',
-      'Polpa de Abacaxi (Pedaços)': '#F7E47A',
-      'Polpa de Acerola (Fruta)': '#E53935',
-      'Polpa de Amora (Fruta)': '#6A1B9A',
-      'Polpa de Açaí (Fruta)': '#4A148C',
-      'Pão de Queijo': '#D7CCC8'
+      'Polpa de Abacaxi': '#F7E47A','Polpa de Abacaxi com Hortelã': '#A8D08D','Polpa de Açaí': '#4A148C','Polpa de Acerola': '#E53935','Polpa de Acerola e Laranja': '#FF8F00','Polpa de Amora': '#6A1B9A','Polpa de Cacau': '#5D4037','Polpa de Cajá': '#F9A825','Polpa de Cajú': '#FF8F00','Polpa de Clorofila': '#43A047','Polpa de Coco': '#F5F5F5','Polpa de Cupuaçu': '#8D6E63','Polpa de Frutas Vermelhas': '#8B0000','Polpa de Goiaba': '#4CAF50','Polpa de Graviola': '#C8E6C9','Polpa de Kiwi': '#6B8E23','Polpa de Laranja': '#FF9800','Polpa de Limão': '#89F436','Polpa de Mamão': '#FFB74D','Polpa de Manga': '#FFB300','Polpa de Maracujá': '#FFC107','Polpa de Melão': '#f3d915','Polpa Mista': '#ff2121','Polpa de Morango': '#E53935','Polpa de Pêssego': '#FFAB91','Polpa de Tamarindo': '#795548','Polpa de Tangerina': '#FF6F00','Polpa de Umbu': '#C0CA33','Polpa de Uva': '#4B0082','Pão de Queijo': '#D7CCC8'
     };
 
     function getCorDaPolpaPorNomeImagem(src) {
@@ -1136,28 +1162,28 @@
       const mapa = {
         'bombonscupuacu': 'Polpa de Cupuaçu',
         'BatidinhadeAcerola': 'Polpa de Acerola',
-        'BrowniecomMoussedeMorango': 'Polpa de Morango',
         'BatidinhadeCupuacu': 'Polpa de Cupuaçu',
-        'CheesecakedeAbacaxi': 'Polpa de Abacaxi',
         'BatidinhadeUva': 'Polpa de Uva',
+        'BombonsdeFrutasVermelhas': 'Polpa de Frutas Vermelhas',
+        'CheesecakedeAbacaxi': 'Polpa de Abacaxi',
         'CheesecakedeAmora': 'Polpa de Amora',
-        'CaipirinhadeCaju': 'Polpa de Cajú',
         'CheesecakedeGoiaba': 'Polpa de Goiaba',
+        'CaipirinhadeGraviola': 'Polpa de Graviola',
         'CaipirinhadeKiwi': 'Polpa de Kiwi',
-        'MousseDeAbacaxiComCoco': 'Polpa de Abacaxi',
         'CosmopolitandeGoiaba': 'Polpa de Goiaba',
-        'MousseDeCupuacu': 'Polpa de Cupuaçu',
         'GindeAbacaxicomHortela': 'Polpa de Abacaxi com Hortelã',
-        'MoussedeManga': 'Polpa de Manga',
         'MojitodeMorango': 'Polpa de Morango',
-        'MousseDeMaracuja': 'Polpa de Maracujá',
         'MoscowMuledeAcerola': 'Polpa de Acerola',
-        'PavedeMorangocomSuspiro': 'Polpa de Morango',
         'MoscowMuledeFrutasVermelhas': 'Polpa de Frutas Vermelhas',
+        'MousseDeAbacaxiComCoco': 'Polpa de Abacaxi',
+        'MousseDeCupuacu': 'Polpa de Cupuaçu',
+        'MousseDeMaracuja': 'Polpa de Maracujá',
+        'MoussedeManga': 'Polpa de Manga',
+        'PavedeMorangocomSuspiro': 'Polpa de Morango',
         'PetitSuissedeFrutasVermelhas': 'Polpa de Frutas Vermelhas',
         'PinaColada': 'Polpa de Abacaxi',
-        'TortadeLimao': 'Polpa de Limão',
-        'SodaTropicaldeManga': 'Polpa de Manga'
+        'SodaTropicaldeManga': 'Polpa de Manga',
+        'TortadeLimao': 'Polpa de Limão'
       };
       const polpa = mapa[nomeArquivo] || null;
       return polpa ? cores[polpa] : null;
@@ -1167,14 +1193,62 @@
     // 4. RENDERIZAÇÃO DO GRID
     // -------------------------------------------------------------
     let categoriaAtual = 'todas';
-
-    const grid = document.getElementById('catalogGrid');
     const tituloEl = document.getElementById('tituloLinha');
 
-    function createCard(recipe) {
-      const count = getLikeCount(recipe.id);
-      const liked = getUserLike(recipe.id);
+    function buildStars(recipe) {
+      const rating = getRecipeRating(recipe.id);
+      const wrap = document.createElement('div');
+      wrap.className = 'stars-wrap';
 
+      const stars = document.createElement('div');
+      stars.className = 'stars';
+      stars.dataset.recipeId = recipe.id;
+      stars.setAttribute('role', 'radiogroup');
+      stars.setAttribute('aria-label', `Avaliação de ${recipe.name}`);
+
+      for (let i = 1; i <= 5; i++) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'star' + (i <= rating.userStars ? ' active' : '');
+        btn.dataset.value = String(i);
+        btn.setAttribute('aria-label', `Avaliar com ${i} estrela${i > 1 ? 's' : ''}`);
+        btn.title = `Avaliar com ${i} estrela${i > 1 ? 's' : ''}`;
+        btn.textContent = '★';
+        stars.appendChild(btn);
+      }
+
+      const info = document.createElement('span');
+      info.className = 'rating-info';
+      info.textContent = rating.count > 0
+        ? `${rating.media.toFixed(1)} (${rating.count})`
+        : '—';
+
+      wrap.appendChild(stars);
+      wrap.appendChild(info);
+      return wrap;
+    }
+
+    function buildChatButton(recipe) {
+      const comments = getComments(recipe.id);
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chat-btn';
+      btn.title = 'Ver comentários e enviar mensagem';
+      btn.innerHTML = '<i class="bi bi-chat-dots"></i> Chat';
+      if (comments.length > 0) {
+        const badge = document.createElement('span');
+        badge.className = 'msg-count';
+        badge.textContent = String(comments.length);
+        btn.appendChild(badge);
+      }
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openChat(recipe.id);
+      });
+      return btn;
+    }
+
+    function createCard(recipe) {
       const card = document.createElement('div');
       card.className = 'recipe-card';
       card.dataset.id = recipe.id;
@@ -1184,14 +1258,13 @@
 
       if (recipe.image && recipe.image.trim() !== '') {
         const cor = getCorDaPolpaPorNomeImagem(recipe.image);
-        if (cor) {
-          imageDiv.style.backgroundColor = cor;
-        } else {
-          imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
-        }
+        if (cor) imageDiv.style.backgroundColor = cor;
+        else imageDiv.style.backgroundImage = 'radial-gradient(circle at 20% 30%, #f1deef 0%, #314ddc 100%)';
+
         const img = document.createElement('img');
         img.src = recipe.image;
         img.alt = recipe.name;
+        img.loading = 'lazy';
         img.addEventListener('error', () => {
           imageDiv.innerHTML = '';
           const span = document.createElement('span');
@@ -1216,36 +1289,27 @@
       desc.className = 'description';
       desc.textContent = recipe.description;
 
-      const likeArea = document.createElement('div');
-      likeArea.className = 'like-area';
-
-      const likeBtn = document.createElement('button');
-      likeBtn.className = `like-btn${liked ? ' liked' : ''}`;
-      likeBtn.textContent = liked ? '♥' : '♡';
-      likeBtn.setAttribute('aria-label', liked ? 'Descurtir' : 'Curtir');
-      likeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleLike(recipe.id);
-      });
-
-      const likeCountSpan = document.createElement('span');
-      likeCountSpan.className = 'like-count';
-      likeCountSpan.textContent = count;
-
-      likeArea.appendChild(likeBtn);
-      likeArea.appendChild(likeCountSpan);
+      const interactions = document.createElement('div');
+      interactions.className = 'card-interactions';
+      interactions.appendChild(buildStars(recipe));
 
       const footer = document.createElement('div');
       footer.className = 'card-footer';
+
+      const chatBtn = buildChatButton(recipe);
+
       const btn = document.createElement('button');
+      btn.type = 'button';
       btn.className = 'btn-recipe';
-      btn.textContent = 'Ver receita';
+      btn.innerHTML = '<i class="bi bi-eye"></i> Ver receita';
       btn.addEventListener('click', () => openModal(recipe.id));
+
+      footer.appendChild(chatBtn);
       footer.appendChild(btn);
 
       contentDiv.appendChild(title);
       contentDiv.appendChild(desc);
-      contentDiv.appendChild(likeArea);
+      contentDiv.appendChild(interactions);
       contentDiv.appendChild(footer);
 
       card.appendChild(imageDiv);
@@ -1254,7 +1318,6 @@
       return card;
     }
 
-    // Cria um grid separado (usado para renderizar múltiplos grids quando há separador)
     function createGridElement() {
       const g = document.createElement('div');
       g.className = 'catalog-grid';
@@ -1262,69 +1325,103 @@
     }
 
     function renderCards(categoria) {
-      // Limpa tudo do main, exceto o título e o modal
       const main = document.querySelector('.receitas-main');
       const modalOverlay = document.getElementById('modalOverlay');
 
-      // Remove grids e barras internas antigas
       main.querySelectorAll('.catalog-grid, .barra-separadora-interna').forEach(el => el.remove());
 
       let receitasFiltradas = [];
-      if (categoria === 'todas') {
-        receitasFiltradas = allRecipes;
-      } else if (categoria === 'sobremesa') {
-        receitasFiltradas = allRecipes.filter(r => r.id <= 12);
-      } else if (categoria === 'drink') {
-        receitasFiltradas = allRecipes.filter(r => r.id > 12);
-      } else {
-        receitasFiltradas = allRecipes;
-      }
+      if (categoria === 'sobremesa') receitasFiltradas = allRecipes.filter(r => r.id <= 12);
+      else if (categoria === 'drink') receitasFiltradas = allRecipes.filter(r => r.id > 12);
+      else receitasFiltradas = allRecipes.slice();
 
       let texto = 'TODAS AS RECEITAS';
       if (categoria === 'sobremesa') texto = 'SOBREMESAS';
       else if (categoria === 'drink') texto = 'DRINKS';
       tituloEl.textContent = texto;
 
-      // Referência para inserir antes do modal
-      const referenciaInsercao = modalOverlay;
+      const ref = modalOverlay;
 
       if (receitasFiltradas.length === 0) {
         const p = document.createElement('p');
         p.style.cssText = 'color:#fff; font-size:24px;';
         p.textContent = 'Nenhuma receita encontrada.';
-        main.insertBefore(p, referenciaInsercao);
+        main.insertBefore(p, ref);
         return;
       }
 
-      // Se for "todas", separa sobremesas e drinks com a barra de largura total
       if (categoria === 'todas') {
         const sobremesas = receitasFiltradas.filter(r => r.id <= 12);
         const drinks = receitasFiltradas.filter(r => r.id > 12);
 
-        // Grid de sobremesas
-        const gridSobremesas = createGridElement();
-        sobremesas.forEach(r => gridSobremesas.appendChild(createCard(r)));
-        main.insertBefore(gridSobremesas, referenciaInsercao);
+        const gS = createGridElement();
+        sobremesas.forEach(r => gS.appendChild(createCard(r)));
+        main.insertBefore(gS, ref);
 
-        // Barra separadora de fora a fora (fora do grid)
         const divisor = document.createElement('div');
         divisor.className = 'barra-separadora-interna';
-        main.insertBefore(divisor, referenciaInsercao);
+        main.insertBefore(divisor, ref);
 
-        // Grid de drinks
-        const gridDrinks = createGridElement();
-        drinks.forEach(r => gridDrinks.appendChild(createCard(r)));
-        main.insertBefore(gridDrinks, referenciaInsercao);
+        const gD = createGridElement();
+        drinks.forEach(r => gD.appendChild(createCard(r)));
+        main.insertBefore(gD, ref);
       } else {
-        // Para categorias filtradas, apenas um grid único
         const g = createGridElement();
         receitasFiltradas.forEach(r => g.appendChild(createCard(r)));
-        main.insertBefore(g, referenciaInsercao);
+        main.insertBefore(g, ref);
       }
     }
 
     // -------------------------------------------------------------
-    // 5. MODAL
+    // 5. DELEGAÇÃO DE EVENTOS: ESTRELAS DO CARD
+    // -------------------------------------------------------------
+    function getNomeAtual() {
+      try {
+        return localStorage.getItem('recipeUserName') || 'Anônimo';
+      } catch { return 'Anônimo'; }
+    }
+
+    document.addEventListener('mouseover', (e) => {
+      const star = e.target.closest('.star');
+      if (!star) return;
+      const stars = star.parentElement;
+      const val = parseInt(star.dataset.value, 10);
+      stars.querySelectorAll('.star').forEach(s => {
+        s.classList.toggle('hovered', parseInt(s.dataset.value, 10) <= val);
+      });
+    });
+    document.addEventListener('mouseout', (e) => {
+      const star = e.target.closest('.star');
+      if (!star) return;
+      const stars = star.parentElement;
+      stars.querySelectorAll('.star').forEach(s => s.classList.remove('hovered'));
+    });
+    document.addEventListener('click', (e) => {
+      const star = e.target.closest('.star');
+      if (!star) return;
+      if (star.closest('#chatStars')) return;
+      e.stopPropagation();
+      const stars = star.parentElement;
+      const recipeId = parseInt(stars.dataset.recipeId, 10);
+      if (!recipeId) return;
+      const val = parseInt(star.dataset.value, 10);
+
+      addRating(recipeId, getNomeAtual(), val);
+
+      const rating = getRecipeRating(recipeId);
+      stars.querySelectorAll('.star').forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.value, 10) <= rating.userStars);
+      });
+      const info = stars.parentElement.querySelector('.rating-info');
+      if (info) {
+        info.textContent = rating.count > 0
+          ? `${rating.media.toFixed(1)} (${rating.count})`
+          : '—';
+      }
+    });
+
+    // -------------------------------------------------------------
+    // 6. MODAL RECEITA
     // -------------------------------------------------------------
     const overlay = document.getElementById('modalOverlay');
     const closeBtn = document.getElementById('modalClose');
@@ -1336,37 +1433,261 @@
     function openModal(id) {
       const recipe = allRecipes.find(r => r.id === id);
       if (!recipe) return;
-
       modalTitle.textContent = recipe.name;
       modalSubtitle.textContent = recipe.description;
-
       modalIngredients.innerHTML = '';
       recipe.ingredients.forEach(ing => {
         const li = document.createElement('li');
         li.textContent = ing;
         modalIngredients.appendChild(li);
       });
-
       modalInstructions.textContent = recipe.instructions;
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeModal() {
       overlay.classList.remove('active');
       document.body.style.overflow = '';
     }
-
     closeBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closeModal();
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+    // -------------------------------------------------------------
+    // 7. CHAT
+    // -------------------------------------------------------------
+    const chatOverlay = document.getElementById('chatOverlay');
+    const chatClose = document.getElementById('chatClose');
+    const chatTitle = document.getElementById('chatTitle');
+    const chatSubtitle = document.getElementById('chatSubtitle');
+    const chatList = document.getElementById('chatList');
+    const chatForm = document.getElementById('chatForm');
+    const chatName = document.getElementById('chatName');
+    const chatMessage = document.getElementById('chatMessage');
+    const charCounter = document.getElementById('charCounter');
+    const chatError = document.getElementById('chatError');
+    const chatStarsEl = document.getElementById('chatStars');
+    const chatStarsInfo = document.getElementById('chatStarsInfo');
+
+    let chatRecipeIdAtual = null;
+    let chatStarsSelecionadas = 0;
+
+    function resetChatStars() {
+      chatStarsSelecionadas = 0;
+      chatStarsEl.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+      chatStarsInfo.textContent = '(opcional)';
+    }
+
+    chatStarsEl.addEventListener('mouseover', (e) => {
+      const star = e.target.closest('.star');
+      if (!star) return;
+      const val = parseInt(star.dataset.value, 10);
+      chatStarsEl.querySelectorAll('.star').forEach(s => {
+        s.classList.toggle('hovered', parseInt(s.dataset.value, 10) <= val);
+      });
     });
+    chatStarsEl.addEventListener('mouseout', () => {
+      chatStarsEl.querySelectorAll('.star').forEach(s => s.classList.remove('hovered'));
+    });
+    chatStarsEl.addEventListener('click', (e) => {
+      const star = e.target.closest('.star');
+      if (!star) return;
+      const val = parseInt(star.dataset.value, 10);
+      chatStarsSelecionadas = val;
+      chatStarsEl.querySelectorAll('.star').forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.value, 10) <= val);
+      });
+      chatStarsInfo.textContent = `(${val} estrela${val > 1 ? 's' : ''})`;
+    });
+
+    function renderChatList(recipeId) {
+      chatList.innerHTML = '';
+      const comentarios = getComments(recipeId);
+      if (comentarios.length === 0) {
+        const p = document.createElement('div');
+        p.className = 'chat-empty';
+        p.textContent = 'Nenhuma mensagem ainda. Seja o primeiro a comentar!';
+        chatList.appendChild(p);
+        return;
+      }
+      comentarios.slice().reverse().forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'chat-message';
+
+        // Topo: nome + data
+        const top = document.createElement('div');
+        top.className = 'cm-top';
+
+        const nomeEl = document.createElement('span');
+        nomeEl.className = 'cm-name';
+        nomeEl.textContent = c.nome;
+
+        const dataEl = document.createElement('span');
+        dataEl.className = 'cm-date';
+        dataEl.textContent = formatarData(c.data);
+
+        top.appendChild(nomeEl);
+        top.appendChild(dataEl);
+        div.appendChild(top);
+
+        // Mensagem
+        const textoEl = document.createElement('div');
+        textoEl.className = 'cm-text';
+        textoEl.textContent = c.mensagem;
+        div.appendChild(textoEl);
+
+        // AVALIAÇÃO ABAIXO DA MENSAGEM
+        if (c.stars && c.stars > 0) {
+          const ratingRow = document.createElement('div');
+          ratingRow.className = 'cm-rating';
+
+          const starsEl = document.createElement('span');
+          starsEl.className = 'cm-rating-stars';
+          for (let i = 1; i <= 5; i++) {
+            const s = document.createElement('span');
+            s.textContent = '★';
+            if (i > c.stars) s.className = 'off';
+            starsEl.appendChild(s);
+          }
+          ratingRow.appendChild(starsEl);
+
+          const labelEl = document.createElement('span');
+          labelEl.className = 'cm-rating-label';
+          labelEl.textContent = `${c.stars}/5`;
+          ratingRow.appendChild(labelEl);
+
+          div.appendChild(ratingRow);
+        }
+
+        chatList.appendChild(div);
+      });
+    }
+
+    function openChat(recipeId) {
+      const recipe = allRecipes.find(r => r.id === recipeId);
+      if (!recipe) return;
+      chatRecipeIdAtual = recipeId;
+      chatTitle.textContent = `Comentários — ${recipe.name}`;
+      chatSubtitle.textContent = 'Veja o que já disseram ou deixe sua mensagem.';
+      chatError.textContent = '';
+      chatForm.reset();
+      resetChatStars();
+      charCounter.textContent = '0 / 3000';
+      charCounter.classList.remove('limit');
+
+      try {
+        const nomeSalvo = localStorage.getItem('recipeUserName') || '';
+        if (nomeSalvo) chatName.value = nomeSalvo;
+      } catch {}
+
+      renderChatList(recipeId);
+      chatOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => chatName.focus(), 150);
+    }
+
+    function closeChat() {
+      chatOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      chatRecipeIdAtual = null;
+      refreshChatBadges();
+    }
+
+    function refreshChatBadges() {
+      document.querySelectorAll('.recipe-card').forEach(card => {
+        const id = parseInt(card.dataset.id, 10);
+        const btn = card.querySelector('.chat-btn');
+        if (!btn) return;
+        const existing = btn.querySelector('.msg-count');
+        const count = getComments(id).length;
+        if (count > 0) {
+          if (existing) existing.textContent = String(count);
+          else {
+            const badge = document.createElement('span');
+            badge.className = 'msg-count';
+            badge.textContent = String(count);
+            btn.appendChild(badge);
+          }
+        } else if (existing) {
+          existing.remove();
+        }
+      });
+    }
+
+    chatClose.addEventListener('click', closeChat);
+    chatOverlay.addEventListener('click', (e) => { if (e.target === chatOverlay) closeChat(); });
+
+    chatMessage.addEventListener('input', () => {
+      const len = chatMessage.value.length;
+      charCounter.textContent = `${len} / 3000`;
+      charCounter.classList.toggle('limit', len >= 3000);
+    });
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      chatError.textContent = '';
+
+      const nome = chatName.value.trim();
+      const msg = chatMessage.value.trim();
+
+      if (!nome) { chatError.textContent = 'Informe seu nome.'; return; }
+      if (!msg) { chatError.textContent = 'Escreva uma mensagem.'; return; }
+      if (msg.length > 3000) { chatError.textContent = 'Mensagem muito longa (máx. 3000 caracteres).'; return; }
+
+      if (chatRecipeIdAtual == null) return;
+
+      try { localStorage.setItem('recipeUserName', nome); } catch {}
+
+      if (chatStarsSelecionadas > 0) {
+        addRating(chatRecipeIdAtual, nome, chatStarsSelecionadas);
+      }
+
+      addComment(chatRecipeIdAtual, nome, msg, chatStarsSelecionadas);
+
+      chatForm.reset();
+      resetChatStars();
+      charCounter.textContent = '0 / 3000';
+      charCounter.classList.remove('limit');
+      renderChatList(chatRecipeIdAtual);
+      chatList.scrollTop = 0;
+
+      const card = document.querySelector(`.recipe-card[data-id="${chatRecipeIdAtual}"]`);
+      if (card) {
+        const btn = card.querySelector('.chat-btn');
+        if (btn) {
+          let badge = btn.querySelector('.msg-count');
+          const count = getComments(chatRecipeIdAtual).length;
+          if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'msg-count';
+            btn.appendChild(badge);
+          }
+          badge.textContent = String(count);
+        }
+
+        const stars = card.querySelector('.stars');
+        if (stars) {
+          const rating = getRecipeRating(chatRecipeIdAtual);
+          stars.querySelectorAll('.star').forEach(s => {
+            s.classList.toggle('active', parseInt(s.dataset.value, 10) <= rating.userStars);
+          });
+          const info = stars.parentElement.querySelector('.rating-info');
+          if (info) {
+            info.textContent = rating.count > 0
+              ? `${rating.media.toFixed(1)} (${rating.count})`
+              : '—';
+          }
+        }
+      }
+    });
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key !== 'Escape') return;
+      if (chatOverlay.classList.contains('active')) closeChat();
+      else if (overlay.classList.contains('active')) closeModal();
     });
 
     // -------------------------------------------------------------
-    // 6. FILTRO PRINCIPAL
+    // 8. FILTRO DE CATEGORIA
     // -------------------------------------------------------------
     function filtrarCategoria(categoria) {
       categoriaAtual = categoria;
@@ -1376,13 +1697,15 @@
     document.querySelectorAll('.menu-revendedor-sub a[data-categoria]').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        const cat = this.dataset.categoria;
-        filtrarCategoria(cat);
+        filtrarCategoria(this.dataset.categoria);
+        const sub = this.closest('.menu-top-sub');
+        if (sub) sub.style.display = 'none';
+        setTimeout(() => { if (sub) sub.style.display = ''; }, 200);
       });
     });
 
     // -------------------------------------------------------------
-    // 7. INICIALIZAÇÃO
+    // 9. INICIALIZAÇÃO
     // -------------------------------------------------------------
     filtrarCategoria('todas');
 
@@ -1390,12 +1713,10 @@
     window.addEventListener('scroll', () => {
       document.body.classList.add('scrolling');
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        document.body.classList.remove('scrolling');
-      }, 150);
+      scrollTimeout = setTimeout(() => document.body.classList.remove('scrolling'), 150);
     });
 
-    console.log('Catálogo de Receitas inicializado.');
+    console.log('Catálogo atualizado: avaliação exibida abaixo da mensagem no chat.');
   </script>
 
 </body>
